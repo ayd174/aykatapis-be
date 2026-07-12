@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayka Tapis | Nettoyage Tapis Bruxelles · Collecte & Livraison Gratuite · 4.9★</title>
+<meta name="description" content="Nettoyage professionnel de tapis à Bruxelles. Collecte & livraison gratuites, retour en 48h, résultat garanti. Réservez sur WhatsApp: +32 488 19 67 67.">
+<meta property="og:title" content="Ayka Tapis — Vos tapis. Propres. Livrés.">
+<meta property="og:description" content="Le service de nettoyage de tapis le plus avancé de Bruxelles. Collecte & livraison gratuites.">
+<meta property="og:url" content="https://aykatapis.be">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ayka Tapis",
+  "description": "Service professionnel de nettoyage de tapis à Bruxelles",
+  "address": { "@type": "PostalAddress", "addressLocality": "Bruxelles", "addressCountry": "BE" },
+  "telephone": "+32488196767",
+  "url": "https://aykatapis.be",
+  "areaServed": "Bruxelles",
+  "priceRange": "€€",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "200" }
+}
+</script>
+<style>
+/* ============ RESET & TOKENS ============ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-primary:#FAFAF8;
+  --bg-dark:#0F1115;
+  --bg-section-alt:#F4F0EA;
+  --accent-teal:#00B4A6;
+  --accent-teal-dark:#008C82;
+  --accent-gold:#D4A85A;
+  --accent-warm:#E8F7F6;
+  --text-primary:#1A1A2E;
+  --text-body:#4A4A5A;
+  --text-light:#8A8A9A;
+  --white:#FFFFFF;
+  --ksat-dark:#07090F;
+  --ksat-gold:#D4A853;
+  --shadow-soft:0 4px 24px rgba(0,180,166,.12);
+  --shadow-card:0 2px 16px rgba(0,0,0,.08);
+  --radius-card:16px;
+  --radius-pill:50px;
+  --font-display:'Cormorant Garamond',serif;
+  --font-head:'Plus Jakarta Sans',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--font-body);color:var(--text-body);background:var(--bg-primary);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--font-head);color:var(--text-primary);line-height:1.2}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:88px 0;position:relative}
+.section-label{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-teal);display:block;margin-bottom:14px}
+.section-title{font-family:var(--font-display);font-size:clamp(32px,5vw,52px);font-weight:600;margin-bottom:16px}
+.section-sub{font-size:17px;color:var(--text-body);max-width:640px;margin:0 auto 48px}
+.center{text-align:center}
+
+/* ============ ANIMATIONS ============ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ============ SCROLL PROGRESS ============ */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent-teal),var(--accent-gold));z-index:1200}
+
+/* ============ ANNOUNCEMENT BAR ============ */
+#announce{background:var(--accent-teal-dark);color:#fff;font-size:13px;font-family:var(--font-mono);text-align:center;padding:9px 44px;position:relative;z-index:1001}
+#announce .msg{display:inline-block;animation:fadeSwap .5s ease}
+@keyframes fadeSwap{from{opacity:0}to{opacity:1}}
+#announce .close-x{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#fff;font-size:16px;opacity:.7;padding:4px 8px}
+#announce .close-x:hover{opacity:1}
+#announce.hidden{display:none}
+
+/* ============ NAVBAR ============ */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .35s,box-shadow .35s,padding .35s;padding:20px 0}
+#navbar .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+#navbar.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:26px;font-weight:700;color:#fff;transition:color .3s}
+.logo img{height:50px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4));transition:filter .3s}
+#navbar.scrolled .logo{color:var(--text-primary)}
+#navbar.scrolled .logo img{filter:invert(1) hue-rotate(180deg) saturate(1.4) drop-shadow(0 1px 3px rgba(0,0,0,.12))}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:600;font-family:var(--font-head);color:rgba(255,255,255,.9);transition:color .25s}
+#navbar.scrolled .nav-links a{color:var(--text-primary)}
+.nav-links a:hover{color:var(--accent-teal)!important}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-switch{display:flex;gap:2px;background:rgba(255,255,255,.12);border-radius:var(--radius-pill);padding:3px}
+#navbar.scrolled .lang-switch{background:rgba(0,0,0,.06)}
+.lang-switch button{font-size:13px;padding:5px 9px;border-radius:var(--radius-pill);opacity:.7;transition:.25s}
+.lang-switch button.active{background:#fff;opacity:1;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-weight:700;border-radius:var(--radius-pill);transition:transform .25s,box-shadow .25s,background .25s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-teal{background:var(--accent-teal);color:#fff;padding:13px 28px;font-size:15px;box-shadow:var(--shadow-soft)}
+.btn-teal:hover{background:var(--accent-teal-dark);box-shadow:0 8px 28px rgba(0,180,166,.35)}
+.btn-outline-white{border:1.5px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;font-size:15px}
+.btn-outline-white:hover{background:rgba(255,255,255,.12)}
+.btn-nav{padding:9px 20px;font-size:13px}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;z-index:1101}
+.hamburger span{width:24px;height:2.5px;background:#fff;border-radius:2px;transition:.3s}
+#navbar.scrolled .hamburger span{background:var(--text-primary)}
+#mobile-menu{position:fixed;inset:0;background:var(--accent-teal-dark);z-index:1100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transform:translateX(100%);transition:transform .4s ease}
+#mobile-menu.open{transform:none}
+#mobile-menu a{color:#fff;font-family:var(--font-head);font-size:24px;font-weight:700}
+#mobile-menu .close-menu{position:absolute;top:24px;right:24px;color:#fff;font-size:32px}
+
+/* ============ HERO ============ */
+#hero{height:100vh;min-height:640px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:0}
+#hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+#hero.no-video .hero-fallback{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#0F1115 0%,#0d2b29 35%,#00695f 60%,#0F1115 100%);background-size:300% 300%;animation:heroShift 14s ease infinite}
+@keyframes heroShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,17,21,.55) 0%,rgba(15,17,21,.35) 50%,rgba(15,17,21,.75) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:0 24px;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius-pill);padding:8px 20px;font-size:13.5px;font-weight:600;font-family:var(--font-head);margin-bottom:28px}
+.hero-content h1{font-family:var(--font-display);font-size:clamp(44px,8vw,84px);font-weight:600;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35);margin-bottom:18px;letter-spacing:-.01em}
+.hero-content .hero-sub{font-family:var(--font-head);font-size:clamp(15px,2.2vw,21px);color:rgba(255,255,255,.87);margin-bottom:36px}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.btn-hero{padding:17px 36px;font-size:16px}
+.tech-powered-strip{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.5);margin-bottom:30px}
+.tech-powered-strip img{height:16px;opacity:.85;filter:brightness(0) invert(1)}
+.hero-proof{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;background:rgba(255,255,255,.09);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-card);padding:14px 28px;font-size:13.5px;font-weight:600;font-family:var(--font-head)}
+.scroll-ind{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:22px;animation:bob 2s ease infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
+
+/* ============ STATS ============ */
+#stats{padding:56px 0;background:#fff;border-bottom:1px solid rgba(0,0,0,.05)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat-val{font-family:var(--font-head);font-size:clamp(34px,4.5vw,52px);font-weight:800;color:var(--accent-teal)}
+.stat-label{font-size:14px;color:var(--text-light);font-weight:500;margin-top:4px}
+
+/* ============ TRUST STRIP ============ */
+#trust{background:var(--bg-section-alt);padding:72px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.trust-item{background:#fff;border-radius:var(--radius-card);padding:28px 26px;display:flex;gap:16px;align-items:flex-start;box-shadow:var(--shadow-card);transition:transform .3s,box-shadow .3s}
+.trust-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft)}
+.trust-item .t-icon{font-size:28px;flex-shrink:0;width:52px;height:52px;border-radius:14px;background:var(--accent-warm);display:flex;align-items:center;justify-content:center}
+.trust-item h3{font-size:16px;margin-bottom:5px}
+.trust-item p{font-size:13.5px;color:var(--text-body)}
+
+/* ============ SERVICES ============ */
+#services{background:var(--accent-warm)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc-card{background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-card);transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,180,166,.22)}
+.svc-img{height:190px;overflow:hidden;position:relative}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.svc-card:hover .svc-img img{transform:scale(1.06)}
+.svc-body{padding:24px 24px 26px;flex:1;display:flex;flex-direction:column}
+.svc-body h3{font-size:19px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.svc-body ul{list-style:none;margin-bottom:16px;flex:1}
+.svc-body li{font-size:13.5px;padding:4px 0 4px 20px;position:relative}
+.svc-body li::before{content:"✓";position:absolute;left:0;color:var(--accent-teal);font-weight:700}
+.svc-price{font-family:var(--font-mono);font-size:13px;color:var(--accent-teal-dark);font-weight:700;background:var(--accent-warm);border-radius:8px;padding:8px 12px;display:inline-block}
+
+/* ============ PLACEHOLDER (missing media) ============ */
+.ph{position:relative;background:linear-gradient(135deg,#E8F7F6,#F4F0EA 55%,#e6ded1);display:flex;align-items:center;justify-content:center;min-height:100%}
+.ph::after{content:attr(data-ph);font-size:44px;opacity:.55}
+.ph.ph-dark{background:linear-gradient(135deg,#10141c,#0b1f1e 60%,#07090F)}
+.ph .ph-note{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-family:var(--font-mono);font-size:10px;color:rgba(0,0,0,.35);letter-spacing:.08em}
+.ph.ph-dark .ph-note{color:rgba(255,255,255,.3)}
+
+/* ============ PROCESS ============ */
+#process{background:#fff}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.step{text-align:center;padding:0 10px;position:relative}
+.step .s-icon{width:84px;height:84px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,var(--accent-teal),var(--accent-teal-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:var(--shadow-soft);position:relative}
+.step .s-num{position:absolute;top:-6px;right:-6px;width:28px;height:28px;border-radius:50%;background:var(--accent-gold);color:#fff;font-family:var(--font-mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:17px;margin-bottom:8px}
+.step p{font-size:13.5px}
+.step:not(:last-child)::after{content:"";position:absolute;top:42px;left:calc(50% + 52px);width:calc(100% - 104px);border-top:2px dashed rgba(0,180,166,.4)}
+.tech-pill{display:inline-block;margin-top:12px;padding:4px 12px;background:rgba(0,0,0,.05);border-radius:var(--radius-pill);font-family:var(--font-mono);font-size:10.5px;color:var(--text-light)}
+
+/* ============ SHOWCASE ============ */
+#showcase{background:var(--bg-dark);color:#fff}
+#showcase .section-title,#showcase h3{color:#fff}
+#showcase .section-sub{color:rgba(255,255,255,.7)}
+.ba-wrap{position:relative;max-width:900px;margin:0 auto;border-radius:var(--radius-card);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);aspect-ratio:16/9;user-select:none;touch-action:none}
+.ba-side{position:absolute;inset:0}
+.ba-side img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-after{clip-path:inset(0 0 0 50%)}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--accent-teal);cursor:ew-resize;z-index:5}
+.ba-handle::after{content:"◂ ▸";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--accent-teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,.4);letter-spacing:-1px}
+.ba-tag{position:absolute;top:16px;font-family:var(--font-mono);font-size:11px;padding:5px 14px;border-radius:var(--radius-pill);background:rgba(0,0,0,.55);color:#fff;z-index:4;backdrop-filter:blur(6px)}
+.ba-tag.before{left:16px}.ba-tag.after{right:16px}
+.showcase-video-wrap{max-width:900px;margin:32px auto 0}
+.showcase-video-wrap video{width:100%;border-radius:var(--radius-card)}
+
+/* ============ ZONES ============ */
+#zones{background:var(--bg-primary)}
+.zones-map{border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:36px}
+.zones-map iframe{width:100%;height:380px;border:0;display:block}
+.zone-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:36px}
+.zone-pill{padding:8px 18px;border-radius:var(--radius-pill);background:var(--accent-warm);color:var(--accent-teal-dark);font-size:13.5px;font-weight:600;font-family:var(--font-head);border:1px solid rgba(0,180,166,.2);transition:.25s}
+.zone-pill:hover{background:var(--accent-teal);color:#fff}
+.zone-banner{max-width:720px;margin:0 auto;background:#fff;border-left:4px solid var(--accent-teal);border-radius:12px;padding:24px 28px;box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.zone-banner p{font-size:14.5px;font-style:italic}
+
+/* ============ PRICING ============ */
+#pricing{background:var(--bg-section-alt)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+.price-card{background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid rgba(0,180,166,.15);border-radius:var(--radius-card);padding:34px 30px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;position:relative;transition:transform .3s,box-shadow .3s}
+.price-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-soft)}
+.price-card.popular{border:2px solid var(--accent-gold);box-shadow:0 8px 32px rgba(212,168,90,.25)}
+.pop-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent-gold);color:#fff;font-family:var(--font-mono);font-size:11px;font-weight:700;padding:5px 18px;border-radius:var(--radius-pill);letter-spacing:.08em;text-transform:uppercase}
+.price-card h3{font-size:20px;margin-bottom:6px}
+.price-card .p-price{font-family:var(--font-head);font-size:26px;font-weight:800;color:var(--accent-teal-dark);margin-bottom:18px}
+.price-card ul{list-style:none;flex:1;margin-bottom:24px}
+.price-card li{font-size:14px;padding:7px 0 7px 24px;position:relative;border-bottom:1px dashed rgba(0,0,0,.06)}
+.price-card li::before{content:"✓";position:absolute;left:0;color:var(--accent-teal);font-weight:700}
+.pricing-note{text-align:center;margin-top:36px;font-size:15px;font-style:italic;color:var(--text-body)}
+
+/* ============ REVIEWS ============ */
+#reviews{background:#fff}
+.rating-display{font-size:30px;color:var(--accent-teal);letter-spacing:4px;margin-bottom:6px}
+.rating-num{font-family:var(--font-head);font-weight:800;font-size:20px;color:var(--text-primary);margin-bottom:40px}
+.carousel{position:relative;max-width:780px;margin:0 auto;overflow:hidden}
+.carousel-track{display:flex;transition:transform .55s ease}
+.review-card{flex:0 0 100%;padding:0 12px}
+.review-inner{background:var(--bg-primary);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius-card);padding:34px 36px;box-shadow:var(--shadow-card);text-align:left}
+.review-inner .r-stars{color:var(--accent-gold);margin-bottom:14px;font-size:16px;letter-spacing:2px}
+.review-inner .r-text{font-size:15.5px;font-style:italic;margin-bottom:18px;color:var(--text-primary)}
+.review-inner .r-name{font-family:var(--font-head);font-weight:700;font-size:14px;color:var(--text-primary)}
+.review-inner .r-loc{font-size:12.5px;color:var(--text-light);font-family:var(--font-mono)}
+.carousel-dots{display:flex;gap:8px;justify-content:center;margin-top:24px}
+.carousel-dots button{width:9px;height:9px;border-radius:50%;background:rgba(0,0,0,.15);transition:.3s}
+.carousel-dots button.active{background:var(--accent-teal);width:26px;border-radius:5px}
+
+/* ============ AI BOOKING ============ */
+#ai-booking{background:var(--bg-dark);color:#fff}
+.ai-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.ai-grid h2{font-family:var(--font-display);font-size:clamp(30px,4.5vw,46px);color:#fff;font-weight:600;margin-bottom:18px}
+.ai-grid .ai-sub{color:rgba(255,255,255,.72);font-size:16px;margin-bottom:28px}
+.ai-features{list-style:none;margin-bottom:34px}
+.ai-features li{padding:8px 0 8px 32px;position:relative;font-size:15px;color:rgba(255,255,255,.9)}
+.ai-features li::before{content:"✅";position:absolute;left:0}
+.phone-float{position:relative;display:flex;justify-content:center}
+.phone-float::before{content:"";position:absolute;inset:10%;background:radial-gradient(circle,rgba(0,180,166,.35),transparent 70%);filter:blur(30px)}
+.phone-frame-img{position:relative;max-width:300px;border-radius:32px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.6);aspect-ratio:9/16;animation:floaty 5s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.phone-frame-img img{width:100%;height:100%;object-fit:cover}
+
+/* ============ K-SAT TECH SECTION ============ */
+#ksat-tech{background:var(--ksat-dark);color:#fff;padding:100px 0}
+.ksat-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid rgba(212,168,83,.4);border-radius:50px;font-family:var(--font-mono);font-size:11px;color:var(--ksat-gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:24px}
+.ksat-badge img{height:20px;filter:brightness(0) invert(1);opacity:.95}
+#ksat-tech h2{font-family:var(--font-display);font-size:clamp(30px,4.5vw,48px);color:#fff;font-weight:600;margin-bottom:18px}
+#ksat-tech .ksat-intro{color:rgba(255,255,255,.7);font-size:16px;max-width:680px;margin-bottom:52px}
+#ksat-tech .ksat-intro strong{color:var(--ksat-gold)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px}
+.pillar{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(8px);border-radius:var(--radius-card);overflow:hidden;transition:transform .3s,border-color .3s;display:flex;flex-direction:column}
+.pillar:hover{transform:translateY(-5px);border-color:rgba(212,168,83,.4)}
+.pillar-img{height:170px;overflow:hidden}
+.pillar-img img{width:100%;height:100%;object-fit:cover}
+.pillar-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.pillar-body h3{color:#fff;font-size:17px;margin-bottom:8px}
+.pillar-body .p-quote{font-style:italic;font-size:13px;color:var(--ksat-gold);margin-bottom:14px}
+.pillar-body ul{list-style:none;flex:1}
+.pillar-body li{font-size:13px;color:rgba(255,255,255,.7);padding:4px 0 4px 18px;position:relative}
+.pillar-body li::before{content:"·";position:absolute;left:4px;color:var(--ksat-gold);font-weight:700}
+.ksat-pill-tag{display:inline-block;padding:3px 10px;background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.2);border-radius:4px;font-family:var(--font-mono);font-size:10px;color:var(--ksat-gold);margin-top:12px}
+.screens-strip{display:flex;gap:22px;overflow-x:auto;padding:8px 4px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.app-screenshot{flex:0 0 min(420px,82vw);scroll-snap-align:start;margin:0}
+.browser-frame{background:#161a23;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.browser-frame .frame-bar{display:flex;gap:6px;padding:10px 14px;background:#0c0f16;border-bottom:1px solid rgba(255,255,255,.06)}
+.browser-frame .frame-bar span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.15)}
+.browser-frame .frame-bar span:first-child{background:#e0605a}
+.browser-frame .frame-bar span:nth-child(2){background:#e0b64f}
+.browser-frame .frame-bar span:nth-child(3){background:#61bd5c}
+.app-screenshot img{width:100%}
+/* Monitor mockup */
+.monitor-frame{background:#0b0e15;border:2px solid #262c38;border-radius:14px;padding:10px 10px 16px;box-shadow:0 16px 48px rgba(0,0,0,.55);position:relative}
+.monitor-frame::after{content:"";position:absolute;left:50%;bottom:5px;transform:translateX(-50%);width:5px;height:5px;border-radius:50%;background:#3a4356}
+.monitor-frame img{border-radius:6px;display:block}
+.monitor-stand{width:84px;height:24px;margin:-1px auto 0;background:linear-gradient(#181d28,#0b0e15);clip-path:polygon(20% 0,80% 0,100% 100%,0 100%)}
+.monitor-base{width:150px;height:9px;margin:0 auto;background:linear-gradient(#1c2230,#12161f);border-radius:5px}
+/* Phone mockup */
+.phone-shot{flex:0 0 min(230px,58vw)!important}
+.phone-mock{background:#0b0e15;border:3px solid #2b3140;border-radius:36px;padding:14px 9px;box-shadow:0 16px 48px rgba(0,0,0,.55),inset 0 0 0 2px #05070b;position:relative}
+.phone-mock::before{content:"";position:absolute;top:15px;left:50%;transform:translateX(-50%);width:64px;height:14px;background:#05070b;border-radius:8px;z-index:2}
+.phone-mock::after{content:"";position:absolute;right:-6px;top:96px;width:3px;height:52px;background:#2b3140;border-radius:2px}
+.phone-mock img{border-radius:24px;display:block}
+.app-screenshot figcaption{margin-top:12px;font-size:12.5px;color:rgba(255,255,255,.55);font-family:var(--font-mono)}
+.app-screenshot figcaption strong{color:#fff;display:block;font-family:var(--font-head);font-size:14px;margin-bottom:2px}
+.ksat-video-wrap{margin:40px 0 0;border-radius:var(--radius-card);overflow:hidden}
+.ksat-video-wrap video{width:100%;display:block}
+.ksat-cta-strip{margin-top:56px;padding:24px 32px;border:1px solid rgba(212,168,83,.25);border-radius:12px;background:rgba(212,168,83,.05);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.ksat-cta-strip p{font-size:16px;color:rgba(255,255,255,.85);font-family:var(--font-head);font-weight:600}
+.btn-ksat{padding:12px 28px;background:linear-gradient(135deg,#D4A853,#F0C060);color:#07090F;border-radius:50px;font-weight:700;font-size:14px;white-space:nowrap;transition:transform .2s,box-shadow .2s;font-family:var(--font-head)}
+.btn-ksat:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,168,83,.4)}
+
+/* ============ GALLERY ============ */
+#gallery{background:var(--bg-primary)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ba-pair{border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-card);position:relative;background:#fff}
+.ba-pair .pair-imgs{display:grid;grid-template-columns:1fr 1fr;aspect-ratio:2/1}
+.ba-pair .half{position:relative;overflow:hidden}
+.ba-pair .half img{width:100%;height:100%;object-fit:cover}
+.ba-pair .half .lab{position:absolute;bottom:8px;left:50%;transform:translateX(-50%) translateY(6px);font-family:var(--font-mono);font-size:10px;padding:3px 10px;border-radius:var(--radius-pill);background:rgba(0,0,0,.6);color:#fff;opacity:0;transition:.3s;white-space:nowrap}
+.ba-pair:hover .lab{opacity:1;transform:translateX(-50%) translateY(0)}
+.ba-pair .pair-title{padding:14px 16px;font-size:13.5px;font-weight:600;font-family:var(--font-head);color:var(--text-primary)}
+
+/* ============ FAQ ============ */
+#faq{background:#fff}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(0,0,0,.08)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;font-family:var(--font-head);font-weight:700;font-size:15.5px;color:var(--text-primary);text-align:left}
+.faq-q .chev{color:var(--accent-teal);transition:transform .3s;font-size:14px;flex-shrink:0}
+.faq-item.open .chev{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 4px 20px;font-size:14.5px}
+
+/* ============ CONTACT ============ */
+#contact{background:var(--bg-section-alt)}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
+.form-card{background:#fff;border-radius:var(--radius-card);padding:36px;box-shadow:var(--shadow-card)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:12.5px;font-weight:600;font-family:var(--font-head);color:var(--text-primary);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:1.5px solid rgba(0,0,0,.12);border-radius:10px;font-family:var(--font-body);font-size:14px;background:var(--bg-primary);transition:border-color .25s;color:var(--text-primary)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent-teal)}
+.form-group textarea{resize:vertical;min-height:90px}
+.form-success{display:none;background:var(--accent-warm);border:1px solid var(--accent-teal);color:var(--accent-teal-dark);border-radius:10px;padding:16px;font-weight:600;font-size:14px;margin-top:16px;text-align:center}
+.contact-direct{display:flex;flex-direction:column;gap:18px}
+.btn-whatsapp{background:#25D366;color:#fff;padding:18px;font-size:17px;justify-content:center;border-radius:var(--radius-card);width:100%}
+.btn-whatsapp:hover{background:#1fb457;box-shadow:0 8px 24px rgba(37,211,102,.35)}
+.contact-info-card{background:#fff;border-radius:var(--radius-card);padding:26px 28px;box-shadow:var(--shadow-card)}
+.contact-info-card h4{font-size:14px;margin-bottom:8px;color:var(--text-light);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.contact-info-card .big-link{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--text-primary)}
+.contact-info-card .big-link:hover{color:var(--accent-teal)}
+.contact-info-card p{font-size:14px}
+.contact-map{border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-card)}
+.contact-map iframe{width:100%;height:220px;border:0;display:block}
+
+/* ============ FOOTER ============ */
+footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:44px}
+.footer-grid h4{color:#fff;font-size:14px;margin-bottom:18px;text-transform:uppercase;letter-spacing:.08em;font-family:var(--font-mono);font-weight:500}
+.footer-grid ul{list-style:none}
+.footer-grid li{margin-bottom:10px}
+.footer-grid a{font-size:14px;transition:color .25s}
+.footer-grid a:hover{color:var(--accent-teal)}
+.footer-logo{font-family:var(--font-display);font-size:26px;font-weight:700;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.footer-tag{font-size:14px;font-style:italic;margin-bottom:18px}
+.social-row{display:flex;gap:12px}
+.social-row a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.25s}
+.social-row a:hover{background:var(--accent-teal)}
+.footer-tech-partner{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;margin-top:8px;padding-bottom:24px}
+.footer-label{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:12px}
+.footer-tech-partner img{height:26px;margin-bottom:10px;filter:brightness(0) invert(1);opacity:.95}
+.footer-tech-desc{font-size:12.5px;color:rgba(255,255,255,.45);margin-bottom:10px}
+.footer-powered{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.4);font-family:var(--font-mono);flex-wrap:wrap}
+.footer-powered a{color:var(--ksat-gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.55)}
+.footer-bottom a:hover{color:#fff}
+
+/* ============ FLOAT WHATSAPP ============ */
+#wa-float{position:fixed;bottom:24px;right:24px;z-index:900;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .25s}
+#wa-float:hover{transform:scale(1.08)}
+#wa-float svg{width:32px;height:32px;fill:#fff}
+#wa-float .pulse-dot{position:absolute;top:2px;right:2px;width:14px;height:14px;border-radius:50%;background:#4cff85;border:2px solid #fff;animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(76,255,133,.6)}70%{box-shadow:0 0 0 10px rgba(76,255,133,0)}100%{box-shadow:0 0 0 0 rgba(76,255,133,0)}}
+
+/* ============ COOKIE BANNER ============ */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:1300;background:rgba(15,17,21,.97);backdrop-filter:blur(10px);color:rgba(255,255,255,.85);padding:18px 24px;display:none;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;font-size:13px;border-top:1px solid rgba(255,255,255,.1)}
+#cookie-banner.show{display:flex}
+#cookie-banner .btn-teal{padding:9px 22px;font-size:13px}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .trust-grid,.services-grid,.pillars,.gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:36px}
+  .step:not(:last-child)::after{display:none}
+  .ai-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .pricing-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+}
+@media (max-width:600px){
+  section{padding:64px 0}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}
+  .trust-grid,.services-grid,.pillars,.gallery-grid,.process-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero-proof{font-size:12px;gap:8px 16px;padding:12px 18px}
+  .btn-hero{width:100%;justify-content:center}
+  .hero-ctas{flex-direction:column;width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+  #wa-float{width:54px;height:54px;bottom:18px;right:18px}
+  .lang-switch button{padding:4px 6px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div id="announce">
+  <span class="msg" id="announce-msg">🎁 Collecte & livraison GRATUITE dans tout Bruxelles · WhatsApp: +32 488 19 67 67</span>
+  <button class="close-x" id="announce-close" aria-label="Fermer">✕</button>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="logo"><img src="brand_assets/logo-ayka-tapis.png" alt="Ayka Tapis"></a>
+    <ul class="nav-links">
+      <li><a href="#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="#process" data-i18n="nav_process">Comment ça marche</a></li>
+      <li><a href="#zones" data-i18n="nav_zones">Zones</a></li>
+      <li><a href="#pricing" data-i18n="nav_pricing">Tarifs</a></li>
+      <li><a href="#devis" data-i18n="nav_devis">Devis</a></li>
+      <li><a href="#reviews" data-i18n="nav_reviews">Avis</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Langue">
+        <button data-lang="fr" class="active" aria-label="Français">🇫🇷</button>
+        <button data-lang="nl" aria-label="Nederlands">🇳🇱</button>
+        <button data-lang="en" aria-label="English">🇬🇧</button>
+        <button data-lang="tr" aria-label="Türkçe">🇹🇷</button>
+      </div>
+      <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-teal btn-nav">📱 <span data-i18n="nav_cta">Réserver</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <button class="close-menu" id="close-menu" aria-label="Fermer">✕</button>
+  <a href="#services" data-i18n="nav_services">Services</a>
+  <a href="#process" data-i18n="nav_process">Comment ça marche</a>
+  <a href="#zones" data-i18n="nav_zones">Zones</a>
+  <a href="#pricing" data-i18n="nav_pricing">Tarifs</a>
+  <a href="#devis" data-i18n="nav_devis">Devis</a>
+  <a href="#reviews" data-i18n="nav_reviews">Avis</a>
+  <a href="#contact" data-i18n="nav_contact">Contact</a>
+  <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-outline-white">📱 WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-fallback"></div>
+  <video autoplay muted loop playsinline id="hero-video" preload="auto"
+    poster="media/hero/hero-carpet-clean-poster.jpg">
+    <source src="media/hero/hero-carpet-transformation.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✨ <span data-i18n="hero_badge">Service #1 à Bruxelles · 4.9★ · 200+ avis</span></div>
+    <h1 data-i18n="hero_h1">Vos tapis méritent mieux.</h1>
+    <p class="hero-sub" data-i18n="hero_sub">Nettoyage professionnel · Collecte & livraison gratuites · Résultat garanti</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-teal btn-hero">💬 <span data-i18n="hero_cta_whatsapp">Réserver sur WhatsApp</span></a>
+      <a href="tel:+32488196767" class="btn btn-outline-white btn-hero">📞 +32 488 19 67 67</a>
+    </div>
+    <div class="tech-powered-strip">
+      <span>⚡ Reservations powered by</span>
+      <img src="brand_assets/logo-K-Sat.png" alt="K-SAT">
+      <span>AI Automation</span>
+    </div>
+    <div class="hero-proof">
+      <span>⚡ <span data-i18n="proof_1">Livraison en 48h</span></span>
+      <span>🧪 <span data-i18n="proof_2">Produits écologiques</span></span>
+      <span>🏆 <span data-i18n="proof_3">Garantie satisfait</span></span>
+      <span>🚚 <span data-i18n="proof_4">Collecte gratuite</span></span>
+    </div>
+  </div>
+  <a href="#stats" class="scroll-ind" aria-label="Défiler">▾</a>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal"><div class="stat-val" data-count="200" data-suffix="+">0</div><div class="stat-label" data-i18n="stat_1">Clients satisfaits</div></div>
+      <div class="reveal"><div class="stat-val" data-count="98" data-suffix="%">0</div><div class="stat-label" data-i18n="stat_2">Taux de satisfaction</div></div>
+      <div class="reveal"><div class="stat-val" data-count="48" data-suffix="h">0</div><div class="stat-label" data-i18n="stat_3">Délai de livraison</div></div>
+      <div class="reveal"><div class="stat-val" data-count="4.9" data-suffix="★" data-decimal="1">0</div><div class="stat-label" data-i18n="stat_4">Note moyenne</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section id="trust">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label" data-i18n="trust_label">Pourquoi Ayka Tapis ?</span>
+      <h2 class="section-title" data-i18n="trust_title">La confiance, ça se mérite.</h2>
+    </div>
+    <div class="trust-grid" style="margin-top:44px">
+      <div class="trust-item reveal"><div class="t-icon">🌿</div><div><h3 data-i18n="trust_1_t">Produits écologiques</h3><p data-i18n="trust_1_d">Shampoings biodégradables, respectueux de vos enfants & animaux.</p></div></div>
+      <div class="trust-item reveal"><div class="t-icon">🚚</div><div><h3 data-i18n="trust_2_t">Collecte & livraison gratuites</h3><p data-i18n="trust_2_d">Nous venons chez vous, partout à Bruxelles.</p></div></div>
+      <div class="trust-item reveal"><div class="t-icon">⚡</div><div><h3 data-i18n="trust_3_t">Retour en 48h</h3><p data-i18n="trust_3_d">Nettoyage express en 2 jours ouvrables garanti.</p></div></div>
+      <div class="trust-item reveal"><div class="t-icon">🏆</div><div><h3 data-i18n="trust_4_t">Résultat garanti</h3><p data-i18n="trust_4_d">Pas satisfait ? On recommence, gratuitement.</p></div></div>
+      <div class="trust-item reveal"><div class="t-icon">🤖</div><div><h3 data-i18n="trust_5_t">Réservation IA 24/7</h3><p data-i18n="trust_5_d">Votre assistant WhatsApp disponible à toute heure.</p></div></div>
+      <div class="trust-item reveal"><div class="t-icon">💎</div><div><h3 data-i18n="trust_6_t">Expert anti-taches</h3><p data-i18n="trust_6_d">Spécialiste taches tenaces : café, vin, encre, sang...</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label" data-i18n="svc_label">Nos services</span>
+      <h2 class="section-title" data-i18n="svc_title">Un seul appel. On s'occupe de tout.</h2>
+      <p class="section-sub" data-i18n="svc_sub">Du tapis oriental au canapé moderne — nous nettoyons tout ce qui habille votre intérieur.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-img ph" data-ph="🧺"><img src="media/services/carpet-cleaning.jpg" alt="Nettoyage professionnel de tapis" loading="lazy" onload="this.parentElement.classList.remove('ph')" onerror="this.remove()"><span class="ph-note">media/services/carpet-cleaning.jpg</span></div>
+        <div class="svc-body">
+          <h3>🧺 <span data-i18n="svc_1_t">Nettoyage de Tapis</span></h3>
+          <ul>
+            <li data-i18n="svc_1_l1">Tapis machine, d'Orient, kilims, soie, berbères</li>
+            <li data-i18n="svc_1_l2">Shampooing haute pression + rinçage centrifuge</li>
+            <li data-i18n="svc_1_l3">Séchage en chambre climatisée — jamais humide</li>
+          </ul>
+          <span class="svc-price" data-i18n="svc_1_p">à partir de 6€/m²</span>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img ph" data-ph="🛋️"><img src="media/services/sofa-cleaning.jpg" alt="Nettoyage de canapés" loading="lazy" onload="this.parentElement.classList.remove('ph')" onerror="this.remove()"><span class="ph-note">media/services/sofa-cleaning.jpg</span></div>
+        <div class="svc-body">
+          <h3>🛋️ <span data-i18n="svc_2_t">Canapés & Sièges</span></h3>
+          <ul>
+            <li data-i18n="svc_2_l1">Canapés tissu, cuir, fauteuils, banquettes</li>
+            <li data-i18n="svc_2_l2">Traitement vapeur + aspiration professionnelle</li>
+          </ul>
+          <span class="svc-price" data-i18n="svc_2_p">à partir de 35€/siège</span>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img ph" data-ph="🪟"><img src="media/services/curtain-cleaning.jpg" alt="Nettoyage de rideaux" loading="lazy" onload="this.parentElement.classList.remove('ph')" onerror="this.remove()"><span class="ph-note">media/services/curtain-cleaning.jpg</span></div>
+        <div class="svc-body">
+          <h3>🪟 <span data-i18n="svc_3_t">Rideaux & Voilages</span></h3>
+          <ul>
+            <li data-i18n="svc_3_l1">Collecte + nettoyage + remise en place</li>
+            <li data-i18n="svc_3_l2">Rideaux lourds, voilages, stores</li>
+          </ul>
+          <span class="svc-price" data-i18n="svc_3_p">sur devis</span>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img ph" data-ph="🛏️"><img src="media/services/mattress-cleaning.jpg" alt="Nettoyage de matelas" loading="lazy" onload="this.parentElement.classList.remove('ph')" onerror="this.remove()"><span class="ph-note">media/services/mattress-cleaning.jpg</span></div>
+        <div class="svc-body">
+          <h3>🛏️ <span data-i18n="svc_4_t">Nettoyage de Matelas</span></h3>
+          <ul>
+            <li data-i18n="svc_4_l1">Désinfection bactéricide, anti-acariens</li>
+            <li data-i18n="svc_4_l2">Traitement anti-odeur</li>
+          </ul>
+          <span class="svc-price" data-i18n="svc_4_p">à partir de 45€/matelas</span>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img ph" data-ph="🏢"><img src="media/services/professional-cleaning.jpg" alt="Nettoyage professionnel B2B" loading="lazy" onload="this.parentElement.classList.remove('ph')" onerror="this.remove()"><span class="ph-note">media/services/professional-cleaning.jpg</span></div>
+        <div class="svc-body">
+          <h3>🏢 <span data-i18n="svc_5_t">Pro & Entreprises</span></h3>
+          <ul>
+            <li data-i18n="svc_5_l1">Bureaux, hôtels, restaurants, résidences</li>
+            <li data-i18n="svc_5_l2">Contrats récurrents disponibles</li>
+          </ul>
+          <span class="svc-price" data-i18n="svc_5_p">devis personnalisé</span>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img ph" data-ph="⚡"><img src="media/services/stain-removal.jpg" alt="Élimination de taches tenaces" loading="lazy" onload="this.parentElement.classList.remove('ph')" onerror="this.remove()"><span class="ph-note">media/services/stain-removal.jpg</span></div>
+        <div class="svc-body">
+          <h3>⚡ <span data-i18n="svc_6_t">Taches Tenaces</span></h3>
+          <ul>
+            <li data-i18n="svc_6_l1">Café, vin rouge, encre, sang, urine, moisissures</li>
+            <li data-i18n="svc_6_l2">Traitement spécialisé par type de tache</li>
+          </ul>
+          <span class="svc-price" data-i18n="svc_6_p">Tache éliminée ou remboursé</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label" data-i18n="proc_label">Comment ça marche ?</span>
+      <h2 class="section-title" data-i18n="proc_title">Simple comme un message WhatsApp.</h2>
+    </div>
+    <div class="process-grid" style="margin-top:52px">
+      <div class="step reveal">
+        <div class="s-icon">📱<span class="s-num">1</span></div>
+        <h3 data-i18n="proc_1_t">Réservez en 1 message</h3>
+        <p data-i18n="proc_1_d">Envoyez un WhatsApp ou appelez-nous. On confirme en 2 minutes.</p>
+        <span class="tech-pill">⚙️ WhatsApp IA · K-SAT</span>
+      </div>
+      <div class="step reveal">
+        <div class="s-icon">🚚<span class="s-num">2</span></div>
+        <h3 data-i18n="proc_2_t">Collecte gratuite J+1</h3>
+        <p data-i18n="proc_2_d">Nos chauffeurs récupèrent vos tapis à l'heure que vous choisissez.</p>
+        <span class="tech-pill">🗺️ <span data-i18n="proc_2_tech">Route optimisée par ERP K-SAT</span></span>
+      </div>
+      <div class="step reveal">
+        <div class="s-icon">🧺<span class="s-num">3</span></div>
+        <h3 data-i18n="proc_3_t">Nettoyage expert 24-48h</h3>
+        <p data-i18n="proc_3_d">Traitement professionnel en atelier climatisé. Photos avant/après partagées.</p>
+        <span class="tech-pill">📊 <span data-i18n="proc_3_tech">Suivi temps réel · Dashboard K-SAT</span></span>
+      </div>
+      <div class="step reveal">
+        <div class="s-icon">✨<span class="s-num">4</span></div>
+        <h3 data-i18n="proc_4_t">Livraison à domicile</h3>
+        <p data-i18n="proc_4_d">Vos tapis, propres, livrés et emballés. Parfum frais.</p>
+        <span class="tech-pill">💬 <span data-i18n="proc_4_tech">Notification automatique WhatsApp</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section id="showcase">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label" data-i18n="show_label">Avant / Après</span>
+      <h2 class="section-title" data-i18n="show_title">Voyez la différence par vous-même.</h2>
+      <p class="section-sub" data-i18n="show_sub">Chaque tapis sort de nos ateliers comme neuf. Parfois, même mieux que neuf.</p>
+    </div>
+    <div class="ba-wrap reveal" id="ba-slider">
+      <div class="ba-side ba-before ph ph-dark" data-ph="🫤"><img src="media/showcase/before-carpet.jpg" alt="Tapis avant nettoyage" loading="lazy" onload="this.parentElement.classList.remove('ph','ph-dark')" onerror="this.remove()"><span class="ph-note">media/showcase/before-carpet.jpg</span></div>
+      <div class="ba-side ba-after ph ph-dark" data-ph="✨" id="ba-after"><img src="media/showcase/after-carpet.jpg" alt="Tapis après nettoyage" loading="lazy" onload="this.parentElement.classList.remove('ph','ph-dark')" onerror="this.remove()"><span class="ph-note">media/showcase/after-carpet.jpg</span></div>
+      <span class="ba-tag before" data-i18n="show_before">Avant</span>
+      <span class="ba-tag after" data-i18n="show_after">Après</span>
+      <div class="ba-handle" id="ba-handle" role="slider" aria-label="Comparateur avant/après" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"></div>
+    </div>
+    <div class="showcase-video-wrap reveal">
+      <video controls preload="none" poster="media/hero/hero-carpet-clean-poster.jpg">
+        <source src="media/showcase/transformation-full.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ZONES -->
+<section id="zones">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label" data-i18n="zones_label">Nous desservons tout Bruxelles</span>
+      <h2 class="section-title" data-i18n="zones_title">Votre quartier est couvert.</h2>
+    </div>
+    <div class="zones-map reveal">
+      <iframe title="Carte de Bruxelles" loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=4.2443%2C50.7641%2C4.4822%2C50.9137&amp;layer=mapnik&amp;marker=50.8466%2C4.3528"></iframe>
+    </div>
+    <div class="zone-pills reveal">
+      <span class="zone-pill">Bruxelles-Ville</span><span class="zone-pill">Ixelles</span><span class="zone-pill">Etterbeek</span><span class="zone-pill">Schaerbeek</span><span class="zone-pill">Jette</span><span class="zone-pill">Laeken</span><span class="zone-pill">Molenbeek</span><span class="zone-pill">Anderlecht</span><span class="zone-pill">Forest</span><span class="zone-pill">Uccle</span><span class="zone-pill">Watermael-Boitsfort</span><span class="zone-pill">Woluwe-Saint-Lambert</span><span class="zone-pill">Woluwe-Saint-Pierre</span><span class="zone-pill">Evere</span><span class="zone-pill">Ganshoren</span><span class="zone-pill">Berchem-Sainte-Agathe</span><span class="zone-pill">Koekelberg</span><span class="zone-pill">Saint-Gilles</span><span class="zone-pill">Saint-Josse-ten-Noode</span><span class="zone-pill">Auderghem</span>
+    </div>
+    <div class="zone-banner reveal">
+      <p data-i18n="zones_banner">Vous êtes en dehors de Bruxelles ? Contactez-nous — nous couvrons également la périphérie sur demande.</p>
+      <a href="https://wa.me/32488196767?text=Bonjour%2C%20suis-je%20dans%20votre%20zone%20de%20service%20%3F" target="_blank" rel="noopener" class="btn btn-teal btn-nav"><span data-i18n="zones_cta">Vérifier ma zone</span> →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label" data-i18n="price_label">Nos tarifs</span>
+      <h2 class="section-title" data-i18n="price_title">Des prix honnêtes. Zéro surprise.</h2>
+    </div>
+    <div class="pricing-grid" style="margin-top:48px">
+      <div class="price-card reveal">
+        <h3>🧺 <span data-i18n="price_1_t">À la pièce</span></h3>
+        <div class="p-price" data-i18n="price_1_p">dès 5€/m²</div>
+        <ul>
+          <li data-i18n="price_1_l1">Petit tapis (&lt; 4m²) : 6€/m²</li>
+          <li data-i18n="price_1_l2">Tapis moyen (4–10m²) : 5.5€/m²</li>
+          <li data-i18n="price_1_l3">Grand tapis (&gt; 10m²) : 5€/m²</li>
+          <li data-i18n="price_1_l4">Kilim / Tapis d'Orient : 7€/m²</li>
+          <li data-i18n="price_1_l5">Tapis de soie : sur devis</li>
+          <li data-i18n="price_1_l6">Collecte & livraison : GRATUITE</li>
+        </ul>
+        <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-teal" style="justify-content:center" data-i18n="price_1_cta">Réserver</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>⚡ <span data-i18n="price_2_t">Formule Express</span></h3>
+        <div class="p-price" data-i18n="price_2_p">+25% · retour 24h</div>
+        <ul>
+          <li data-i18n="price_2_l1">Même service, délai prioritaire</li>
+          <li data-i18n="price_2_l2">Idéal avant un événement</li>
+          <li data-i18n="price_2_l3">Collecte le jour même si possible</li>
+        </ul>
+        <a href="https://wa.me/32488196767?text=Bonjour%2C%20je%20souhaite%20un%20service%20Express" target="_blank" rel="noopener" class="btn btn-teal" style="justify-content:center" data-i18n="price_2_cta">Réserver Express</a>
+      </div>
+      <div class="price-card popular reveal">
+        <span class="pop-badge" data-i18n="price_pop">Populaire</span>
+        <h3>🏆 <span data-i18n="price_3_t">Abonnement PRO</span></h3>
+        <div class="p-price" data-i18n="price_3_p">dès 49€/mois</div>
+        <ul>
+          <li data-i18n="price_3_l1">Nettoyage mensuel ou trimestriel</li>
+          <li data-i18n="price_3_l2">Priorité de prise en charge</li>
+          <li data-i18n="price_3_l3">-15% sur tous les services</li>
+          <li data-i18n="price_3_l4">Rapport de nettoyage après chaque visite</li>
+        </ul>
+        <a href="https://wa.me/32488196767?text=Bonjour%2C%20je%20souhaite%20un%20devis%20PRO" target="_blank" rel="noopener" class="btn btn-teal" style="justify-content:center" data-i18n="price_3_cta">Demander un devis</a>
+      </div>
+    </div>
+    <p class="pricing-note reveal" data-i18n="price_note">🔍 Obtenez un devis en 2 minutes sur WhatsApp. Envoyez une photo de votre tapis, on vous répond immédiatement.</p>
+  </div>
+</section>
+
+<!-- DEVIS EN LIGNE / CALCULATEUR -->
+<section id="devis" style="background:#fff">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label" data-i18n="devis_label">Devis en ligne</span>
+      <h2 class="section-title" data-i18n="devis_title">Calculez le prix de nettoyage de votre tapis.</h2>
+      <p class="section-sub" data-i18n="devis_sub">Utilisez notre calculateur en ligne pour estimer le coût du nettoyage de vos tapis. N'oubliez pas de vérifier le montant du forfait minimal concernant la livraison.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="form-card reveal">
+        <div class="form-group">
+          <label for="calc-type" data-i18n="devis_type_label">Choisissez le type de tapis :</label>
+          <select id="calc-type"></select>
+        </div>
+        <div class="form-group">
+          <label for="calc-m2" data-i18n="devis_m2_label">Entrez la mesure en m² de votre tapis</label>
+          <input type="number" id="calc-m2" min="0" step="0.1" placeholder="ex: 6.5" inputmode="decimal">
+        </div>
+        <div style="background:var(--accent-warm);border-radius:12px;padding:20px 24px;margin:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <span style="font-family:var(--font-head);font-weight:700;color:var(--text-primary)" data-i18n="devis_total_label">Coût total pour le nettoyage</span>
+          <span id="calc-total" style="font-family:var(--font-head);font-weight:800;font-size:30px;color:var(--accent-teal-dark)">0.00€</span>
+        </div>
+        <a href="https://wa.me/32488196767" target="_blank" rel="noopener" id="calc-cta" class="btn btn-teal" style="width:100%;justify-content:center;padding:15px" data-i18n="devis_cta">Demander ce devis sur WhatsApp</a>
+      </div>
+      <div class="contact-direct reveal">
+        <div class="contact-info-card" style="border-left:4px solid var(--accent-teal)">
+          <h4 data-i18n="devis_forfait_title">Forfait livraison</h4>
+          <p style="margin-bottom:10px"><strong style="color:var(--accent-teal-dark)">min 50€</strong> — Bruxelles</p>
+          <p style="margin-bottom:10px"><strong style="color:var(--accent-teal-dark)">min 60€</strong> — 1150, 1200, 1600, 1700, 1731, 1780, 1050</p>
+          <p><strong style="color:var(--accent-teal-dark)">min 100€</strong> — 1180, 1160, 1170, 9300, 3070, 1820, 1970, 1950, 1730, 1650, 1785</p>
+        </div>
+        <div class="contact-info-card" style="border-left:4px solid var(--accent-gold)">
+          <h4>Self-Service</h4>
+          <p data-i18n="devis_selfservice">Déposez vos tapis à l'atelier sans payer les frais de livraison.</p>
+          <p style="margin-top:8px;font-size:13px;color:var(--text-light)">📍 Dieudonné Lefèvrestraat 250, 1020 Bruxelles</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container center">
+    <div class="reveal">
+      <span class="section-label" data-i18n="rev_label">Avis Google</span>
+      <h2 class="section-title" data-i18n="rev_title">Ce que disent nos clients.</h2>
+      <p class="section-sub" data-i18n="rev_sub">200+ familles bruxelloises nous font confiance.</p>
+      <div class="rating-display">★★★★★</div>
+      <div class="rating-num">4.9/5</div>
+    </div>
+    <div class="carousel reveal" id="carousel">
+      <div class="carousel-track" id="carousel-track">
+        <div class="review-card"><div class="review-inner"><div class="r-stars">★★★★★</div><p class="r-text" data-i18n="rev_1">"Mon tapis d'Orient de 50 ans comme neuf ! J'aurais jamais cru que les couleurs pouvaient revenir ainsi. Service impeccable, chauffeurs ponctuels."</p><div class="r-name">Sophie M.</div><div class="r-loc">Ixelles</div></div></div>
+        <div class="review-card"><div class="review-inner"><div class="r-stars">★★★★★</div><p class="r-text" data-i18n="rev_2">"Réservé sur WhatsApp le soir, collecte le lendemain matin, livraison le surlendemain. Tache de café partie complètement. Top !"</p><div class="r-name">Ahmed B.</div><div class="r-loc">Schaerbeek</div></div></div>
+        <div class="review-card"><div class="review-inner"><div class="r-stars">★★★★★</div><p class="r-text" data-i18n="rev_3">"3 grands tapis + canapé. Livraison soignée, emballés proprement. Prix très raisonnable pour la qualité."</p><div class="r-name">Marie-Claire D.</div><div class="r-loc">Uccle</div></div></div>
+        <div class="review-card"><div class="review-inner"><div class="r-stars">★★★★★</div><p class="r-text" data-i18n="rev_4">"L'assistant WhatsApp est bluffant — confirmation immédiate, suivi en temps réel. L'ère du service intelligent !"</p><div class="r-name">Jean-François L.</div><div class="r-loc">Woluwe</div></div></div>
+        <div class="review-card"><div class="review-inner"><div class="r-stars">★★★★★</div><p class="r-text" data-i18n="rev_5">"Taches d'urine de chat sur mon tapis shaggy. D'autres avaient abandonné. Eux, tache + odeur disparues. Miracle !"</p><div class="r-name">Fatima O.</div><div class="r-loc">Molenbeek</div></div></div>
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
+    <div class="reveal" style="margin-top:32px">
+      <a href="https://www.google.com/maps/search/Ayka+Tapis+Bruxelles" target="_blank" rel="noopener" class="btn btn-teal"><span data-i18n="rev_cta">Voir tous les avis Google</span> →</a>
+    </div>
+  </div>
+</section>
+
+<!-- AI BOOKING -->
+<section id="ai-booking">
+  <div class="container">
+    <div class="ai-grid">
+      <div class="reveal">
+        <span class="section-label" data-i18n="ai_label">Réservez en 1 message</span>
+        <h2 data-i18n="ai_title">24h/24, 7j/7. Votre assistant IA est toujours là.</h2>
+        <p class="ai-sub" data-i18n="ai_sub">Envoyez un message WhatsApp à n'importe quelle heure. Notre assistant IA vous répond en 30 secondes — en français, néerlandais, anglais ou turc.</p>
+        <ul class="ai-features">
+          <li data-i18n="ai_f1">Prise de RDV instantanée</li>
+          <li data-i18n="ai_f2">Confirmation automatique</li>
+          <li data-i18n="ai_f3">Rappel la veille de la collecte</li>
+          <li data-i18n="ai_f4">Photo de votre tapis après nettoyage</li>
+          <li data-i18n="ai_f5">Suivi en temps réel</li>
+          <li data-i18n="ai_f6">Paiement sécurisé en ligne ou à la livraison</li>
+        </ul>
+        <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-teal btn-hero">💬 <span data-i18n="ai_cta">Démarrer sur WhatsApp</span></a>
+      </div>
+      <div class="phone-float reveal">
+        <div class="phone-frame-img ph ph-dark" data-ph="💬"><img src="media/ksat-tech/whatsapp-ai.jpg" alt="Assistant WhatsApp IA Ayka Tapis" loading="lazy" onload="this.parentElement.classList.remove('ph','ph-dark')" onerror="this.remove()"><span class="ph-note">media/ksat-tech/whatsapp-ai.jpg</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- K-SAT TECHNOLOGY SHOWCASE -->
+<section id="ksat-tech">
+  <div class="container">
+    <div class="reveal">
+      <div class="ksat-badge"><img src="brand_assets/logo-K-Sat.png" alt="K-SAT"><span data-i18n="ksat_badge">Automation & Logistics Partner</span></div>
+      <h2 data-i18n="ksat_title">Derrière chaque livraison,<br>une technologie d'avant-garde.</h2>
+      <p class="ksat-intro" data-i18n_html="ksat_intro">Ayka Tapis est propulsé par <strong>K-SAT</strong>, agence spécialisée en automatisation IA et logistique. Nos systèmes travaillent 24h/24 pour que votre tapis soit collecté, nettoyé et livré sans friction — et sans que vous ayez à lever le petit doigt.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-img ph ph-dark" data-ph="🗺️"><img src="media/ksat-tech/erp-dashboard.jpg" alt="Ayka Transport Logistics ERP" loading="lazy" onload="this.parentElement.classList.remove('ph','ph-dark')" onerror="this.remove()"><span class="ph-note">media/ksat-tech/erp-dashboard.jpg</span></div>
+        <div class="pillar-body">
+          <h3>🗺️ Ayka Transport Logistics ERP</h3>
+          <p class="p-quote" data-i18n="ksat_p1_q">"Chaque tournée, optimisée à la minute près."</p>
+          <ul>
+            <li data-i18n="ksat_p1_l1">Dashboard de gestion de tournées en temps réel</li>
+            <li data-i18n="ksat_p1_l2">Optimisation d'itinéraires Google Maps (±15 min)</li>
+            <li data-i18n="ksat_p1_l3">Suivi GPS des chauffeurs en direct</li>
+            <li data-i18n="ksat_p1_l4">Portail atelier — gestion des commandes</li>
+            <li data-i18n="ksat_p1_l5">Notifications WhatsApp automatiques à chaque étape</li>
+          </ul>
+          <span class="ksat-pill-tag">Built by K-SAT · React · TypeScript · Supabase · Google Maps API</span>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-img ph ph-dark" data-ph="💬"><img src="media/ksat-tech/whatsapp-ai.jpg" alt="Assistant WhatsApp IA" loading="lazy" onload="this.parentElement.classList.remove('ph','ph-dark')" onerror="this.remove()"><span class="ph-note">media/ksat-tech/whatsapp-ai.jpg</span></div>
+        <div class="pillar-body">
+          <h3>💬 <span data-i18n="ksat_p2_t">Assistant WhatsApp IA 24/7</span></h3>
+          <p class="p-quote" data-i18n="ksat_p2_q">"Votre client réserve à 23h. Notre IA répond en 30 secondes."</p>
+          <ul>
+            <li data-i18n="ksat_p2_l1">Assistant multilingue FR · NL · EN · TR</li>
+            <li data-i18n="ksat_p2_l2">RDV, confirmation, rappel, suivi — tout automatique</li>
+            <li data-i18n="ksat_p2_l3">90% des réservations sans intervention humaine</li>
+          </ul>
+          <span class="ksat-pill-tag">Built by K-SAT · n8n · Evolution API · Claude AI · WhatsApp Business</span>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-img ph ph-dark" data-ph="📞"><img src="media/ksat-tech/voice-agent.jpg" alt="Agent vocal IA" loading="lazy" onload="this.parentElement.classList.remove('ph','ph-dark')" onerror="this.remove()"><span class="ph-note">media/ksat-tech/voice-agent.jpg</span></div>
+        <div class="pillar-body">
+          <h3>📞 <span data-i18n="ksat_p3_t">Agent Vocal IA</span></h3>
+          <p class="p-quote" data-i18n="ksat_p3_q">"Même au téléphone, notre IA ne dort jamais."</p>
+          <ul>
+            <li data-i18n="ksat_p3_l1">Agent vocal inbound — répond, planifie, confirme</li>
+            <li data-i18n="ksat_p3_l2">Agent outbound — rappelle après livraison</li>
+            <li data-i18n="ksat_p3_l3">Numéro belge +32 dédié, langue auto-détectée</li>
+          </ul>
+          <span class="ksat-pill-tag">Built by K-SAT · Vapi · Telnyx · Claude AI</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="footer-label" style="margin-bottom:18px" data-i18n="ksat_screens_label">Nos applications en production chez Ayka Tapis</p>
+      <div class="screens-strip">
+        <figure class="app-screenshot">
+          <div class="monitor-frame"><img src="screenshots/dashboard-main.jpg" alt="Ayka Tapis ERP Dashboard - K-SAT" loading="lazy"></div>
+          <div class="monitor-stand"></div><div class="monitor-base"></div>
+          <figcaption><strong>Ayka Transport Logistics ERP</strong><span data-i18n="ksat_ss1">Gestion de tournées en temps réel · Built by K-SAT</span></figcaption>
+        </figure>
+        <figure class="app-screenshot">
+          <div class="monitor-frame"><img src="screenshots/dashboard-2.jpg" alt="ERP Dashboard commandes - K-SAT" loading="lazy"></div>
+          <div class="monitor-stand"></div><div class="monitor-base"></div>
+          <figcaption><strong>ERP · <span data-i18n="ksat_ss2_t">Commandes</span></strong><span data-i18n="ksat_ss2">Suivi des commandes de nettoyage · Built by K-SAT</span></figcaption>
+        </figure>
+        <figure class="app-screenshot phone-shot">
+          <div class="phone-mock"><img src="screenshots/driver-1.jpg" alt="App mobile chauffeur - K-SAT" loading="lazy"></div>
+          <figcaption><strong>Driver App</strong><span data-i18n="ksat_ss3">Application mobile chauffeur · Built by K-SAT</span></figcaption>
+        </figure>
+        <figure class="app-screenshot">
+          <div class="monitor-frame"><img src="screenshots/workshop-1.jpg" alt="Portail atelier - K-SAT" loading="lazy"></div>
+          <div class="monitor-stand"></div><div class="monitor-base"></div>
+          <figcaption><strong>Workshop Portal</strong><span data-i18n="ksat_ss4">Portail atelier de nettoyage · Built by K-SAT</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="ksat-video-wrap reveal">
+      <video controls preload="none" muted loop playsinline>
+        <source src="media/ksat-tech/erp-demo-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="ksat-cta-strip reveal">
+      <p data-i18n="ksat_cta_text">Vous aussi, automatisez votre business avec K-SAT.</p>
+      <a href="https://k-sat.be" target="_blank" rel="noopener" class="btn-ksat"><span data-i18n="ksat_cta_btn">Découvrir K-SAT</span> →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label" data-i18n="gal_label">Galerie</span>
+      <h2 class="section-title" data-i18n="gal_title">Résultats réels. Clients réels.</h2>
+    </div>
+    <div class="gallery-grid" style="margin-top:44px" id="gallery-grid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title" data-i18n="faq_title">Questions fréquentes.</h2>
+    </div>
+    <div class="faq-list reveal" id="faq-list" style="margin-top:36px"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="center reveal">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title" data-i18n="contact_title">Réservez votre nettoyage.</h2>
+    </div>
+    <div class="contact-grid" style="margin-top:44px">
+      <div class="form-card reveal">
+        <form id="booking-form" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label for="f-name" data-i18n="form_name">Nom</label><input type="text" id="f-name" required autocomplete="name"></div>
+            <div class="form-group"><label for="f-phone" data-i18n="form_phone">Téléphone / WhatsApp</label><input type="tel" id="f-phone" required autocomplete="tel"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="f-email">Email</label><input type="email" id="f-email" autocomplete="email"></div>
+            <div class="form-group"><label for="f-service" data-i18n="form_service">Type de service</label>
+              <select id="f-service">
+                <option data-i18n="form_svc_1">Tapis</option><option data-i18n="form_svc_2">Canapé</option><option data-i18n="form_svc_3">Rideaux</option><option data-i18n="form_svc_4">Matelas</option><option data-i18n="form_svc_5">Entreprise</option><option data-i18n="form_svc_6">Autre</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label for="f-address" data-i18n="form_address">Adresse à Bruxelles</label><input type="text" id="f-address" autocomplete="street-address"></div>
+          <div class="form-row">
+            <div class="form-group"><label for="f-size" data-i18n="form_size">Taille / quantité</label><input type="text" id="f-size" placeholder="ex: 2 tapis, 3m x 2m"></div>
+            <div class="form-group"><label for="f-date" data-i18n="form_date">Date de collecte souhaitée</label><input type="date" id="f-date"></div>
+          </div>
+          <div class="form-group"><label for="f-msg" data-i18n="form_msg">Message / décrivez vos taches</label><textarea id="f-msg"></textarea></div>
+          <button type="submit" class="btn btn-teal" style="width:100%;justify-content:center;padding:15px" data-i18n="form_submit">Envoyer ma demande →</button>
+          <div class="form-success" id="form-success" data-i18n="form_success">✅ Merci ! Votre demande est bien envoyée. Nous vous confirmons dans les 2 heures ouvrables.</div>
+        </form>
+      </div>
+      <div class="contact-direct reveal">
+        <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 <span data-i18n="contact_wa">Réserver sur WhatsApp</span></a>
+        <div class="contact-info-card">
+          <h4 data-i18n="contact_phone">Téléphone</h4>
+          <a href="tel:+32488196767" class="big-link">+32 488 19 67 67</a>
+        </div>
+        <div class="contact-info-card">
+          <h4>Email</h4>
+          <a href="mailto:info@aykatapis.be" class="big-link" style="font-size:18px">info@aykatapis.be</a>
+        </div>
+        <div class="contact-info-card">
+          <h4 data-i18n="contact_hours">Horaires</h4>
+          <p data-i18n="contact_hours_val">Lun – Sam : 10h00 – 17h00 · Dimanche : fermé<br>Assistant IA WhatsApp : 24h/24, 7j/7</p>
+        </div>
+        <div class="contact-info-card">
+          <h4 data-i18n="contact_address">Atelier</h4>
+          <p>📍 Dieudonné Lefèvrestraat 250,<br>1020 Bruxelles, Belgique</p>
+        </div>
+        <div class="contact-map">
+          <iframe title="Ayka Tapis Bruxelles" loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=4.30%2C50.82%2C4.42%2C50.88&amp;layer=mapnik&amp;marker=50.8466%2C4.3528"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="brand_assets/logo-ayka-tapis.png" alt="Ayka Tapis" style="height:60px;width:auto"></div>
+        <p class="footer-tag" data-i18n="footer_tag">Vos tapis. Propres. Livrés.</p>
+        <div class="social-row">
+          <a href="https://www.facebook.com/aykatapis" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/aykatapis" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+          <a href="https://www.google.com/maps/search/Ayka+Tapis+Bruxelles" target="_blank" rel="noopener" aria-label="Google Maps">📍</a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer_svcs">Services</h4>
+        <ul>
+          <li><a href="#services" data-i18n="svc_1_t">Nettoyage de Tapis</a></li>
+          <li><a href="#services" data-i18n="svc_2_t">Canapés & Sièges</a></li>
+          <li><a href="#services" data-i18n="svc_3_t">Rideaux & Voilages</a></li>
+          <li><a href="#services" data-i18n="svc_4_t">Nettoyage de Matelas</a></li>
+          <li><a href="#services" data-i18n="svc_5_t">Pro & Entreprises</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer_info">Informations</h4>
+        <ul>
+          <li><a href="#zones" data-i18n="nav_zones">Zones</a></li>
+          <li><a href="#pricing" data-i18n="nav_pricing">Tarifs</a></li>
+          <li><a href="#devis" data-i18n="nav_devis">Devis en ligne</a></li>
+          <li><a href="#process" data-i18n="nav_process">Comment ça marche</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#reviews" data-i18n="nav_reviews">Avis</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+32488196767">📞 +32 488 19 67 67</a></li>
+          <li><a href="https://wa.me/32488196767" target="_blank" rel="noopener">💬 WhatsApp 24/7</a></li>
+          <li><a href="mailto:info@aykatapis.be">✉️ info@aykatapis.be</a></li>
+          <li><span style="font-size:14px">📍 Dieudonné Lefèvrestraat 250, 1020 Bruxelles</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-tech-partner">
+      <p class="footer-label" data-i18n="ksat_footer_label">Technologie & Automatisation</p>
+      <a href="https://k-sat.be" target="_blank" rel="noopener"><img src="brand_assets/logo-K-Sat.png" alt="K-SAT"></a>
+      <p class="footer-tech-desc" data-i18n="ksat_footer_desc">Système ERP · Assistant WhatsApp IA · Agent Vocal · Optimisation de tournées</p>
+      <p class="footer-powered"><span>Powered by</span> <strong>K-SAT Automation & Logistics</strong> <a href="https://k-sat.be" target="_blank" rel="noopener">k-sat.be →</a></p>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ayka Tapis · Bruxelles · <span data-i18n="footer_rights">Tous droits réservés</span> · <span data-i18n="footer_by">Conçu par</span> <a href="https://k-sat.be" target="_blank" rel="noopener" style="color:var(--ksat-gold)">K-SAT</a></span>
+      <span><a href="#" data-i18n="footer_privacy">Confidentialité</a> · <a href="#" data-i18n="footer_cgv">CGV</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/32488196767" target="_blank" rel="noopener" id="wa-float" aria-label="WhatsApp">
+  <span class="pulse-dot"></span>
+  <svg viewBox="0 0 32 32"><path d="M16 2.9C8.8 2.9 3 8.7 3 15.9c0 2.3.6 4.5 1.7 6.5L3 29.1l6.9-1.8c1.9 1 4 1.6 6.1 1.6 7.2 0 13-5.8 13-13S23.2 2.9 16 2.9zm0 23.7c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1.1-1.7-1.6-3.7-1.6-5.7C5.3 10 10.1 5.2 16 5.2S26.7 10 26.7 15.9 21.9 26.6 16 26.6zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.7-1.8-1-2.4-.3-.6-.5-.5-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.4c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <span data-i18n="cookie_text">Ce site utilise des cookies pour améliorer votre expérience. Système de réservation géré par K-SAT AI Automation.</span>
+  <button class="btn btn-teal" id="cookie-accept" data-i18n="cookie_ok">Accepter</button>
+</div>
+
+<script>
+/* ================= I18N ================= */
+const translations = {
+fr:{
+  nav_services:"Services",nav_process:"Comment ça marche",nav_zones:"Zones",nav_pricing:"Tarifs",nav_reviews:"Avis",nav_contact:"Contact",nav_cta:"Réserver",nav_devis:"Devis",
+  devis_label:"Devis en ligne",devis_title:"Calculez le prix de nettoyage de votre tapis.",
+  devis_sub:"Utilisez notre calculateur en ligne pour estimer le coût du nettoyage de vos tapis. N'oubliez pas de vérifier le montant du forfait minimal concernant la livraison.",
+  devis_type_label:"Choisissez le type de tapis :",devis_m2_label:"Entrez la mesure en m² de votre tapis",
+  devis_total_label:"Coût total pour le nettoyage",devis_cta:"Demander ce devis sur WhatsApp",
+  devis_forfait_title:"Forfait livraison",devis_selfservice:"Self-Service : Déposez vos tapis à l'atelier sans payer les frais de livraison.",
+  devis_types:["Tapis synthétique (polyester) — jusqu'à 10m²","Tapis synthétique (polyester) — à partir de 10m²","Tapis acrylique — jusqu'à 10m²","Tapis acrylique — à partir de 10m²","Tapis Shaggy — jusqu'à 10m²","Tapis Shaggy — à partir de 10m²","Tapis Persan (pure laine, oriental, artisanal, népalais, chinois) — jusqu'à 10m²","Tapis Persan (pure laine, oriental, artisanal, népalais, chinois) — à partir de 10m²","Tapis en soie"],
+  announce_1:"🎁 Collecte & livraison GRATUITE dans tout Bruxelles · WhatsApp: +32 488 19 67 67",
+  announce_2:"🤖 Réservation IA 24/7 · Suivi en temps réel · Powered by K-SAT Automation",
+  hero_badge:"Service #1 à Bruxelles · 4.9★ · 200+ avis",hero_h1:"Vos tapis méritent mieux.",
+  hero_sub:"Nettoyage professionnel · Collecte & livraison gratuites · Résultat garanti",
+  hero_cta_whatsapp:"Réserver sur WhatsApp",hero_cta_call:"Appeler maintenant",
+  proof_1:"Livraison en 48h",proof_2:"Produits écologiques",proof_3:"Garantie satisfait",proof_4:"Collecte gratuite",
+  stat_1:"Clients satisfaits",stat_2:"Taux de satisfaction",stat_3:"Délai de livraison",stat_4:"Note moyenne",
+  trust_label:"Pourquoi Ayka Tapis ?",trust_title:"La confiance, ça se mérite.",
+  trust_1_t:"Produits écologiques",trust_1_d:"Shampoings biodégradables, respectueux de vos enfants & animaux.",
+  trust_2_t:"Collecte & livraison gratuites",trust_2_d:"Nous venons chez vous, partout à Bruxelles.",
+  trust_3_t:"Retour en 48h",trust_3_d:"Nettoyage express en 2 jours ouvrables garanti.",
+  trust_4_t:"Résultat garanti",trust_4_d:"Pas satisfait ? On recommence, gratuitement.",
+  trust_5_t:"Réservation IA 24/7",trust_5_d:"Votre assistant WhatsApp disponible à toute heure.",
+  trust_6_t:"Expert anti-taches",trust_6_d:"Spécialiste taches tenaces : café, vin, encre, sang...",
+  svc_label:"Nos services",svc_title:"Un seul appel. On s'occupe de tout.",
+  svc_sub:"Du tapis oriental au canapé moderne — lavage 100% automatique avec des machines industrielles de dernière génération, unique en Belgique.",
+  svc_1_t:"Nettoyage de Tapis",svc_1_l1:"Tapis machine, d'Orient, kilims, soie, berbères",svc_1_l2:"Lavage intégral recto-verso — machines industrielles entièrement automatisées",svc_1_l3:"Séchage en chambre climatisée — jamais humide",svc_1_p:"à partir de 6,50€/m²",
+  svc_2_t:"Canapés & Sièges",svc_2_l1:"Canapés tissu, cuir, fauteuils, banquettes",svc_2_l2:"Traitement vapeur + aspiration professionnelle",svc_2_p:"à partir de 35€/siège",
+  svc_3_t:"Rideaux & Voilages",svc_3_l1:"Collecte + nettoyage + remise en place",svc_3_l2:"Rideaux lourds, voilages, stores",svc_3_p:"sur devis",
+  svc_4_t:"Nettoyage de Matelas",svc_4_l1:"Désinfection bactéricide, anti-acariens",svc_4_l2:"Traitement anti-odeur",svc_4_p:"à partir de 45€/matelas",
+  svc_5_t:"Pro & Entreprises",svc_5_l1:"Bureaux, hôtels, restaurants, résidences",svc_5_l2:"Contrats récurrents disponibles",svc_5_p:"devis personnalisé",
+  svc_6_t:"Taches Tenaces",svc_6_l1:"Café, vin rouge, encre, sang, urine, moisissures",svc_6_l2:"Traitement spécialisé par type de tache",svc_6_p:"Tache éliminée ou remboursé",
+  proc_label:"Comment ça marche ?",proc_title:"Simple comme un message WhatsApp.",
+  proc_1_t:"Réservez en 1 message",proc_1_d:"Envoyez un WhatsApp ou appelez-nous. On confirme en 2 minutes.",
+  proc_2_t:"Collecte gratuite J+1",proc_2_d:"Nos chauffeurs récupèrent vos tapis à l'heure que vous choisissez.",proc_2_tech:"Route optimisée par ERP K-SAT",
+  proc_3_t:"Nettoyage expert 24-48h",proc_3_d:"Lavage en machines industrielles full-automatiques — technologie unique en Belgique. Photos avant/après partagées.",proc_3_tech:"Suivi temps réel · Dashboard K-SAT",
+  proc_4_t:"Livraison à domicile",proc_4_d:"Vos tapis, propres, livrés et emballés. Parfum frais.",proc_4_tech:"Notification automatique WhatsApp",
+  show_label:"Avant / Après",show_title:"Voyez la différence par vous-même.",
+  show_sub:"Chaque tapis sort de nos ateliers comme neuf. Parfois, même mieux que neuf.",show_before:"Avant",show_after:"Après",
+  zones_label:"Nous desservons tout Bruxelles",zones_title:"Votre quartier est couvert.",
+  zones_banner:"Vous êtes en dehors de Bruxelles ? Contactez-nous — nous couvrons également la périphérie sur demande.",zones_cta:"Vérifier ma zone",
+  price_label:"Nos tarifs",price_title:"Des prix honnêtes. Zéro surprise.",price_pop:"Populaire",
+  price_1_t:"À la pièce",price_1_p:"dès 6,50€/m²",price_1_l1:"Synthétique (polyester) : dès 6,50€/m²",price_1_l2:"Acrylique / Shaggy : dès 7,50€/m²",price_1_l3:"Persan / Oriental pure laine : dès 18€/m²",price_1_l4:"Tapis en soie : 54€/m²",price_1_l5:"Devis précis en 2 min via le calculateur",price_1_l6:"Collecte & livraison : GRATUITE (forfait min. selon zone)",price_1_cta:"Réserver",
+  price_2_t:"Formule Express",price_2_p:"+25% · retour 24h",price_2_l1:"Même service, délai prioritaire",price_2_l2:"Idéal avant un événement",price_2_l3:"Collecte le jour même si possible",price_2_cta:"Réserver Express",
+  price_3_t:"Abonnement PRO",price_3_p:"dès 49€/mois",price_3_l1:"Nettoyage mensuel ou trimestriel",price_3_l2:"Priorité de prise en charge",price_3_l3:"-15% sur tous les services",price_3_l4:"Rapport de nettoyage après chaque visite",price_3_cta:"Demander un devis",
+  price_note:"🔍 Obtenez un devis en 2 minutes sur WhatsApp. Envoyez une photo de votre tapis, on vous répond immédiatement.",
+  rev_label:"Avis Google",rev_title:"Ce que disent nos clients.",rev_sub:"200+ familles bruxelloises nous font confiance.",rev_cta:"Voir tous les avis Google",
+  rev_1:"\"Mon tapis d'Orient de 50 ans comme neuf ! J'aurais jamais cru que les couleurs pouvaient revenir ainsi. Service impeccable, chauffeurs ponctuels.\"",
+  rev_2:"\"Réservé sur WhatsApp le soir, collecte le lendemain matin, livraison le surlendemain. Tache de café partie complètement. Top !\"",
+  rev_3:"\"3 grands tapis + canapé. Livraison soignée, emballés proprement. Prix très raisonnable pour la qualité.\"",
+  rev_4:"\"L'assistant WhatsApp est bluffant — confirmation immédiate, suivi en temps réel. L'ère du service intelligent !\"",
+  rev_5:"\"Taches d'urine de chat sur mon tapis shaggy. D'autres avaient abandonné. Eux, tache + odeur disparues. Miracle !\"",
+  ai_label:"Réservez en 1 message",ai_title:"24h/24, 7j/7. Votre assistant IA est toujours là.",
+  ai_sub:"Envoyez un message WhatsApp à n'importe quelle heure. Notre assistant IA vous répond en 30 secondes — en français, néerlandais, anglais ou turc.",
+  ai_f1:"Prise de RDV instantanée",ai_f2:"Confirmation automatique",ai_f3:"Rappel la veille de la collecte",ai_f4:"Photo de votre tapis après nettoyage",ai_f5:"Suivi en temps réel",ai_f6:"Paiement sécurisé en ligne ou à la livraison",ai_cta:"Démarrer sur WhatsApp",
+  ksat_badge:"Propulsé par K-SAT Automation & Logistics",
+  ksat_title:"Derrière chaque livraison,<br>une technologie d'avant-garde.",
+  ksat_intro:"Ayka Tapis est propulsé par <strong>K-SAT</strong>, agence spécialisée en automatisation IA et logistique. Nos systèmes travaillent 24h/24 pour que votre tapis soit collecté, nettoyé et livré sans friction — et sans que vous ayez à lever le petit doigt.",
+  ksat_p1_q:"\"Chaque tournée, optimisée à la minute près.\"",ksat_p1_l1:"Dashboard de gestion de tournées en temps réel",ksat_p1_l2:"Optimisation d'itinéraires Google Maps (±15 min)",ksat_p1_l3:"Suivi GPS des chauffeurs en direct",ksat_p1_l4:"Portail atelier — gestion des commandes",ksat_p1_l5:"Notifications WhatsApp automatiques à chaque étape",
+  ksat_p2_t:"Assistant WhatsApp IA 24/7",ksat_p2_q:"\"Votre client réserve à 23h. Notre IA répond en 30 secondes.\"",ksat_p2_l1:"Assistant multilingue FR · NL · EN · TR",ksat_p2_l2:"RDV, confirmation, rappel, suivi — tout automatique",ksat_p2_l3:"90% des réservations sans intervention humaine",
+  ksat_p3_t:"Agent Vocal IA",ksat_p3_q:"\"Même au téléphone, notre IA ne dort jamais.\"",ksat_p3_l1:"Agent vocal inbound — répond, planifie, confirme",ksat_p3_l2:"Agent outbound — rappelle après livraison",ksat_p3_l3:"Numéro belge +32 dédié, langue auto-détectée",
+  ksat_screens_label:"Nos applications en production chez Ayka Tapis",
+  ksat_ss1:"Gestion de tournées en temps réel · Built by K-SAT",ksat_ss2_t:"Commandes",ksat_ss2:"Suivi des commandes de nettoyage · Built by K-SAT",ksat_ss3:"Application mobile chauffeur · Built by K-SAT",ksat_ss4:"Portail atelier de nettoyage · Built by K-SAT",
+  ksat_cta_text:"Vous aussi, automatisez votre business avec K-SAT.",ksat_cta_btn:"Découvrir K-SAT",
+  ksat_footer_label:"Technologie & Automatisation",ksat_footer_desc:"Système ERP · Assistant WhatsApp IA · Agent Vocal · Optimisation de tournées",
+  gal_label:"Galerie",gal_title:"Résultats réels. Clients réels.",gal_before:"Avant",gal_after:"Après",
+  gal_1:"Tapis d'Orient — taches de vin éliminées",gal_2:"Tapis shaggy — boue & taches d'animaux",gal_3:"Tapis de bureau — taches de café",gal_4:"Kilim — couleurs ravivées",gal_5:"Tapis d'enfant — encre & crayon",gal_6:"Canapé blanc — nettoyage en profondeur",
+  faq_title:"Questions fréquentes.",
+  faq:[
+    ["Combien de temps prend le nettoyage ?","En général 24 à 48h. Service express en 24h disponible."],
+    ["La collecte et la livraison sont-elles vraiment gratuites ?","Oui, partout à Bruxelles et dans les communes limitrophes. Sans condition de montant minimum."],
+    ["Quels types de tapis nettoyez-vous ?","Tous types : machine, tissé main, oriental, kilim, soie, shaggy, bambou, synthétique, laine..."],
+    ["Mes taches tenaces peuvent-elles être éliminées ?","La majorité des taches disparaissent complètement (café, vin, urine, encre). Pour certaines taches très anciennes, nous vous informons honnêtement avant traitement."],
+    ["Comment réserver ?","Via WhatsApp (+32 488 19 67 67), par téléphone, ou via le formulaire sur ce site. Notre IA répond 24h/24."],
+    ["Vos produits sont-ils dangereux pour mes enfants / animaux ?","Non. Nous utilisons exclusivement des produits biodégradables, certifiés, sans solvants agressifs."],
+    ["Que se passe-t-il si je ne suis pas satisfait ?","Nous recommençons gratuitement. Si le résultat n'est toujours pas satisfaisant, nous vous remboursons."],
+    ["Puis-je laver mon tapis en machine moi-même ?","Pour les petits tapis synthétiques, oui. Mais pour les tapis de valeur (laine, soie, Oriental), un lavage professionnel est indispensable."],
+    ["Vous travaillez aussi avec des entreprises ?","Oui — hôtels, bureaux, restaurants, résidences. Devis personnalisé sur demande."],
+    ["Comment se passe le paiement ?","Carte bancaire, virement, ou espèces à la livraison."]
+  ],
+  contact_title:"Réservez votre nettoyage.",form_name:"Nom",form_phone:"Téléphone / WhatsApp",form_service:"Type de service",
+  form_svc_1:"Tapis",form_svc_2:"Canapé",form_svc_3:"Rideaux",form_svc_4:"Matelas",form_svc_5:"Entreprise",form_svc_6:"Autre",
+  form_address:"Adresse à Bruxelles",form_size:"Taille / quantité",form_date:"Date de collecte souhaitée",form_msg:"Message / décrivez vos taches",
+  form_submit:"Envoyer ma demande →",form_success:"✅ Merci ! Votre demande est bien envoyée. Nous vous confirmons dans les 2 heures ouvrables.",
+  contact_wa:"Réserver sur WhatsApp",contact_phone:"Téléphone",contact_hours:"Horaires",contact_hours_val:"Lun – Sam : 10h00 – 17h00 · Dimanche : fermé<br>Assistant IA WhatsApp : 24h/24, 7j/7",contact_address:"Atelier",
+  footer_tag:"Vos tapis. Propres. Livrés.",footer_svcs:"Services",footer_info:"Informations",footer_rights:"Tous droits réservés",footer_by:"Conçu par",footer_privacy:"Confidentialité",footer_cgv:"CGV",
+  cookie_text:"Ce site utilise des cookies pour améliorer votre expérience. Système de réservation géré par K-SAT AI Automation.",cookie_ok:"Accepter"
+},
+nl:{
+  nav_services:"Diensten",nav_process:"Hoe het werkt",nav_zones:"Zones",nav_pricing:"Prijzen",nav_reviews:"Reviews",nav_contact:"Contact",nav_cta:"Boeken",nav_devis:"Offerte",
+  devis_label:"Online offerte",devis_title:"Bereken de reinigingsprijs van uw tapijt.",
+  devis_sub:"Gebruik onze online calculator om de reinigingskost van uw tapijten te schatten. Vergeet niet het minimale leveringsforfait voor uw zone te controleren.",
+  devis_type_label:"Kies het type tapijt:",devis_m2_label:"Voer de afmeting van uw tapijt in m² in",
+  devis_total_label:"Totale reinigingskost",devis_cta:"Deze offerte aanvragen via WhatsApp",
+  devis_forfait_title:"Leveringsforfait",devis_selfservice:"Self-Service: breng uw tapijten naar het atelier zonder leveringskosten te betalen.",
+  devis_types:["Synthetisch tapijt (polyester) — tot 10m²","Synthetisch tapijt (polyester) — vanaf 10m²","Acryl tapijt — tot 10m²","Acryl tapijt — vanaf 10m²","Shaggy tapijt — tot 10m²","Shaggy tapijt — vanaf 10m²","Perzisch tapijt (zuivere wol, oosters, artisanaal, Nepalees, Chinees) — tot 10m²","Perzisch tapijt (zuivere wol, oosters, artisanaal, Nepalees, Chinees) — vanaf 10m²","Zijden tapijt"],
+  announce_1:"🎁 GRATIS ophaling & levering in heel Brussel · WhatsApp: +32 488 19 67 67",
+  announce_2:"🤖 AI-reservering 24/7 · Realtime tracking · Powered by K-SAT Automation",
+  hero_badge:"Nr. 1 in Brussel · 4.9★ · 200+ reviews",hero_h1:"Uw tapijten verdienen beter.",
+  hero_sub:"Professionele reiniging · Gratis ophaling & levering · Gegarandeerd resultaat",
+  hero_cta_whatsapp:"Boek via WhatsApp",hero_cta_call:"Bel nu",
+  proof_1:"Levering in 48u",proof_2:"Ecologische producten",proof_3:"Tevredenheidsgarantie",proof_4:"Gratis ophaling",
+  stat_1:"Tevreden klanten",stat_2:"Tevredenheidsgraad",stat_3:"Levertermijn",stat_4:"Gemiddelde score",
+  trust_label:"Waarom Ayka Tapis?",trust_title:"Vertrouwen verdien je.",
+  trust_1_t:"Ecologische producten",trust_1_d:"Biologisch afbreekbare shampoos, veilig voor kinderen & huisdieren.",
+  trust_2_t:"Gratis ophaling & levering",trust_2_d:"Wij komen bij u thuis, overal in Brussel.",
+  trust_3_t:"Terug in 48u",trust_3_d:"Express reiniging in 2 werkdagen gegarandeerd.",
+  trust_4_t:"Gegarandeerd resultaat",trust_4_d:"Niet tevreden? We doen het gratis opnieuw.",
+  trust_5_t:"AI-reservering 24/7",trust_5_d:"Uw WhatsApp-assistent is altijd beschikbaar.",
+  trust_6_t:"Vlekkenexpert",trust_6_d:"Specialist in hardnekkige vlekken: koffie, wijn, inkt, bloed...",
+  svc_label:"Onze diensten",svc_title:"Eén telefoontje. Wij regelen alles.",
+  svc_sub:"Van oosters tapijt tot moderne zetel — 100% automatische wassing met industriële machines van de nieuwste generatie, uniek in België.",
+  svc_1_t:"Tapijtreiniging",svc_1_l1:"Machinaal, oosters, kelim, zijde, berbers",svc_1_l2:"Integrale recto-verso wassing — volautomatische industriële machines",svc_1_l3:"Droging in klimaatkamer — nooit vochtig",svc_1_p:"vanaf 6,50€/m²",
+  svc_2_t:"Zetels & Stoelen",svc_2_l1:"Stoffen zetels, leder, fauteuils, banken",svc_2_l2:"Stoombehandeling + professionele extractie",svc_2_p:"vanaf 35€/zitplaats",
+  svc_3_t:"Gordijnen & Vitrages",svc_3_l1:"Ophaling + reiniging + terugplaatsing",svc_3_l2:"Zware gordijnen, vitrages, stores",svc_3_p:"op offerte",
+  svc_4_t:"Matrasreiniging",svc_4_l1:"Bacteriedodende desinfectie, anti-huisstofmijt",svc_4_l2:"Anti-geur behandeling",svc_4_p:"vanaf 45€/matras",
+  svc_5_t:"Pro & Bedrijven",svc_5_l1:"Kantoren, hotels, restaurants, residenties",svc_5_l2:"Terugkerende contracten mogelijk",svc_5_p:"offerte op maat",
+  svc_6_t:"Hardnekkige Vlekken",svc_6_l1:"Koffie, rode wijn, inkt, bloed, urine, schimmel",svc_6_l2:"Gespecialiseerde behandeling per vlektype",svc_6_p:"Vlek weg of geld terug",
+  proc_label:"Hoe het werkt?",proc_title:"Zo simpel als een WhatsApp-bericht.",
+  proc_1_t:"Boek in 1 bericht",proc_1_d:"Stuur een WhatsApp of bel ons. Bevestiging binnen 2 minuten.",
+  proc_2_t:"Gratis ophaling D+1",proc_2_d:"Onze chauffeurs halen uw tapijten op wanneer het u past.",proc_2_tech:"Geoptimaliseerde route · K-SAT ERP",
+  proc_3_t:"Expertreiniging 24-48u",proc_3_d:"Wassing in volautomatische industriële machines — unieke technologie in België. Voor/na foto's gedeeld.",proc_3_tech:"Realtime tracking · K-SAT Dashboard",
+  proc_4_t:"Levering aan huis",proc_4_d:"Uw tapijten, schoon, geleverd en verpakt. Frisse geur.",proc_4_tech:"Automatische WhatsApp-melding",
+  show_label:"Voor / Na",show_title:"Zie zelf het verschil.",
+  show_sub:"Elk tapijt verlaat ons atelier als nieuw. Soms zelfs beter dan nieuw.",show_before:"Voor",show_after:"Na",
+  zones_label:"Wij bedienen heel Brussel",zones_title:"Uw wijk is gedekt.",
+  zones_banner:"Woont u buiten Brussel? Contacteer ons — wij bedienen ook de rand op aanvraag.",zones_cta:"Check mijn zone",
+  price_label:"Onze prijzen",price_title:"Eerlijke prijzen. Nul verrassingen.",price_pop:"Populair",
+  price_1_t:"Per stuk",price_1_p:"vanaf 6,50€/m²",price_1_l1:"Synthetisch (polyester): vanaf 6,50€/m²",price_1_l2:"Acryl / Shaggy: vanaf 7,50€/m²",price_1_l3:"Perzisch / Oosters zuivere wol: vanaf 18€/m²",price_1_l4:"Zijden tapijt: 54€/m²",price_1_l5:"Precieze offerte in 2 min via de calculator",price_1_l6:"Ophaling & levering: GRATIS (min. forfait per zone)",price_1_cta:"Boeken",
+  price_2_t:"Express Formule",price_2_p:"+25% · terug in 24u",price_2_l1:"Zelfde service, prioritaire termijn",price_2_l2:"Ideaal vóór een evenement",price_2_l3:"Ophaling dezelfde dag indien mogelijk",price_2_cta:"Boek Express",
+  price_3_t:"PRO Abonnement",price_3_p:"vanaf 49€/maand",price_3_l1:"Maandelijkse of driemaandelijkse reiniging",price_3_l2:"Prioritaire behandeling",price_3_l3:"-15% op alle diensten",price_3_l4:"Reinigingsrapport na elk bezoek",price_3_cta:"Vraag offerte",
+  price_note:"🔍 Krijg een offerte in 2 minuten via WhatsApp. Stuur een foto van uw tapijt, wij antwoorden meteen.",
+  rev_label:"Google Reviews",rev_title:"Wat onze klanten zeggen.",rev_sub:"200+ Brusselse gezinnen vertrouwen ons.",rev_cta:"Bekijk alle Google reviews",
+  rev_1:"\"Mijn 50 jaar oude oosterse tapijt als nieuw! Nooit gedacht dat de kleuren zo konden terugkomen. Onberispelijke service, stipte chauffeurs.\"",
+  rev_2:"\"'s Avonds geboekt via WhatsApp, de volgende ochtend opgehaald, twee dagen later geleverd. Koffievlek volledig weg. Top!\"",
+  rev_3:"\"3 grote tapijten + zetel. Verzorgde levering, netjes verpakt. Zeer redelijke prijs voor de kwaliteit.\"",
+  rev_4:"\"De WhatsApp-assistent is verbluffend — onmiddellijke bevestiging, realtime opvolging. Het tijdperk van slimme service!\"",
+  rev_5:"\"Kattenurine op mijn shaggy tapijt. Anderen hadden opgegeven. Zij: vlek + geur verdwenen. Wonder!\"",
+  ai_label:"Boek in 1 bericht",ai_title:"24/7. Uw AI-assistent is er altijd.",
+  ai_sub:"Stuur op elk moment een WhatsApp-bericht. Onze AI-assistent antwoordt binnen 30 seconden — in het Frans, Nederlands, Engels of Turks.",
+  ai_f1:"Onmiddellijke afspraak",ai_f2:"Automatische bevestiging",ai_f3:"Herinnering daags voor ophaling",ai_f4:"Foto van uw tapijt na reiniging",ai_f5:"Realtime opvolging",ai_f6:"Veilig betalen online of bij levering",ai_cta:"Start op WhatsApp",
+  ksat_badge:"Aangedreven door K-SAT Automation & Logistics",
+  ksat_title:"Achter elke levering,<br>geavanceerde technologie.",
+  ksat_intro:"Ayka Tapis wordt aangedreven door <strong>K-SAT</strong>, gespecialiseerd in AI-automatisering en logistiek. Onze systemen werken 24/7 zodat uw tapijt zonder gedoe wordt opgehaald, gereinigd en geleverd.",
+  ksat_p1_q:"\"Elke route, tot op de minuut geoptimaliseerd.\"",ksat_p1_l1:"Realtime routebeheer dashboard",ksat_p1_l2:"Google Maps route-optimalisatie (±15 min)",ksat_p1_l3:"Live GPS-tracking van chauffeurs",ksat_p1_l4:"Atelierportaal — orderbeheer",ksat_p1_l5:"Automatische WhatsApp-meldingen bij elke stap",
+  ksat_p2_t:"WhatsApp AI-assistent 24/7",ksat_p2_q:"\"Uw klant boekt om 23u. Onze AI antwoordt in 30 seconden.\"",ksat_p2_l1:"Meertalige assistent FR · NL · EN · TR",ksat_p2_l2:"Afspraak, bevestiging, herinnering — alles automatisch",ksat_p2_l3:"90% van de boekingen zonder menselijke tussenkomst",
+  ksat_p3_t:"AI-spraakagent",ksat_p3_q:"\"Zelfs aan de telefoon slaapt onze AI nooit.\"",ksat_p3_l1:"Inbound spraakagent — antwoordt, plant, bevestigt",ksat_p3_l2:"Outbound agent — belt terug na levering",ksat_p3_l3:"Belgisch +32 nummer, taal automatisch gedetecteerd",
+  ksat_screens_label:"Onze applicaties in productie bij Ayka Tapis",
+  ksat_ss1:"Realtime routebeheer · Built by K-SAT",ksat_ss2_t:"Bestellingen",ksat_ss2:"Opvolging reinigingsorders · Built by K-SAT",ksat_ss3:"Mobiele chauffeursapp · Built by K-SAT",ksat_ss4:"Reinigingsatelier portaal · Built by K-SAT",
+  ksat_cta_text:"Automatiseer ook uw business met K-SAT.",ksat_cta_btn:"Ontdek K-SAT",
+  ksat_footer_label:"Technologie & Automatisering",ksat_footer_desc:"ERP-systeem · WhatsApp AI-assistent · Spraakagent · Route-optimalisatie",
+  gal_label:"Galerij",gal_title:"Echte resultaten. Echte klanten.",gal_before:"Voor",gal_after:"Na",
+  gal_1:"Oosters tapijt — wijnvlekken verwijderd",gal_2:"Shaggy tapijt — modder & huisdiervlekken",gal_3:"Kantoortapijt — koffievlekken",gal_4:"Kelim — kleuren hersteld",gal_5:"Kindertapijt — inkt & krijt",gal_6:"Witte zetel — dieptereiniging",
+  faq_title:"Veelgestelde vragen.",
+  faq:[
+    ["Hoe lang duurt de reiniging?","Meestal 24 tot 48u. Express service in 24u beschikbaar."],
+    ["Zijn ophaling en levering echt gratis?","Ja, overal in Brussel en de aangrenzende gemeenten. Zonder minimumbedrag."],
+    ["Welke soorten tapijten reinigen jullie?","Alle soorten: machinaal, handgeweven, oosters, kelim, zijde, shaggy, bamboe, synthetisch, wol..."],
+    ["Kunnen mijn hardnekkige vlekken verwijderd worden?","De meeste vlekken verdwijnen volledig (koffie, wijn, urine, inkt). Bij zeer oude vlekken informeren wij u eerlijk vóór behandeling."],
+    ["Hoe boek ik?","Via WhatsApp (+32 488 19 67 67), telefonisch, of via het formulier op deze site. Onze AI antwoordt 24/7."],
+    ["Zijn uw producten gevaarlijk voor kinderen / huisdieren?","Nee. Wij gebruiken uitsluitend biologisch afbreekbare, gecertificeerde producten zonder agressieve oplosmiddelen."],
+    ["Wat als ik niet tevreden ben?","Wij doen het gratis opnieuw. Als het resultaat nog steeds niet voldoet, betalen wij u terug."],
+    ["Kan ik mijn tapijt zelf in de wasmachine wassen?","Voor kleine synthetische tapijten wel. Maar voor waardevolle tapijten (wol, zijde, oosters) is professionele reiniging onmisbaar."],
+    ["Werken jullie ook met bedrijven?","Ja — hotels, kantoren, restaurants, residenties. Offerte op maat op aanvraag."],
+    ["Hoe verloopt de betaling?","Bankkaart, overschrijving, of contant bij levering."]
+  ],
+  contact_title:"Boek uw reiniging.",form_name:"Naam",form_phone:"Telefoon / WhatsApp",form_service:"Type dienst",
+  form_svc_1:"Tapijt",form_svc_2:"Zetel",form_svc_3:"Gordijnen",form_svc_4:"Matras",form_svc_5:"Bedrijf",form_svc_6:"Andere",
+  form_address:"Adres in Brussel",form_size:"Grootte / aantal",form_date:"Gewenste ophaaldatum",form_msg:"Bericht / beschrijf uw vlekken",
+  form_submit:"Verstuur mijn aanvraag →",form_success:"✅ Bedankt! Uw aanvraag is verzonden. Wij bevestigen binnen 2 werkuren.",
+  contact_wa:"Boek via WhatsApp",contact_phone:"Telefoon",contact_hours:"Openingsuren",contact_hours_val:"Ma – Za: 10u00 – 17u00 · Zo: gesloten<br>WhatsApp AI-assistent: 24/7",contact_address:"Atelier",
+  footer_tag:"Uw tapijten. Schoon. Bezorgd.",footer_svcs:"Diensten",footer_info:"Informatie",footer_rights:"Alle rechten voorbehouden",footer_by:"Ontworpen door",footer_privacy:"Privacy",footer_cgv:"Voorwaarden",
+  cookie_text:"Deze site gebruikt cookies om uw ervaring te verbeteren. Reserveringssysteem beheerd door K-SAT AI Automation.",cookie_ok:"Accepteren"
+},
+en:{
+  nav_services:"Services",nav_process:"How it works",nav_zones:"Areas",nav_pricing:"Pricing",nav_reviews:"Reviews",nav_contact:"Contact",nav_cta:"Book now",nav_devis:"Quote",
+  devis_label:"Online quote",devis_title:"Calculate your carpet cleaning price.",
+  devis_sub:"Use our online calculator to estimate the cleaning cost of your carpets. Don't forget to check the minimum delivery package for your zone.",
+  devis_type_label:"Choose your carpet type:",devis_m2_label:"Enter your carpet size in m²",
+  devis_total_label:"Total cleaning cost",devis_cta:"Request this quote on WhatsApp",
+  devis_forfait_title:"Delivery minimum",devis_selfservice:"Self-service: drop off your carpets at the workshop and pay no delivery fees.",
+  devis_types:["Synthetic carpet (polyester) — up to 10m²","Synthetic carpet (polyester) — from 10m²","Acrylic carpet — up to 10m²","Acrylic carpet — from 10m²","Shaggy rug — up to 10m²","Shaggy rug — from 10m²","Persian carpet (pure wool, Oriental, artisanal, Nepalese, Chinese) — up to 10m²","Persian carpet (pure wool, Oriental, artisanal, Nepalese, Chinese) — from 10m²","Silk carpet"],
+  announce_1:"🎁 FREE pickup & delivery across Brussels · WhatsApp: +32 488 19 67 67",
+  announce_2:"🤖 AI booking 24/7 · Real-time tracking · Powered by K-SAT Automation",
+  hero_badge:"#1 service in Brussels · 4.9★ · 200+ reviews",hero_h1:"Your carpets deserve better.",
+  hero_sub:"Professional cleaning · Free pickup & delivery · Guaranteed results",
+  hero_cta_whatsapp:"Book on WhatsApp",hero_cta_call:"Call now",
+  proof_1:"48h delivery",proof_2:"Eco-friendly products",proof_3:"Satisfaction guarantee",proof_4:"Free pickup",
+  stat_1:"Happy clients",stat_2:"Satisfaction rate",stat_3:"Turnaround time",stat_4:"Average rating",
+  trust_label:"Why Ayka Tapis?",trust_title:"Trust is earned.",
+  trust_1_t:"Eco-friendly products",trust_1_d:"Biodegradable shampoos, safe for your kids & pets.",
+  trust_2_t:"Free pickup & delivery",trust_2_d:"We come to you, anywhere in Brussels.",
+  trust_3_t:"Back in 48h",trust_3_d:"Express cleaning in 2 business days, guaranteed.",
+  trust_4_t:"Guaranteed results",trust_4_d:"Not satisfied? We redo it, free of charge.",
+  trust_5_t:"AI booking 24/7",trust_5_d:"Your WhatsApp assistant is available around the clock.",
+  trust_6_t:"Stain removal expert",trust_6_d:"Tough stain specialists: coffee, wine, ink, blood...",
+  svc_label:"Our services",svc_title:"One call. We handle everything.",
+  svc_sub:"From Oriental rugs to modern sofas — fully automatic washing with latest-generation industrial machines, unique in Belgium.",
+  svc_1_t:"Carpet Cleaning",svc_1_l1:"Machine-made, Oriental, kilims, silk, Berber",svc_1_l2:"Full double-sided washing — fully automated industrial machines",svc_1_l3:"Climate-room drying — never delivered damp",svc_1_p:"from €6.50/m²",
+  svc_2_t:"Sofas & Seats",svc_2_l1:"Fabric sofas, leather, armchairs, benches",svc_2_l2:"Steam treatment + professional extraction",svc_2_p:"from €35/seat",
+  svc_3_t:"Curtains & Sheers",svc_3_l1:"Pickup + cleaning + rehanging",svc_3_l2:"Heavy curtains, sheers, blinds",svc_3_p:"on quote",
+  svc_4_t:"Mattress Cleaning",svc_4_l1:"Bactericidal disinfection, anti-dust mite",svc_4_l2:"Odor-removal treatment",svc_4_p:"from €45/mattress",
+  svc_5_t:"Business & B2B",svc_5_l1:"Offices, hotels, restaurants, residences",svc_5_l2:"Recurring contracts available",svc_5_p:"custom quote",
+  svc_6_t:"Tough Stains",svc_6_l1:"Coffee, red wine, ink, blood, urine, mold",svc_6_l2:"Specialized treatment per stain type",svc_6_p:"Stain removed or refunded",
+  proc_label:"How it works",proc_title:"As simple as a WhatsApp message.",
+  proc_1_t:"Book in 1 message",proc_1_d:"Send a WhatsApp or call us. We confirm within 2 minutes.",
+  proc_2_t:"Free pickup next day",proc_2_d:"Our drivers collect your carpets at the time you choose.",proc_2_tech:"Optimized route · K-SAT ERP",
+  proc_3_t:"Expert cleaning 24-48h",proc_3_d:"Washing in fully automated industrial machines — technology unique in Belgium. Before/after photos shared.",proc_3_tech:"Real-time tracking · K-SAT Dashboard",
+  proc_4_t:"Home delivery",proc_4_d:"Your carpets, clean, delivered and wrapped. Fresh scent.",proc_4_tech:"Automatic WhatsApp notification",
+  show_label:"Before / After",show_title:"See the difference for yourself.",
+  show_sub:"Every carpet leaves our workshop like new. Sometimes even better than new.",show_before:"Before",show_after:"After",
+  zones_label:"We serve all of Brussels",zones_title:"Your neighborhood is covered.",
+  zones_banner:"Outside Brussels? Contact us — we also cover the outskirts on request.",zones_cta:"Check my area",
+  price_label:"Our pricing",price_title:"Honest prices. Zero surprises.",price_pop:"Popular",
+  price_1_t:"Per item",price_1_p:"from €6.50/m²",price_1_l1:"Synthetic (polyester): from €6.50/m²",price_1_l2:"Acrylic / Shaggy: from €7.50/m²",price_1_l3:"Persian / Oriental pure wool: from €18/m²",price_1_l4:"Silk carpet: €54/m²",price_1_l5:"Exact quote in 2 min via the calculator",price_1_l6:"Pickup & delivery: FREE (min. package per zone)",price_1_cta:"Book",
+  price_2_t:"Express Formula",price_2_p:"+25% · back in 24h",price_2_l1:"Same service, priority turnaround",price_2_l2:"Ideal before an event",price_2_l3:"Same-day pickup when possible",price_2_cta:"Book Express",
+  price_3_t:"PRO Subscription",price_3_p:"from €49/month",price_3_l1:"Monthly or quarterly cleaning",price_3_l2:"Priority handling",price_3_l3:"-15% on all services",price_3_l4:"Cleaning report after every visit",price_3_cta:"Request a quote",
+  price_note:"🔍 Get a quote in 2 minutes on WhatsApp. Send a photo of your carpet, we reply immediately.",
+  rev_label:"Google Reviews",rev_title:"What our clients say.",rev_sub:"200+ Brussels families trust us.",rev_cta:"See all Google reviews",
+  rev_1:"\"My 50-year-old Oriental rug looks brand new! I never thought the colors could come back like that. Impeccable service, punctual drivers.\"",
+  rev_2:"\"Booked on WhatsApp in the evening, pickup the next morning, delivery two days later. Coffee stain completely gone. Top!\"",
+  rev_3:"\"3 large rugs + a sofa. Careful delivery, neatly wrapped. Very reasonable price for the quality.\"",
+  rev_4:"\"The WhatsApp assistant is stunning — instant confirmation, real-time tracking. The era of smart service!\"",
+  rev_5:"\"Cat urine stains on my shaggy rug. Others had given up. Here: stain + odor gone. A miracle!\"",
+  ai_label:"Book in 1 message",ai_title:"24/7. Your AI assistant is always there.",
+  ai_sub:"Send a WhatsApp message at any hour. Our AI assistant replies in 30 seconds — in French, Dutch, English or Turkish.",
+  ai_f1:"Instant appointment booking",ai_f2:"Automatic confirmation",ai_f3:"Reminder the day before pickup",ai_f4:"Photo of your carpet after cleaning",ai_f5:"Real-time tracking",ai_f6:"Secure payment online or on delivery",ai_cta:"Start on WhatsApp",
+  ksat_badge:"Powered by K-SAT Automation & Logistics",
+  ksat_title:"Behind every delivery,<br>cutting-edge technology.",
+  ksat_intro:"Ayka Tapis is powered by <strong>K-SAT</strong>, specialized in AI automation and logistics. Our systems work 24/7 so your carpet is collected, cleaned and delivered without friction — without you lifting a finger.",
+  ksat_p1_q:"\"Every route, optimized to the minute.\"",ksat_p1_l1:"Real-time route management dashboard",ksat_p1_l2:"Google Maps route optimization (±15 min)",ksat_p1_l3:"Live driver GPS tracking",ksat_p1_l4:"Workshop portal — order management",ksat_p1_l5:"Automatic WhatsApp notifications at every step",
+  ksat_p2_t:"WhatsApp AI Assistant 24/7",ksat_p2_q:"\"Your customer books at 11pm. Our AI replies in 30 seconds.\"",ksat_p2_l1:"Multilingual assistant FR · NL · EN · TR",ksat_p2_l2:"Booking, confirmation, reminders — all automatic",ksat_p2_l3:"90% of bookings without human intervention",
+  ksat_p3_t:"AI Voice Agent",ksat_p3_q:"\"Even on the phone, our AI never sleeps.\"",ksat_p3_l1:"Inbound voice agent — answers, schedules, confirms",ksat_p3_l2:"Outbound agent — calls back after delivery",ksat_p3_l3:"Dedicated Belgian +32 number, language auto-detected",
+  ksat_screens_label:"Our applications in production at Ayka Tapis",
+  ksat_ss1:"Real-time route management · Built by K-SAT",ksat_ss2_t:"Orders",ksat_ss2:"Cleaning order tracking · Built by K-SAT",ksat_ss3:"Driver mobile app · Built by K-SAT",ksat_ss4:"Cleaning workshop portal · Built by K-SAT",
+  ksat_cta_text:"You too — automate your business with K-SAT.",ksat_cta_btn:"Discover K-SAT",
+  ksat_footer_label:"Technology & Automation",ksat_footer_desc:"ERP System · WhatsApp AI Assistant · Voice Agent · Route Optimization",
+  gal_label:"Gallery",gal_title:"Real results. Real clients.",gal_before:"Before",gal_after:"After",
+  gal_1:"Oriental rug — wine stains removed",gal_2:"Shaggy rug — mud & pet stains",gal_3:"Office carpet — coffee stains",gal_4:"Kilim — colors restored",gal_5:"Kids' rug — ink & crayon",gal_6:"White sofa — deep clean",
+  faq_title:"Frequently asked questions.",
+  faq:[
+    ["How long does cleaning take?","Usually 24 to 48h. Express 24h service available."],
+    ["Are pickup and delivery really free?","Yes, everywhere in Brussels and neighboring municipalities. No minimum amount."],
+    ["What types of carpets do you clean?","All types: machine-made, hand-woven, Oriental, kilim, silk, shaggy, bamboo, synthetic, wool..."],
+    ["Can my tough stains be removed?","Most stains disappear completely (coffee, wine, urine, ink). For some very old stains, we inform you honestly before treatment."],
+    ["How do I book?","Via WhatsApp (+32 488 19 67 67), by phone, or via the form on this site. Our AI answers 24/7."],
+    ["Are your products dangerous for my kids / pets?","No. We use exclusively biodegradable, certified products without aggressive solvents."],
+    ["What if I'm not satisfied?","We redo it for free. If the result is still not satisfactory, we refund you."],
+    ["Can I machine-wash my carpet myself?","For small synthetic rugs, yes. But for valuable carpets (wool, silk, Oriental), professional cleaning is essential."],
+    ["Do you also work with businesses?","Yes — hotels, offices, restaurants, residences. Custom quote on request."],
+    ["How does payment work?","Bank card, transfer, or cash on delivery."]
+  ],
+  contact_title:"Book your cleaning.",form_name:"Name",form_phone:"Phone / WhatsApp",form_service:"Service type",
+  form_svc_1:"Carpet",form_svc_2:"Sofa",form_svc_3:"Curtains",form_svc_4:"Mattress",form_svc_5:"Business",form_svc_6:"Other",
+  form_address:"Address in Brussels",form_size:"Size / quantity",form_date:"Preferred pickup date",form_msg:"Message / describe your stains",
+  form_submit:"Send my request →",form_success:"✅ Thank you! Your request has been sent. We'll confirm within 2 business hours.",
+  contact_wa:"Book on WhatsApp",contact_phone:"Phone",contact_hours:"Opening hours",contact_hours_val:"Mon – Sat: 10:00 – 17:00 · Sun: closed<br>WhatsApp AI assistant: 24/7",contact_address:"Workshop",
+  footer_tag:"Your carpets. Clean. Delivered.",footer_svcs:"Services",footer_info:"Information",footer_rights:"All rights reserved",footer_by:"Designed by",footer_privacy:"Privacy",footer_cgv:"Terms",
+  cookie_text:"This site uses cookies to improve your experience. Booking system managed by K-SAT AI Automation.",cookie_ok:"Accept"
+},
+tr:{
+  nav_services:"Hizmetler",nav_process:"Nasıl çalışır",nav_zones:"Bölgeler",nav_pricing:"Fiyatlar",nav_reviews:"Yorumlar",nav_contact:"İletişim",nav_cta:"Rezervasyon",nav_devis:"Teklif",
+  devis_label:"Online teklif",devis_title:"Halınızın yıkama fiyatını hesaplayın.",
+  devis_sub:"Halılarınızın temizlik maliyetini tahmin etmek için online hesaplayıcımızı kullanın. Bölgenize ait minimum teslimat tutarını kontrol etmeyi unutmayın.",
+  devis_type_label:"Halı tipini seçin:",devis_m2_label:"Halınızın ölçüsünü m² olarak girin",
+  devis_total_label:"Toplam temizlik ücreti",devis_cta:"Bu teklifi WhatsApp'tan iste",
+  devis_forfait_title:"Teslimat forfait",devis_selfservice:"Self-Servis: Halılarınızı atölyeye kendiniz bırakın, teslimat ücreti ödemeyin.",
+  devis_types:["Sentetik halı (polyester) — 10m²'ye kadar","Sentetik halı (polyester) — 10m²'den itibaren","Akrilik halı — 10m²'ye kadar","Akrilik halı — 10m²'den itibaren","Shaggy halı — 10m²'ye kadar","Shaggy halı — 10m²'den itibaren","İran halısı (saf yün, şark, el işi, Nepal, Çin) — 10m²'ye kadar","İran halısı (saf yün, şark, el işi, Nepal, Çin) — 10m²'den itibaren","İpek halı"],
+  announce_1:"🎁 Tüm Brüksel'de ÜCRETSİZ alım & teslimat · WhatsApp: +32 488 19 67 67",
+  announce_2:"🤖 7/24 AI rezervasyon · Gerçek zamanlı takip · Powered by K-SAT Automation",
+  hero_badge:"Brüksel'de 1 numara · 4.9★ · 200+ yorum",hero_h1:"Halılarınız daha iyisini hak ediyor.",
+  hero_sub:"Profesyonel temizlik · Ücretsiz alım & teslimat · Garantili sonuç",
+  hero_cta_whatsapp:"WhatsApp'tan Rezervasyon",hero_cta_call:"Hemen ara",
+  proof_1:"48 saatte teslimat",proof_2:"Ekolojik ürünler",proof_3:"Memnuniyet garantisi",proof_4:"Ücretsiz alım",
+  stat_1:"Memnun müşteri",stat_2:"Memnuniyet oranı",stat_3:"Teslimat süresi",stat_4:"Ortalama puan",
+  trust_label:"Neden Ayka Tapis?",trust_title:"Güven, hak edilir.",
+  trust_1_t:"Ekolojik ürünler",trust_1_d:"Biyolojik olarak parçalanabilen şampuanlar; çocuklarınız ve evcil hayvanlarınız için güvenli.",
+  trust_2_t:"Ücretsiz alım & teslimat",trust_2_d:"Brüksel'in her yerinde ayağınıza geliyoruz.",
+  trust_3_t:"48 saatte iade",trust_3_d:"2 iş gününde ekspres temizlik garantisi.",
+  trust_4_t:"Garantili sonuç",trust_4_d:"Memnun kalmadınız mı? Ücretsiz yeniden yapıyoruz.",
+  trust_5_t:"7/24 AI rezervasyon",trust_5_d:"WhatsApp asistanınız her saat hizmetinizde.",
+  trust_6_t:"Leke uzmanı",trust_6_d:"İnatçı leke uzmanı: kahve, şarap, mürekkep, kan...",
+  svc_label:"Hizmetlerimiz",svc_title:"Tek bir arama. Gerisini biz hallederiz.",
+  svc_sub:"Şark halısından modern koltuğa — son nesil endüstriyel makinelerle %100 otomatik yıkama, Belçika'da tek.",
+  svc_1_t:"Halı Temizliği",svc_1_l1:"Makine halısı, şark, kilim, ipek, berber",svc_1_l2:"Çift taraflı komple yıkama — tam otomatik endüstriyel makineler",svc_1_l3:"İklimlendirilmiş odada kurutma — asla nemli değil",svc_1_p:"6,50€/m²'den başlayan",
+  svc_2_t:"Koltuk & Oturma Grupları",svc_2_l1:"Kumaş koltuk, deri, berjer, bank",svc_2_l2:"Buharlı işlem + profesyonel ekstraksiyon",svc_2_p:"35€/oturak'tan başlayan",
+  svc_3_t:"Perde & Tül",svc_3_l1:"Alım + temizlik + yerine takma",svc_3_l2:"Ağır perdeler, tüller, storlar",svc_3_p:"teklifle",
+  svc_4_t:"Yatak Temizliği",svc_4_l1:"Bakterisit dezenfeksiyon, akar karşıtı",svc_4_l2:"Koku giderici işlem",svc_4_p:"45€/yatak'tan başlayan",
+  svc_5_t:"Kurumsal & B2B",svc_5_l1:"Ofisler, oteller, restoranlar, rezidanslar",svc_5_l2:"Periyodik sözleşmeler mevcut",svc_5_p:"özel teklif",
+  svc_6_t:"İnatçı Lekeler",svc_6_l1:"Kahve, kırmızı şarap, mürekkep, kan, idrar, küf",svc_6_l2:"Leke tipine göre özel işlem",svc_6_p:"Leke çıkmadıysa iade",
+  proc_label:"Nasıl çalışır?",proc_title:"Bir WhatsApp mesajı kadar basit.",
+  proc_1_t:"1 mesajla rezervasyon",proc_1_d:"WhatsApp gönderin ya da arayın. 2 dakikada onaylıyoruz.",
+  proc_2_t:"Ertesi gün ücretsiz alım",proc_2_d:"Şoförlerimiz halılarınızı seçtiğiniz saatte teslim alır.",proc_2_tech:"Optimize rota · K-SAT ERP",
+  proc_3_t:"24-48 saatte uzman temizlik",proc_3_d:"Tam otomatik endüstriyel makinelerde yıkama — Belçika'da eşsiz teknoloji. Öncesi/sonrası fotoğraflar paylaşılır.",proc_3_tech:"Gerçek zamanlı takip · K-SAT Dashboard",
+  proc_4_t:"Eve teslimat",proc_4_d:"Halılarınız tertemiz, paketlenmiş halde teslim. Mis gibi kokulu.",proc_4_tech:"Otomatik WhatsApp bildirimi",
+  show_label:"Öncesi / Sonrası",show_title:"Farkı kendi gözlerinizle görün.",
+  show_sub:"Her halı atölyemizden yeni gibi çıkar. Bazen yeniden bile iyi.",show_before:"Öncesi",show_after:"Sonrası",
+  zones_label:"Tüm Brüksel'e hizmet veriyoruz",zones_title:"Mahalleniz kapsama alanında.",
+  zones_banner:"Brüksel dışında mısınız? Bize ulaşın — talep üzerine çevre bölgelere de hizmet veriyoruz.",zones_cta:"Bölgemi kontrol et",
+  price_label:"Fiyatlarımız",price_title:"Dürüst fiyatlar. Sıfır sürpriz.",price_pop:"Popüler",
+  price_1_t:"Parça başı",price_1_p:"6,50€/m²'den başlayan",price_1_l1:"Sentetik (polyester): 6,50€/m²'den",price_1_l2:"Akrilik / Shaggy: 7,50€/m²'den",price_1_l3:"İran / Şark saf yün: 18€/m²'den",price_1_l4:"İpek halı: 54€/m²",price_1_l5:"Hesaplayıcıyla 2 dakikada net teklif",price_1_l6:"Alım & teslimat: ÜCRETSİZ (bölgeye göre min. tutar)",price_1_cta:"Rezervasyon",
+  price_2_t:"Ekspres Formül",price_2_p:"+25% · 24 saatte iade",price_2_l1:"Aynı hizmet, öncelikli süre",price_2_l2:"Etkinlik öncesi ideal",price_2_l3:"Mümkünse aynı gün alım",price_2_cta:"Ekspres Rezervasyon",
+  price_3_t:"PRO Abonelik",price_3_p:"49€/ay'dan başlayan",price_3_l1:"Aylık veya üç aylık temizlik",price_3_l2:"Öncelikli hizmet",price_3_l3:"Tüm hizmetlerde -15%",price_3_l4:"Her ziyaret sonrası temizlik raporu",price_3_cta:"Teklif iste",
+  price_note:"🔍 WhatsApp'tan 2 dakikada teklif alın. Halınızın fotoğrafını gönderin, hemen yanıtlayalım.",
+  rev_label:"Google Yorumları",rev_title:"Müşterilerimiz ne diyor?",rev_sub:"200+ Brüksel ailesi bize güveniyor.",rev_cta:"Tüm Google yorumlarını gör",
+  rev_1:"\"50 yıllık şark halım yeni gibi oldu! Renklerin böyle geri geleceğine asla inanmazdım. Kusursuz hizmet, dakik şoförler.\"",
+  rev_2:"\"Akşam WhatsApp'tan rezervasyon, ertesi sabah alım, iki gün sonra teslimat. Kahve lekesi tamamen çıktı. Süper!\"",
+  rev_3:"\"3 büyük halı + koltuk. Özenli teslimat, düzgün paketlenmiş. Kaliteye göre çok makul fiyat.\"",
+  rev_4:"\"WhatsApp asistanı inanılmaz — anında onay, gerçek zamanlı takip. Akıllı hizmet çağı!\"",
+  rev_5:"\"Shaggy halımda kedi idrarı lekeleri vardı. Başkaları pes etmişti. Onlar leke + kokuyu yok etti. Mucize!\"",
+  ai_label:"1 mesajla rezervasyon",ai_title:"7/24. AI asistanınız her zaman yanınızda.",
+  ai_sub:"Günün her saati WhatsApp mesajı gönderin. AI asistanımız 30 saniyede yanıt verir — Fransızca, Flamanca, İngilizce veya Türkçe.",
+  ai_f1:"Anında randevu",ai_f2:"Otomatik onay",ai_f3:"Alımdan bir gün önce hatırlatma",ai_f4:"Temizlik sonrası halınızın fotoğrafı",ai_f5:"Gerçek zamanlı takip",ai_f6:"Online veya teslimatta güvenli ödeme",ai_cta:"WhatsApp'ta başla",
+  ksat_badge:"K-SAT Automation & Logistics ile Güçlendirildi",
+  ksat_title:"Her teslimatın arkasında,<br>öncü teknoloji.",
+  ksat_intro:"Ayka Tapis, AI otomasyon ve lojistik uzmanı <strong>K-SAT</strong> tarafından güçlendirilmektedir. Sistemlerimiz 7/24 çalışarak halınızın sorunsuz toplanmasını, temizlenmesini ve teslim edilmesini sağlar — siz parmağınızı bile kıpırdatmadan.",
+  ksat_p1_q:"\"Her tur, dakikasına kadar optimize.\"",ksat_p1_l1:"Gerçek zamanlı tur yönetim paneli",ksat_p1_l2:"Google Maps rota optimizasyonu (±15 dk)",ksat_p1_l3:"Şoförlerin canlı GPS takibi",ksat_p1_l4:"Atölye portalı — sipariş yönetimi",ksat_p1_l5:"Her adımda otomatik WhatsApp bildirimi",
+  ksat_p2_t:"7/24 WhatsApp AI Asistanı",ksat_p2_q:"\"Müşteriniz 23:00'te rezervasyon yapıyor. AI'mız 30 saniyede yanıtlıyor.\"",ksat_p2_l1:"Çok dilli asistan FR · NL · EN · TR",ksat_p2_l2:"Randevu, onay, hatırlatma — hepsi otomatik",ksat_p2_l3:"Rezervasyonların %90'ı insan müdahalesi olmadan",
+  ksat_p3_t:"AI Sesli Ajan",ksat_p3_q:"\"Telefonda bile AI'mız asla uyumaz.\"",ksat_p3_l1:"Gelen çağrı ajanı — yanıtlar, planlar, onaylar",ksat_p3_l2:"Giden çağrı ajanı — teslimat sonrası arar",ksat_p3_l3:"Özel Belçika +32 numarası, dil otomatik algılanır",
+  ksat_screens_label:"Ayka Tapis'te canlıda çalışan uygulamalarımız",
+  ksat_ss1:"Gerçek zamanlı tur yönetimi · Built by K-SAT",ksat_ss2_t:"Siparişler",ksat_ss2:"Temizlik siparişi takibi · Built by K-SAT",ksat_ss3:"Şoför mobil uygulaması · Built by K-SAT",ksat_ss4:"Temizlik atölyesi portalı · Built by K-SAT",
+  ksat_cta_text:"Siz de işinizi K-SAT ile otomatikleştirin.",ksat_cta_btn:"K-SAT'ı keşfet",
+  ksat_footer_label:"Teknoloji & Otomasyon",ksat_footer_desc:"ERP Sistemi · WhatsApp AI Asistanı · Sesli Ajan · Rota Optimizasyonu",
+  gal_label:"Galeri",gal_title:"Gerçek sonuçlar. Gerçek müşteriler.",gal_before:"Öncesi",gal_after:"Sonrası",
+  gal_1:"Şark halısı — şarap lekeleri çıkarıldı",gal_2:"Shaggy halı — çamur & evcil hayvan lekeleri",gal_3:"Ofis halısı — kahve lekeleri",gal_4:"Kilim — renkler canlandırıldı",gal_5:"Çocuk halısı — mürekkep & pastel boya",gal_6:"Beyaz koltuk — derin temizlik",
+  faq_title:"Sıkça sorulan sorular.",
+  faq:[
+    ["Temizlik ne kadar sürer?","Genellikle 24-48 saat. 24 saatte ekspres hizmet mevcut."],
+    ["Alım ve teslimat gerçekten ücretsiz mi?","Evet, Brüksel'in her yerinde ve komşu belediyelerde. Minimum tutar şartı yok."],
+    ["Hangi tür halıları temizliyorsunuz?","Her tür: makine, el dokuması, şark, kilim, ipek, shaggy, bambu, sentetik, yün..."],
+    ["İnatçı lekelerim çıkarılabilir mi?","Lekelerin çoğu tamamen çıkar (kahve, şarap, idrar, mürekkep). Çok eski bazı lekeler için işlem öncesi sizi dürüstçe bilgilendiririz."],
+    ["Nasıl rezervasyon yapabilirim?","WhatsApp (+32 488 19 67 67), telefon veya bu sitedeki form üzerinden. AI'mız 7/24 yanıt verir."],
+    ["Ürünleriniz çocuklarım / evcil hayvanlarım için tehlikeli mi?","Hayır. Yalnızca biyolojik olarak parçalanabilen, sertifikalı, agresif çözücü içermeyen ürünler kullanıyoruz."],
+    ["Memnun kalmazsam ne olur?","Ücretsiz yeniden yapıyoruz. Sonuç yine de tatmin edici değilse paranızı iade ediyoruz."],
+    ["Halımı kendim makinede yıkayabilir miyim?","Küçük sentetik halılar için evet. Ancak değerli halılar (yün, ipek, şark) için profesyonel yıkama şarttır."],
+    ["Şirketlerle de çalışıyor musunuz?","Evet — oteller, ofisler, restoranlar, rezidanslar. Talep üzerine özel teklif."],
+    ["Ödeme nasıl yapılıyor?","Banka kartı, havale veya teslimatta nakit."]
+  ],
+  contact_title:"Temizliğinizi ayırtın.",form_name:"İsim",form_phone:"Telefon / WhatsApp",form_service:"Hizmet türü",
+  form_svc_1:"Halı",form_svc_2:"Koltuk",form_svc_3:"Perde",form_svc_4:"Yatak",form_svc_5:"Kurumsal",form_svc_6:"Diğer",
+  form_address:"Brüksel'deki adres",form_size:"Boyut / adet",form_date:"Tercih edilen alım tarihi",form_msg:"Mesaj / lekelerinizi anlatın",
+  form_submit:"Talebimi gönder →",form_success:"✅ Teşekkürler! Talebiniz gönderildi. 2 iş saati içinde onaylıyoruz.",
+  contact_wa:"WhatsApp'tan Rezervasyon",contact_phone:"Telefon",contact_hours:"Çalışma saatleri",contact_hours_val:"Pzt – Cmt: 10:00 – 17:00 · Paz: kapalı<br>WhatsApp AI asistanı: 7/24",contact_address:"Atölye",
+  footer_tag:"Halılarınız. Temiz. Teslim.",footer_svcs:"Hizmetler",footer_info:"Bilgiler",footer_rights:"Tüm hakları saklıdır",footer_by:"Tasarım",footer_privacy:"Gizlilik",footer_cgv:"Koşullar",
+  cookie_text:"Bu site deneyiminizi iyileştirmek için çerezler kullanır. Rezervasyon sistemi K-SAT AI Automation tarafından yönetilir.",cookie_ok:"Kabul et"
+}
+};
+
+const HTML_KEYS = new Set(['ksat_title','ksat_intro','contact_hours_val']);
+let currentLang = localStorage.getItem('ayka_lang') || 'fr';
+
+function applyLang(lang){
+  currentLang = lang;
+  localStorage.setItem('ayka_lang', lang);
+  document.documentElement.lang = lang;
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(t[k] !== undefined){ HTML_KEYS.has(k) ? el.innerHTML = t[k] : el.textContent = t[k]; }
+  });
+  document.querySelectorAll('[data-i18n_html]').forEach(el=>{
+    const k = el.getAttribute('data-i18n_html');
+    if(t[k] !== undefined) el.innerHTML = t[k];
+  });
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  buildFaq(t); buildGallery(t); buildCalc(t); updateAnnounce();
+}
+document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+
+/* ================= ANNOUNCEMENT BAR ================= */
+const announceEl = document.getElementById('announce');
+const announceMsg = document.getElementById('announce-msg');
+let announceIdx = 0;
+function updateAnnounce(){
+  const t = translations[currentLang];
+  announceMsg.textContent = announceIdx % 2 === 0 ? t.announce_1 : t.announce_2;
+}
+if(localStorage.getItem('ayka_announce_closed')==='1'){ announceEl.classList.add('hidden'); }
+else{
+  setInterval(()=>{ announceIdx++; announceMsg.style.animation='none'; void announceMsg.offsetWidth; announceMsg.style.animation=''; updateAnnounce(); }, 6000);
+}
+document.getElementById('announce-close').addEventListener('click',()=>{
+  announceEl.classList.add('hidden');
+  localStorage.setItem('ayka_announce_closed','1');
+});
+
+/* ================= NAVBAR ================= */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('scroll-progress').style.width =
+    (window.scrollY / (document.documentElement.scrollHeight - innerHeight) * 100) + '%';
+},{passive:true});
+
+const mobileMenu = document.getElementById('mobile-menu');
+document.getElementById('hamburger').addEventListener('click',()=>mobileMenu.classList.add('open'));
+document.getElementById('close-menu').addEventListener('click',()=>mobileMenu.classList.remove('open'));
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('open')));
+
+/* ================= HERO VIDEO FALLBACK ================= */
+const heroVideo = document.getElementById('hero-video');
+const heroSection = document.getElementById('hero');
+function heroFallback(){ heroSection.classList.add('no-video'); heroVideo.style.display='none'; }
+heroVideo.querySelector('source').addEventListener('error', heroFallback);
+heroVideo.addEventListener('error', heroFallback);
+const heroFallbackTimer = setTimeout(()=>{ if(heroVideo.readyState < 2 && !heroVideo.videoWidth) heroFallback(); }, 8000);
+heroVideo.addEventListener('loadeddata', ()=> clearTimeout(heroFallbackTimer));
+
+/* ================= REVEAL + COUNTERS ================= */
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.stat-val[data-count]').forEach(animateCounter);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+function animateCounter(el){
+  if(el.dataset.done) return; el.dataset.done='1';
+  const target = parseFloat(el.dataset.count), dec = parseInt(el.dataset.decimal||'0'), suf = el.dataset.suffix||'';
+  if(reduceMotion){ el.textContent = target.toFixed(dec)+suf; return; }
+  const dur = 1600, start = performance.now();
+  (function tick(now){
+    const p = Math.min((now-start)/dur, 1), eased = 1-Math.pow(1-p,3);
+    el.textContent = (target*eased).toFixed(dec)+suf;
+    if(p<1) requestAnimationFrame(tick);
+  })(start);
+}
+
+/* ================= BEFORE/AFTER SLIDER ================= */
+const baSlider = document.getElementById('ba-slider');
+const baAfter = document.getElementById('ba-after');
+const baHandle = document.getElementById('ba-handle');
+function setBA(pct){
+  pct = Math.max(2, Math.min(98, pct));
+  baAfter.style.clipPath = `inset(0 0 0 ${pct}%)`;
+  baHandle.style.left = pct+'%';
+  baHandle.setAttribute('aria-valuenow', Math.round(pct));
+}
+function baMove(clientX){
+  const r = baSlider.getBoundingClientRect();
+  setBA((clientX - r.left) / r.width * 100);
+}
+let baDrag = false;
+baSlider.addEventListener('pointerdown', e=>{ baDrag=true; baMove(e.clientX); });
+window.addEventListener('pointermove', e=>{ if(baDrag) baMove(e.clientX); });
+window.addEventListener('pointerup', ()=>baDrag=false);
+baHandle.addEventListener('keydown', e=>{
+  const cur = parseFloat(baHandle.style.left)||50;
+  if(e.key==='ArrowLeft') setBA(cur-4);
+  if(e.key==='ArrowRight') setBA(cur+4);
+});
+
+/* ================= TESTIMONIAL CAROUSEL ================= */
+const track = document.getElementById('carousel-track');
+const dotsWrap = document.getElementById('carousel-dots');
+const slides = track.children.length;
+let slideIdx = 0, autoTimer;
+for(let i=0;i<slides;i++){
+  const d = document.createElement('button');
+  d.setAttribute('aria-label','Avis '+(i+1));
+  d.addEventListener('click',()=>{ goSlide(i); restartAuto(); });
+  dotsWrap.appendChild(d);
+}
+function goSlide(i){
+  slideIdx = (i+slides)%slides;
+  track.style.transform = `translateX(-${slideIdx*100}%)`;
+  [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('active', j===slideIdx));
+}
+function restartAuto(){
+  clearInterval(autoTimer);
+  if(!reduceMotion) autoTimer = setInterval(()=>goSlide(slideIdx+1), 4000);
+}
+goSlide(0); restartAuto();
+let touchX = null;
+track.addEventListener('touchstart', e=>touchX=e.touches[0].clientX, {passive:true});
+track.addEventListener('touchend', e=>{
+  if(touchX===null) return;
+  const dx = e.changedTouches[0].clientX - touchX;
+  if(Math.abs(dx)>44){ goSlide(slideIdx + (dx<0?1:-1)); restartAuto(); }
+  touchX=null;
+},{passive:true});
+
+/* ================= GALLERY (built from i18n) ================= */
+function buildGallery(t){
+  const grid = document.getElementById('gallery-grid');
+  grid.innerHTML = '';
+  const icons = ['🍷','🐾','☕','🎨','🖍️','🛋️'];
+  for(let i=1;i<=6;i++){
+    const pair = document.createElement('div');
+    pair.className = 'ba-pair reveal visible';
+    pair.innerHTML = `
+      <div class="pair-imgs">
+        <div class="half ph" data-ph="${icons[i-1]}"><img src="media/gallery/before-${i}.jpg" alt="${t['gal_'+i]} — ${t.gal_before}" loading="lazy" onload="this.parentElement.classList.remove('ph')" onerror="this.remove()"><span class="lab">${t.gal_before}</span></div>
+        <div class="half ph" data-ph="✨"><img src="media/gallery/after-${i}.jpg" alt="${t['gal_'+i]} — ${t.gal_after}" loading="lazy" onload="this.parentElement.classList.remove('ph')" onerror="this.remove()"><span class="lab">${t.gal_after}</span></div>
+      </div>
+      <div class="pair-title">${t['gal_'+i]}</div>`;
+    grid.appendChild(pair);
+  }
+}
+
+/* ================= FAQ (built from i18n) ================= */
+function buildFaq(t){
+  const list = document.getElementById('faq-list');
+  list.innerHTML = '';
+  t.faq.forEach(([q,a])=>{
+    const item = document.createElement('div');
+    item.className = 'faq-item';
+    item.innerHTML = `<button class="faq-q" aria-expanded="false">${q}<span class="chev">▼</span></button><div class="faq-a"><p>${a}</p></div>`;
+    const btn = item.querySelector('.faq-q'), ans = item.querySelector('.faq-a');
+    btn.addEventListener('click',()=>{
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      ans.style.maxHeight = open ? ans.scrollHeight+'px' : '0';
+    });
+    list.appendChild(item);
+  });
+}
+
+/* ================= DEVIS CALCULATOR ================= */
+const CALC_RATES = [6.5, 8, 7.5, 10, 7.5, 10, 18, 22, 54];
+const calcType = document.getElementById('calc-type');
+const calcM2 = document.getElementById('calc-m2');
+const calcTotal = document.getElementById('calc-total');
+const calcCta = document.getElementById('calc-cta');
+
+function buildCalc(t){
+  const sel = calcType.selectedIndex >= 0 ? calcType.selectedIndex : 0;
+  calcType.innerHTML = '';
+  t.devis_types.forEach((label, i)=>{
+    const o = document.createElement('option');
+    o.value = CALC_RATES[i]; o.textContent = label;
+    calcType.appendChild(o);
+  });
+  calcType.selectedIndex = sel;
+  recalcDevis();
+}
+function recalcDevis(){
+  const rate = parseFloat(calcType.value) || 0;
+  const m2 = parseFloat(calcM2.value) || 0;
+  const total = rate * m2;
+  calcTotal.textContent = total.toFixed(2) + '€';
+  const t = translations[currentLang];
+  const typeLabel = calcType.options[calcType.selectedIndex] ? calcType.options[calcType.selectedIndex].textContent : '';
+  const msg = encodeURIComponent(`${t.devis_title}\n${typeLabel}\n${m2} m² → ${total.toFixed(2)}€`);
+  calcCta.href = 'https://wa.me/32488196767?text=' + msg;
+}
+calcType.addEventListener('change', recalcDevis);
+calcM2.addEventListener('input', recalcDevis);
+
+/* ================= FORM ================= */
+document.getElementById('booking-form').addEventListener('submit', e=>{
+  e.preventDefault();
+  const name = document.getElementById('f-name'), phone = document.getElementById('f-phone');
+  let ok = true;
+  [name, phone].forEach(f=>{
+    f.style.borderColor = f.value.trim() ? '' : '#e0605a';
+    if(!f.value.trim()) ok = false;
+  });
+  if(!ok) return;
+  const t = translations[currentLang];
+  const msg = encodeURIComponent(
+    `${t.form_name}: ${name.value}\n${t.form_phone}: ${phone.value}\n`+
+    `${t.form_service}: ${document.getElementById('f-service').value}\n`+
+    `${t.form_address}: ${document.getElementById('f-address').value}\n`+
+    `${t.form_size}: ${document.getElementById('f-size').value}\n`+
+    `${t.form_date}: ${document.getElementById('f-date').value}\n`+
+    `${t.form_msg}: ${document.getElementById('f-msg').value}`);
+  document.getElementById('form-success').style.display = 'block';
+  window.open('https://wa.me/32488196767?text='+msg, '_blank', 'noopener');
+});
+
+/* ================= COOKIE BANNER ================= */
+const cookieBanner = document.getElementById('cookie-banner');
+if(!localStorage.getItem('ayka_cookies')) cookieBanner.classList.add('show');
+document.getElementById('cookie-accept').addEventListener('click',()=>{
+  localStorage.setItem('ayka_cookies','1');
+  cookieBanner.classList.remove('show');
+});
+
+/* ================= INIT ================= */
+applyLang(currentLang);
+</script>
+</body>
+</html>
