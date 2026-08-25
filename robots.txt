@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aykatapis.be/sitemap.xml
