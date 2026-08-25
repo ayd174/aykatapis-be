@@ -347,6 +347,7 @@ section{padding:88px 0;position:relative}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent-teal)}
 .form-group textarea{resize:vertical;min-height:90px}
 .form-success{display:none;background:var(--accent-warm);border:1px solid var(--accent-teal);color:var(--accent-teal-dark);border-radius:10px;padding:16px;font-weight:600;font-size:14px;margin-top:16px;text-align:center}
+.form-error{display:none;background:#FDF3F2;border:1px solid #e0605a;color:#a33a34;border-radius:10px;padding:16px;font-weight:600;font-size:14px;margin-top:16px;text-align:center}
 .contact-direct{display:flex;flex-direction:column;gap:18px}
 .btn-whatsapp{background:#25D366;color:#fff;padding:18px;font-size:17px;justify-content:center;border-radius:var(--radius-card);width:100%}
 .btn-whatsapp:hover{background:#1fb457;box-shadow:0 8px 24px rgba(37,211,102,.35)}
@@ -918,25 +919,33 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
       <div class="form-card reveal">
         <form id="booking-form" novalidate>
           <div class="form-row">
-            <div class="form-group"><label for="f-name" data-i18n="form_name">Nom</label><input type="text" id="f-name" required autocomplete="name"></div>
-            <div class="form-group"><label for="f-phone" data-i18n="form_phone">Téléphone / WhatsApp</label><input type="tel" id="f-phone" required autocomplete="tel"></div>
+            <div class="form-group"><label for="f-name" data-i18n="form_name">Nom</label><input type="text" id="f-name" name="Nom" required autocomplete="name"></div>
+            <div class="form-group"><label for="f-phone" data-i18n="form_phone">Téléphone / WhatsApp</label><input type="tel" id="f-phone" name="Telephone" required autocomplete="tel"></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label for="f-email">Email</label><input type="email" id="f-email" autocomplete="email"></div>
+            <div class="form-group"><label for="f-email">Email</label><input type="email" id="f-email" name="email" autocomplete="email"></div>
             <div class="form-group"><label for="f-service" data-i18n="form_service">Type de service</label>
-              <select id="f-service">
+              <select id="f-service" name="Service">
                 <option data-i18n="form_svc_1">Tapis</option><option data-i18n="form_svc_2">Canapé</option><option data-i18n="form_svc_3">Rideaux</option><option data-i18n="form_svc_4">Matelas</option><option data-i18n="form_svc_5">Entreprise</option><option data-i18n="form_svc_6">Autre</option>
               </select>
             </div>
           </div>
-          <div class="form-group"><label for="f-address" data-i18n="form_address">Adresse à Bruxelles</label><input type="text" id="f-address" autocomplete="street-address"></div>
+          <div class="form-group"><label for="f-address" data-i18n="form_address">Adresse à Bruxelles</label><input type="text" id="f-address" name="Adresse" autocomplete="street-address"></div>
           <div class="form-row">
-            <div class="form-group"><label for="f-size" data-i18n="form_size">Taille / quantité</label><input type="text" id="f-size" placeholder="ex: 2 tapis, 3m x 2m"></div>
-            <div class="form-group"><label for="f-date" data-i18n="form_date">Date de collecte souhaitée</label><input type="date" id="f-date"></div>
+            <div class="form-group"><label for="f-size" data-i18n="form_size">Taille / quantité</label><input type="text" id="f-size" name="Taille" placeholder="ex: 2 tapis, 3m x 2m"></div>
+            <div class="form-group"><label for="f-date" data-i18n="form_date">Date de collecte souhaitée</label><input type="date" id="f-date" name="Date souhaitee"></div>
           </div>
-          <div class="form-group"><label for="f-msg" data-i18n="form_msg">Message / décrivez vos taches</label><textarea id="f-msg"></textarea></div>
-          <button type="submit" class="btn btn-teal" style="width:100%;justify-content:center;padding:15px" data-i18n="form_submit">Envoyer ma demande →</button>
+          <div class="form-group"><label for="f-msg" data-i18n="form_msg">Message / décrivez vos taches</label><textarea id="f-msg" name="Message"></textarea></div>
+          <!-- Spam tuzagi: Formspree _gotcha dolu gelen gonderimleri atar. Gorunumden,
+               sekme sirasindan ve ekran okuyuculardan gizli; asla zorunlu degil, yani
+               hicbir insan bu yuzden engellenemez. -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <button type="submit" class="btn btn-teal" id="form-submit-btn" style="width:100%;justify-content:center;padding:15px" data-i18n="form_submit">Envoyer ma demande →</button>
           <div class="form-success" id="form-success" data-i18n="form_success">✅ Merci ! Votre demande est bien envoyée. Nous vous confirmons dans les 2 heures ouvrables.</div>
+          <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-whatsapp" id="form-wa"
+             style="display:none;width:100%;justify-content:center;margin-top:12px" data-i18n="form_wa_cta">💬 Continuer sur WhatsApp</a>
+          <div class="form-error" id="form-error"><span data-i18n="form_error">Envoi impossible pour le moment. Écrivez-nous sur WhatsApp — on répond tout de suite.</span></div>
         </form>
       </div>
       <div class="contact-direct reveal">
@@ -1115,7 +1124,7 @@ fr:{
   contact_title:"Réservez votre nettoyage.",form_name:"Nom",form_phone:"Téléphone / WhatsApp",form_service:"Type de service",
   form_svc_1:"Tapis",form_svc_2:"Canapé",form_svc_3:"Rideaux",form_svc_4:"Matelas",form_svc_5:"Entreprise",form_svc_6:"Autre",
   form_address:"Adresse à Bruxelles",form_size:"Taille / quantité",form_date:"Date de collecte souhaitée",form_msg:"Message / décrivez vos taches",
-  form_submit:"Envoyer ma demande →",form_success:"✅ Merci ! Votre demande est bien envoyée. Nous vous confirmons dans les 2 heures ouvrables.",
+  form_submit:"Envoyer ma demande →",form_success:"✅ Merci ! Votre demande est bien envoyée. Nous vous confirmons dans les 2 heures ouvrables.",form_sending:"Envoi en cours…",form_error:"Envoi impossible pour le moment. Écrivez-nous sur WhatsApp — on répond tout de suite.",form_wa_cta:"💬 Continuer sur WhatsApp",
   contact_wa:"Réserver sur WhatsApp",contact_phone:"Téléphone",contact_hours:"Horaires",contact_hours_val:"Lun – Sam : 10h00 – 17h00 · Dimanche : fermé<br>Assistant IA WhatsApp : 24h/24, 7j/7",contact_address:"Atelier",
   footer_tag:"Vos tapis. Propres. Livrés.",footer_svcs:"Services",footer_info:"Informations",footer_rights:"Tous droits réservés",footer_by:"Conçu par",footer_privacy:"Confidentialité",footer_cgv:"CGV",footer_cgv_full:"Conditions générales (CGV)",
   cookie_text:"Ce site n'utilise ni cookie publicitaire ni outil de mesure d'audience. Seules vos préférences (langue, bandeaux) sont enregistrées dans votre navigateur.",cookie_ok:"Accepter",cookie_more:"En savoir plus"
@@ -1195,7 +1204,7 @@ nl:{
   contact_title:"Boek uw reiniging.",form_name:"Naam",form_phone:"Telefoon / WhatsApp",form_service:"Type dienst",
   form_svc_1:"Tapijt",form_svc_2:"Zetel",form_svc_3:"Gordijnen",form_svc_4:"Matras",form_svc_5:"Bedrijf",form_svc_6:"Andere",
   form_address:"Adres in Brussel",form_size:"Grootte / aantal",form_date:"Gewenste ophaaldatum",form_msg:"Bericht / beschrijf uw vlekken",
-  form_submit:"Verstuur mijn aanvraag →",form_success:"✅ Bedankt! Uw aanvraag is verzonden. Wij bevestigen binnen 2 werkuren.",
+  form_submit:"Verstuur mijn aanvraag →",form_success:"✅ Bedankt! Uw aanvraag is verzonden. Wij bevestigen binnen 2 werkuren.",form_sending:"Bezig met verzenden…",form_error:"Verzenden lukt nu niet. Stuur ons een WhatsApp — we antwoorden meteen.",form_wa_cta:"💬 Verder via WhatsApp",
   contact_wa:"Boek via WhatsApp",contact_phone:"Telefoon",contact_hours:"Openingsuren",contact_hours_val:"Ma – Za: 10u00 – 17u00 · Zo: gesloten<br>WhatsApp AI-assistent: 24/7",contact_address:"Atelier",
   footer_tag:"Uw tapijten. Schoon. Bezorgd.",footer_svcs:"Diensten",footer_info:"Informatie",footer_rights:"Alle rechten voorbehouden",footer_by:"Ontworpen door",footer_privacy:"Privacy",footer_cgv:"Voorwaarden",footer_cgv_full:"Algemene voorwaarden",
   cookie_text:"Deze site gebruikt geen advertentiecookies of analysetools. Enkel uw voorkeuren (taal, banners) worden in uw browser bewaard.",cookie_ok:"Accepteren",cookie_more:"Meer info"
@@ -1275,7 +1284,7 @@ en:{
   contact_title:"Book your cleaning.",form_name:"Name",form_phone:"Phone / WhatsApp",form_service:"Service type",
   form_svc_1:"Carpet",form_svc_2:"Sofa",form_svc_3:"Curtains",form_svc_4:"Mattress",form_svc_5:"Business",form_svc_6:"Other",
   form_address:"Address in Brussels",form_size:"Size / quantity",form_date:"Preferred pickup date",form_msg:"Message / describe your stains",
-  form_submit:"Send my request →",form_success:"✅ Thank you! Your request has been sent. We'll confirm within 2 business hours.",
+  form_submit:"Send my request →",form_success:"✅ Thank you! Your request has been sent. We'll confirm within 2 business hours.",form_sending:"Sending…",form_error:"We could not send that right now. Message us on WhatsApp — we reply straight away.",form_wa_cta:"💬 Continue on WhatsApp",
   contact_wa:"Book on WhatsApp",contact_phone:"Phone",contact_hours:"Opening hours",contact_hours_val:"Mon – Sat: 10:00 – 17:00 · Sun: closed<br>WhatsApp AI assistant: 24/7",contact_address:"Workshop",
   footer_tag:"Your carpets. Clean. Delivered.",footer_svcs:"Services",footer_info:"Information",footer_rights:"All rights reserved",footer_by:"Designed by",footer_privacy:"Privacy",footer_cgv:"Terms",footer_cgv_full:"Terms & conditions",
   cookie_text:"This site uses no advertising cookies and no analytics tools. Only your preferences (language, banners) are stored in your browser.",cookie_ok:"Accept",cookie_more:"Learn more"
@@ -1355,7 +1364,7 @@ tr:{
   contact_title:"Temizliğinizi ayırtın.",form_name:"İsim",form_phone:"Telefon / WhatsApp",form_service:"Hizmet türü",
   form_svc_1:"Halı",form_svc_2:"Koltuk",form_svc_3:"Perde",form_svc_4:"Yatak",form_svc_5:"Kurumsal",form_svc_6:"Diğer",
   form_address:"Brüksel'deki adres",form_size:"Boyut / adet",form_date:"Tercih edilen alım tarihi",form_msg:"Mesaj / lekelerinizi anlatın",
-  form_submit:"Talebimi gönder →",form_success:"✅ Teşekkürler! Talebiniz gönderildi. 2 iş saati içinde onaylıyoruz.",
+  form_submit:"Talebimi gönder →",form_success:"✅ Teşekkürler! Talebiniz gönderildi. 2 iş saati içinde onaylıyoruz.",form_sending:"Gönderiliyor…",form_error:"Şu anda gönderilemedi. WhatsApp'tan yazın — hemen dönüyoruz.",form_wa_cta:"💬 WhatsApp'tan devam et",
   contact_wa:"WhatsApp'tan Rezervasyon",contact_phone:"Telefon",contact_hours:"Çalışma saatleri",contact_hours_val:"Pzt – Cmt: 10:00 – 17:00 · Paz: kapalı<br>WhatsApp AI asistanı: 7/24",contact_address:"Atölye",
   footer_tag:"Halılarınız. Temiz. Teslim.",footer_svcs:"Hizmetler",footer_info:"Bilgiler",footer_rights:"Tüm hakları saklıdır",footer_by:"Tasarım",footer_privacy:"Gizlilik",footer_cgv:"Koşullar",footer_cgv_full:"Genel koşullar",
   cookie_text:"Bu site reklam çerezi ve analiz aracı kullanmaz. Yalnızca tercihleriniz (dil, bantlar) tarayıcınızda saklanır.",cookie_ok:"Kabul et",cookie_more:"Daha fazla bilgi"
@@ -1539,7 +1548,34 @@ calcType.addEventListener('change', recalcDevis);
 calcM2.addEventListener('input', recalcDevis);
 
 /* ================= FORM ================= */
-document.getElementById('booking-form').addEventListener('submit', e=>{
+/* Formspree endpoint'i. Ayka'ya AIT ayri bir form olmali - K-SAT'in formu
+   (xnjgnggk) kullanilirsa Ayka'nin musteri talepleri K-SAT'in gelen kutusuna
+   duser. Asagidaki deger yapilandirilmamisken form eski davranisina
+   (WhatsApp acma) geri duser, yani hicbir zaman bugunkunden kotu olmaz. */
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzebzgyl';
+const FORM_CONFIGURED = !/YOUR_FORM_ID/.test(FORMSPREE_ENDPOINT);
+const FORM_READY_AT = Date.now();
+const MIN_FILL_MS = 3000;
+
+const bookingForm = document.getElementById('booking-form');
+const formSuccess = document.getElementById('form-success');
+const formError   = document.getElementById('form-error');
+const formWa      = document.getElementById('form-wa');
+const formBtn     = document.getElementById('form-submit-btn');
+
+function bookingWhatsAppUrl(){
+  const t = translations[currentLang], v = id => document.getElementById(id).value;
+  return 'https://wa.me/32488196767?text=' + encodeURIComponent(
+    `${t.form_name}: ${v('f-name')}\n${t.form_phone}: ${v('f-phone')}\n`+
+    `Email: ${v('f-email')}\n`+
+    `${t.form_service}: ${v('f-service')}\n`+
+    `${t.form_address}: ${v('f-address')}\n`+
+    `${t.form_size}: ${v('f-size')}\n`+
+    `${t.form_date}: ${v('f-date')}\n`+
+    `${t.form_msg}: ${v('f-msg')}`);
+}
+
+bookingForm.addEventListener('submit', async e=>{
   e.preventDefault();
   const name = document.getElementById('f-name'), phone = document.getElementById('f-phone');
   let ok = true;
@@ -1548,17 +1584,53 @@ document.getElementById('booking-form').addEventListener('submit', e=>{
     if(!f.value.trim()) ok = false;
   });
   if(!ok) return;
+
   const t = translations[currentLang];
-  const msg = encodeURIComponent(
-    `${t.form_name}: ${name.value}\n${t.form_phone}: ${phone.value}\n`+
-    `Email: ${document.getElementById('f-email').value}\n`+
-    `${t.form_service}: ${document.getElementById('f-service').value}\n`+
-    `${t.form_address}: ${document.getElementById('f-address').value}\n`+
-    `${t.form_size}: ${document.getElementById('f-size').value}\n`+
-    `${t.form_date}: ${document.getElementById('f-date').value}\n`+
-    `${t.form_msg}: ${document.getElementById('f-msg').value}`);
-  document.getElementById('form-success').style.display = 'block';
-  window.open('https://wa.me/32488196767?text='+msg, '_blank', 'noopener');
+  const waUrl = bookingWhatsAppUrl();
+  formWa.href = waUrl;
+
+  /* Endpoint henuz yapilandirilmadi: eskisi gibi davran. */
+  if(!FORM_CONFIGURED){
+    formSuccess.style.display = 'block';
+    window.open(waUrl, '_blank', 'noopener');
+    return;
+  }
+
+  /* Iki sessiz bot tuzagi. Honeypot her alani dolduran form-doldurucularini,
+     zaman tuzagi bir insanin yazamayacagi hizda gelen gonderimleri yakalar.
+     Ikisi de endpoint'in kendisini korumaz (ID sayfa kaynaginda) - gercek
+     koruma icin Formspree panelinden reCAPTCHA acilmali. */
+  const trapped = (bookingForm.elements['_gotcha'] && bookingForm.elements['_gotcha'].value !== '')
+                  || (Date.now() - FORM_READY_AT) < MIN_FILL_MS;
+  if(trapped){
+    formSuccess.style.display = 'block';
+    bookingForm.reset();
+    return;
+  }
+
+  formBtn.disabled = true;
+  formBtn.textContent = t.form_sending;
+  formError.style.display = 'none';
+  try{
+    const fd = new FormData(bookingForm);
+    fd.append('_subject', 'Ayka Tapis — nouvelle demande: ' + name.value);
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method:'POST', body:fd, headers:{'Accept':'application/json'}
+    });
+    if(!res.ok) throw new Error('http '+res.status);
+    formSuccess.style.display = 'block';
+    formWa.style.display = 'inline-flex';
+    bookingForm.reset();
+  }catch(err){
+    /* Gonderim gercekten basarisiz: basari mesajini GOSTERME, musteriyi
+       WhatsApp'a yonlendir. Eski kod burada da "gonderildi" diyordu. */
+    formSuccess.style.display = 'none';
+    formError.style.display = 'block';
+    formWa.style.display = 'inline-flex';
+  }finally{
+    formBtn.disabled = false;
+    formBtn.textContent = t.form_submit;
+  }
 });
 
 /* ================= COOKIE BANNER ================= */
