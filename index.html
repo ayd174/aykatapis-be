@@ -3,23 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayka Tapis | Nettoyage Tapis Bruxelles · Collecte & Livraison Gratuite</title>
-<meta name="description" content="Nettoyage professionnel de tapis à Bruxelles. Collecte & livraison gratuites, retour en 48h, résultat garanti. Réservez sur WhatsApp: +32 488 19 67 67.">
+<title>Ayka Tapis | Nettoyage Tapis Bruxelles · Collecte & Livraison à domicile</title>
+<meta name="description" content="Nettoyage professionnel de tapis à Bruxelles. Collecte & livraison à domicile incluses dès 50 € de commande, retour en 48h, résultat garanti. Réservez sur WhatsApp : +32 488 19 67 67.">
 <meta property="og:title" content="Ayka Tapis — Vos tapis. Propres. Livrés.">
-<meta property="og:description" content="Nettoyage professionnel de tapis à Bruxelles. Collecte & livraison gratuites, retour en 48h.">
-<meta property="og:url" content="https://aykatapis.be">
+<meta property="og:description" content="Nettoyage professionnel de tapis à Bruxelles. Collecte & livraison à domicile incluses dès 50 € de commande, retour en 48h.">
+<meta property="og:url" content="https://aykatapis.be/">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://aykatapis.be/">
-<meta property="og:image" content="https://aykatapis.be/media/hero/hero-carpet-clean-poster.jpg">
-<meta property="og:image:width" content="1376">
-<meta property="og:image:height" content="768">
-<meta property="og:image:alt" content="Tapis d'Orient nettoyé par Ayka Tapis">
+<meta property="og:image" content="https://aykatapis.be/media/og/og-home.jpg">
+<meta property="og:image:secure_url" content="https://aykatapis.be/media/og/og-home.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ayka Tapis — Vos tapis méritent mieux. Nettoyage de tapis à Bruxelles, collecte & livraison à domicile.">
 <meta property="og:site_name" content="Ayka Tapis">
 <meta property="og:locale" content="fr_BE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ayka Tapis — Vos tapis. Propres. Livrés.">
-<meta name="twitter:description" content="Nettoyage professionnel de tapis à Bruxelles. Collecte & livraison gratuites.">
-<meta name="twitter:image" content="https://aykatapis.be/media/hero/hero-carpet-clean-poster.jpg">
+<meta name="twitter:description" content="Nettoyage professionnel de tapis à Bruxelles. Collecte & livraison à domicile incluses dès 50 € de commande.">
+<meta name="twitter:image" content="https://aykatapis.be/media/og/og-home.jpg">
+<meta name="twitter:image:alt" content="Ayka Tapis — Vos tapis méritent mieux.">
 <meta name="theme-color" content="#00B4A6">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="icon-192.png" sizes="192x192">
@@ -66,8 +69,9 @@
   --font-head:'Plus Jakarta Sans',sans-serif;
   --font-body:'Inter',sans-serif;
   --font-mono:'JetBrains Mono',monospace;
+  --nav-h:78px;
 }
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
 body{font-family:var(--font-body);color:var(--text-body);background:var(--bg-primary);line-height:1.65;overflow-x:hidden}
 h1,h2,h3,h4{font-family:var(--font-head);color:var(--text-primary);line-height:1.2}
 img{max-width:100%;display:block}
@@ -92,7 +96,7 @@ section{padding:88px 0;position:relative}
 #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent-teal),var(--accent-gold));z-index:1200}
 
 /* ============ ANNOUNCEMENT BAR ============ */
-#announce{background:var(--accent-teal-dark);color:#fff;font-size:13px;font-family:var(--font-mono);text-align:center;padding:9px 44px;position:relative;z-index:1001}
+#announce{background:var(--accent-teal-dark);color:#fff;font-size:13px;line-height:1.45;font-family:var(--font-mono);text-align:center;padding:9px 44px;position:relative;z-index:1001}
 #announce .msg{display:inline-block;animation:fadeSwap .5s ease}
 @keyframes fadeSwap{from{opacity:0}to{opacity:1}}
 #announce .close-x{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#fff;font-size:16px;opacity:.7;padding:4px 8px}
@@ -100,18 +104,21 @@ section{padding:88px 0;position:relative}
 #announce.hidden{display:none}
 
 /* ============ NAVBAR ============ */
-#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .35s,box-shadow .35s,padding .35s;padding:20px 0}
+#navbar{position:sticky;top:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;transition:background .35s,box-shadow .35s}
+#navbar .container{width:100%}
 #navbar .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-#navbar.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:12px 0}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:26px;font-weight:700;color:#fff;transition:color .3s}
-.logo img{height:50px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4));transition:filter .3s}
+#navbar.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;color:#fff;transition:color .3s}
+.logo img{height:50px;width:auto;flex-shrink:0;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4));transition:filter .3s}
+.logo-name{font-family:var(--font-head);font-weight:800;font-size:22px;letter-spacing:.01em;line-height:1;padding-top:14px;text-shadow:0 2px 10px rgba(0,0,0,.35);transition:text-shadow .3s}
+#navbar.scrolled .logo-name{text-shadow:none}
 #navbar.scrolled .logo{color:var(--text-primary)}
 #navbar.scrolled .logo img{filter:invert(1) hue-rotate(180deg) saturate(1.4) drop-shadow(0 1px 3px rgba(0,0,0,.12))}
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-size:14px;font-weight:600;font-family:var(--font-head);color:rgba(255,255,255,.9);transition:color .25s}
 #navbar.scrolled .nav-links a{color:var(--text-primary)}
 .nav-links a:hover{color:var(--accent-teal)!important}
-.nav-right{display:flex;align-items:center;gap:14px}
+.nav-right{display:flex;align-items:center;gap:14px;flex-shrink:0}
 .lang-switch{display:flex;gap:2px;background:rgba(255,255,255,.12);border-radius:var(--radius-pill);padding:3px}
 #navbar.scrolled .lang-switch{background:rgba(0,0,0,.06)}
 .lang-switch button{font-size:13px;padding:5px 9px;border-radius:var(--radius-pill);opacity:.7;transition:.25s}
@@ -132,7 +139,7 @@ section{padding:88px 0;position:relative}
 #mobile-menu .close-menu{position:absolute;top:24px;right:24px;color:#fff;font-size:32px}
 
 /* ============ HERO ============ */
-#hero{height:100vh;min-height:640px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:0}
+#hero{height:100vh;min-height:640px;margin-top:calc(-1 * var(--nav-h));padding:var(--nav-h) 0 0;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
 #hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 #hero.no-video .hero-fallback{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#0F1115 0%,#0d2b29 35%,#00695f 60%,#0F1115 100%);background-size:300% 300%;animation:heroShift 14s ease infinite}
 @keyframes heroShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -403,8 +410,15 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
   .step:not(:last-child)::after{display:none}
   .ai-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
   .pricing-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
 }
 @media (max-width:600px){
+  :root{--nav-h:70px}
+  #announce{font-size:12px;padding:8px 40px 8px 14px}
+  .logo img{height:42px}
+  .logo-name{font-size:19px;padding-top:12px}
+  .btn-nav{display:none}
+  .nav-right{gap:10px}
   section{padding:64px 0}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}
   .trust-grid,.services-grid,.pillars,.gallery-grid,.process-grid{grid-template-columns:1fr}
@@ -414,6 +428,20 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
   .hero-ctas{flex-direction:column;width:100%;max-width:340px;margin-left:auto;margin-right:auto}
   #wa-float{width:54px;height:54px;bottom:18px;right:18px}
   .lang-switch button{padding:4px 6px;font-size:12px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .tech-powered-strip{flex-wrap:wrap}
+}
+@media (max-width:360px){
+  #announce{font-size:11px}
+  .logo img{height:38px}
+  .logo-name{font-size:17px;padding-top:10px}
+  .logo{gap:8px}
+  .nav-right{gap:8px}
+  #navbar .nav-inner{gap:12px}
+  .lang-switch button{padding:3px 4px;font-size:11px}
+  .hamburger{padding:6px}
+  .form-card .btn{white-space:normal;text-align:center}
+  .btn-hero{padding-left:20px;padding-right:20px}
 }
 </style>
 </head>
@@ -423,14 +451,14 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
 
 <!-- ANNOUNCEMENT BAR -->
 <div id="announce">
-  <span class="msg" id="announce-msg">🎁 Collecte & livraison GRATUITE dans tout Bruxelles · WhatsApp: +32 488 19 67 67</span>
+  <span class="msg" id="announce-msg">🚚 Collecte & livraison incluses dès 50 € de commande · WhatsApp : +32 488 19 67 67</span>
   <button class="close-x" id="announce-close" aria-label="Fermer">✕</button>
 </div>
 
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="container nav-inner">
-    <a href="#hero" class="logo"><img src="brand_assets/logo-ayka-tapis.png" alt="Ayka Tapis"></a>
+    <a href="#hero" class="logo" aria-label="Ayka Tapis — Accueil"><img src="brand_assets/logo-ayka-tapis.png" alt="Ayka"><span class="logo-name">Tapis</span></a>
     <ul class="nav-links">
       <li><a href="#services" data-i18n="nav_services">Services</a></li>
       <li><a href="#process" data-i18n="nav_process">Comment ça marche</a></li>
@@ -473,9 +501,9 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">✨ <span data-i18n="hero_badge">Collecte & livraison gratuites · Retour en 48h</span></div>
+    <div class="hero-badge">✨ <span data-i18n="hero_badge">Collecte & livraison incluses dès 50 € · Retour en 48h</span></div>
     <h1 data-i18n="hero_h1">Vos tapis méritent mieux.</h1>
-    <p class="hero-sub" data-i18n="hero_sub">Nettoyage professionnel · Collecte & livraison gratuites · Résultat garanti</p>
+    <p class="hero-sub" data-i18n="hero_sub">Nettoyage professionnel · Collecte & livraison à domicile · Résultat garanti</p>
     <div class="hero-ctas">
       <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-teal btn-hero">💬 <span data-i18n="hero_cta_whatsapp">Réserver sur WhatsApp</span></a>
       <a href="tel:+32488196767" class="btn btn-outline-white btn-hero">📞 +32 488 19 67 67</a>
@@ -489,7 +517,7 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
       <span>⚡ <span data-i18n="proof_1">Livraison en 48h</span></span>
       <span>🧪 <span data-i18n="proof_2">Produits écologiques</span></span>
       <span>🏆 <span data-i18n="proof_3">Garantie satisfait</span></span>
-      <span>🚚 <span data-i18n="proof_4">Collecte gratuite</span></span>
+      <span>🚚 <span data-i18n="proof_4">Collecte à domicile</span></span>
     </div>
   </div>
   <a href="#stats" class="scroll-ind" aria-label="Défiler">▾</a>
@@ -501,7 +529,7 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
     <div class="stats-grid">
       <div class="reveal"><div class="stat-val" data-count="48" data-suffix="h">0</div><div class="stat-label" data-i18n="stat_1">Délai de livraison</div></div>
       <div class="reveal"><div class="stat-val" data-count="19" data-suffix="">0</div><div class="stat-label" data-i18n="stat_2">Communes desservies</div></div>
-      <div class="reveal"><div class="stat-val" data-count="0" data-suffix="€">0</div><div class="stat-label" data-i18n="stat_3">Collecte & livraison</div></div>
+      <div class="reveal"><div class="stat-val" data-count="50" data-suffix="€">0</div><div class="stat-label" data-i18n="stat_3">Commande min. Bruxelles · livraison incluse</div></div>
       <div class="reveal"><div class="stat-val" data-count="24" data-suffix="/7">0</div><div class="stat-label" data-i18n="stat_4">Réservation WhatsApp</div></div>
     </div>
   </div>
@@ -516,7 +544,7 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
     </div>
     <div class="trust-grid" style="margin-top:44px">
       <div class="trust-item reveal"><div class="t-icon">🌿</div><div><h3 data-i18n="trust_1_t">Produits écologiques</h3><p data-i18n="trust_1_d">Shampoings biodégradables, respectueux de vos enfants & animaux.</p></div></div>
-      <div class="trust-item reveal"><div class="t-icon">🚚</div><div><h3 data-i18n="trust_2_t">Collecte & livraison gratuites</h3><p data-i18n="trust_2_d">Nous venons chez vous, partout à Bruxelles.</p></div></div>
+      <div class="trust-item reveal"><div class="t-icon">🚚</div><div><h3 data-i18n="trust_2_t">Collecte & livraison à domicile</h3><p data-i18n="trust_2_d">Nous venons chez vous, partout à Bruxelles — incluses dès 50 € de commande (60 € ou 100 € selon la commune).</p></div></div>
       <div class="trust-item reveal"><div class="t-icon">⚡</div><div><h3 data-i18n="trust_3_t">Retour en 48h</h3><p data-i18n="trust_3_d">Nettoyage express en 2 jours ouvrables garanti.</p></div></div>
       <div class="trust-item reveal"><div class="t-icon">🏆</div><div><h3 data-i18n="trust_4_t">Résultat garanti</h3><p data-i18n="trust_4_d">Pas satisfait ? On recommence, gratuitement.</p></div></div>
       <div class="trust-item reveal"><div class="t-icon">🤖</div><div><h3 data-i18n="trust_5_t">Réservation IA 24/7</h3><p data-i18n="trust_5_d">Votre assistant WhatsApp disponible à toute heure.</p></div></div>
@@ -621,7 +649,7 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
       </div>
       <div class="step reveal">
         <div class="s-icon">🚚<span class="s-num">2</span></div>
-        <h3 data-i18n="proc_2_t">Collecte gratuite J+1</h3>
+        <h3 data-i18n="proc_2_t">Collecte à domicile J+1</h3>
         <p data-i18n="proc_2_d">Nos chauffeurs récupèrent vos tapis à l'heure que vous choisissez.</p>
         <span class="tech-pill">🗺️ <span data-i18n="proc_2_tech">Route optimisée par ERP K-SAT</span></span>
       </div>
@@ -702,7 +730,7 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
           <li data-i18n="price_1_l3">Persan / Oriental pure laine : dès 18€/m²</li>
           <li data-i18n="price_1_l4">Tapis en soie : 54€/m²</li>
           <li data-i18n="price_1_l5">Devis précis en 2 min via le calculateur</li>
-          <li data-i18n="price_1_l6">Collecte & livraison : GRATUITE (forfait min. selon zone)</li>
+          <li data-i18n="price_1_l6">Collecte & livraison incluses dès le minimum de commande de votre zone (50 € Bruxelles · 60 € / 100 € selon la commune)</li>
         </ul>
         <a href="https://wa.me/32488196767" target="_blank" rel="noopener" class="btn btn-teal" style="justify-content:center" data-i18n="price_1_cta">Réserver</a>
       </div>
@@ -759,7 +787,7 @@ footer{background:var(--bg-dark);color:rgba(255,255,255,.7);padding:72px 0 0}
       </div>
       <div class="contact-direct reveal">
         <div class="contact-info-card" style="border-left:4px solid var(--accent-teal)">
-          <h4 data-i18n="devis_forfait_title">Forfait livraison</h4>
+          <h4 data-i18n="devis_forfait_title">Minimum de commande avec livraison</h4>
           <p style="margin-bottom:10px"><strong style="color:var(--accent-teal-dark)">min 50€</strong> — Bruxelles</p>
           <p style="margin-bottom:10px"><strong style="color:var(--accent-teal-dark)">min 60€</strong> — 1150, 1200, 1600, 1700, 1731, 1780, 1050</p>
           <p><strong style="color:var(--accent-teal-dark)">min 100€</strong> — 1180, 1160, 1170, 9300, 3070, 1820, 1970, 1950, 1730, 1650, 1785</p>
@@ -1055,18 +1083,18 @@ fr:{
   devis_sub:"Utilisez notre calculateur en ligne pour estimer le coût du nettoyage de vos tapis. N'oubliez pas de vérifier le montant du forfait minimal concernant la livraison.",
   devis_type_label:"Choisissez le type de tapis :",devis_m2_label:"Entrez la mesure en m² de votre tapis",
   devis_total_label:"Coût total pour le nettoyage",devis_cta:"Demander ce devis sur WhatsApp",
-  devis_forfait_title:"Forfait livraison",devis_selfservice:"Déposez vos tapis à l'atelier sans payer les frais de livraison.",
+  devis_forfait_title:"Minimum de commande avec livraison",devis_selfservice:"Déposez vos tapis à l'atelier sans payer les frais de livraison.",
   devis_types:["Tapis synthétique (polyester) — jusqu'à 10m²","Tapis synthétique (polyester) — à partir de 10m²","Tapis acrylique — jusqu'à 10m²","Tapis acrylique — à partir de 10m²","Tapis Shaggy — jusqu'à 10m²","Tapis Shaggy — à partir de 10m²","Tapis Persan (pure laine, oriental, artisanal, népalais, chinois) — jusqu'à 10m²","Tapis Persan (pure laine, oriental, artisanal, népalais, chinois) — à partir de 10m²","Tapis en soie"],
-  announce_1:"🎁 Collecte & livraison GRATUITE dans tout Bruxelles · WhatsApp: +32 488 19 67 67",
+  announce_1:"🚚 Collecte & livraison incluses dès 50 € de commande · WhatsApp : +32 488 19 67 67",
   announce_2:"🤖 Réservation IA 24/7 · Suivi en temps réel · Powered by K-SAT Automation",
-  hero_badge:"Collecte & livraison gratuites · Retour en 48h",hero_h1:"Vos tapis méritent mieux.",
-  hero_sub:"Nettoyage professionnel · Collecte & livraison gratuites · Résultat garanti",
+  hero_badge:"Collecte & livraison incluses dès 50 € · Retour en 48h",hero_h1:"Vos tapis méritent mieux.",
+  hero_sub:"Nettoyage professionnel · Collecte & livraison à domicile · Résultat garanti",
   hero_cta_whatsapp:"Réserver sur WhatsApp",hero_cta_call:"Appeler maintenant",
-  proof_1:"Livraison en 48h",proof_2:"Produits écologiques",proof_3:"Garantie satisfait",proof_4:"Collecte gratuite",
-  stat_1:"Délai de livraison",stat_2:"Communes desservies",stat_3:"Collecte & livraison",stat_4:"Réservation WhatsApp",
+  proof_1:"Livraison en 48h",proof_2:"Produits écologiques",proof_3:"Garantie satisfait",proof_4:"Collecte à domicile",
+  stat_1:"Délai de livraison",stat_2:"Communes desservies",stat_3:"Commande min. Bruxelles · livraison incluse",stat_4:"Réservation WhatsApp",
   trust_label:"Pourquoi Ayka Tapis ?",trust_title:"La confiance, ça se mérite.",
   trust_1_t:"Produits écologiques",trust_1_d:"Shampoings biodégradables, respectueux de vos enfants & animaux.",
-  trust_2_t:"Collecte & livraison gratuites",trust_2_d:"Nous venons chez vous, partout à Bruxelles.",
+  trust_2_t:"Collecte & livraison à domicile",trust_2_d:"Nous venons chez vous, partout à Bruxelles — incluses dès 50 € de commande (60 € ou 100 € selon la commune).",
   trust_3_t:"Retour en 48h",trust_3_d:"Nettoyage express en 2 jours ouvrables garanti.",
   trust_4_t:"Résultat garanti",trust_4_d:"Pas satisfait ? On recommence, gratuitement.",
   trust_5_t:"Réservation IA 24/7",trust_5_d:"Votre assistant WhatsApp disponible à toute heure.",
@@ -1081,7 +1109,7 @@ fr:{
   svc_6_t:"Taches Tenaces",svc_6_l1:"Café, vin rouge, encre, sang, urine, moisissures",svc_6_l2:"Traitement spécialisé par type de tache",svc_6_p:"Tache éliminée ou remboursé",
   proc_label:"Comment ça marche ?",proc_title:"Simple comme un message WhatsApp.",
   proc_1_t:"Réservez en 1 message",proc_1_d:"Envoyez un WhatsApp ou appelez-nous. On confirme en 2 minutes.",
-  proc_2_t:"Collecte gratuite J+1",proc_2_d:"Nos chauffeurs récupèrent vos tapis à l'heure que vous choisissez.",proc_2_tech:"Route optimisée par ERP K-SAT",
+  proc_2_t:"Collecte à domicile J+1",proc_2_d:"Nos chauffeurs récupèrent vos tapis à l'heure que vous choisissez.",proc_2_tech:"Route optimisée par ERP K-SAT",
   proc_3_t:"Nettoyage expert 24-48h",proc_3_d:"Lavage en machines industrielles full-automatiques — technologie unique en Belgique. Photos avant/après partagées.",proc_3_tech:"Suivi temps réel · Dashboard K-SAT",
   proc_4_t:"Livraison à domicile",proc_4_d:"Vos tapis, propres, livrés et emballés. Parfum frais.",proc_4_tech:"Notification automatique WhatsApp",
   show_label:"Avant / Après",show_title:"Voyez la différence par vous-même.",
@@ -1089,7 +1117,7 @@ fr:{
   zones_label:"Nous desservons tout Bruxelles",zones_title:"Votre quartier est couvert.",
   zones_banner:"Vous êtes en dehors de Bruxelles ? Contactez-nous — nous couvrons également la périphérie sur demande.",zones_cta:"Vérifier ma zone",
   price_label:"Nos tarifs",price_title:"Des prix honnêtes. Zéro surprise.",price_pop:"Populaire",
-  price_1_t:"À la pièce",price_1_p:"dès 6,50€/m²",price_1_l1:"Synthétique (polyester) : dès 6,50€/m²",price_1_l2:"Acrylique / Shaggy : dès 7,50€/m²",price_1_l3:"Persan / Oriental pure laine : dès 18€/m²",price_1_l4:"Tapis en soie : 54€/m²",price_1_l5:"Devis précis en 2 min via le calculateur",price_1_l6:"Collecte & livraison : GRATUITE (forfait min. selon zone)",price_1_cta:"Réserver",
+  price_1_t:"À la pièce",price_1_p:"dès 6,50€/m²",price_1_l1:"Synthétique (polyester) : dès 6,50€/m²",price_1_l2:"Acrylique / Shaggy : dès 7,50€/m²",price_1_l3:"Persan / Oriental pure laine : dès 18€/m²",price_1_l4:"Tapis en soie : 54€/m²",price_1_l5:"Devis précis en 2 min via le calculateur",price_1_l6:"Collecte & livraison incluses dès le minimum de commande de votre zone (50 € Bruxelles · 60 € / 100 € selon la commune)",price_1_cta:"Réserver",
   price_2_t:"Formule Express",price_2_p:"+25% · retour 24h",price_2_l1:"Même service, délai prioritaire",price_2_l2:"Idéal avant un événement",price_2_l3:"Collecte le jour même si possible",price_2_cta:"Réserver Express",
   price_3_t:"Abonnement PRO",price_3_p:"dès 49€/mois",price_3_l1:"Nettoyage mensuel ou trimestriel",price_3_l2:"Priorité de prise en charge",price_3_l3:"-15% sur tous les services",price_3_l4:"Rapport de nettoyage après chaque visite",price_3_cta:"Demander un devis",
   price_note:"🔍 Obtenez un devis en 2 minutes sur WhatsApp. Envoyez une photo de votre tapis, on vous répond immédiatement.",
@@ -1111,7 +1139,7 @@ fr:{
   faq_title:"Questions fréquentes.",
   faq:[
     ["Combien de temps prend le nettoyage ?","En général 24 à 48h. Service express en 24h disponible."],
-    ["La collecte et la livraison sont-elles vraiment gratuites ?","Oui, partout à Bruxelles et dans les communes limitrophes. Sans condition de montant minimum."],
+    ["La collecte et la livraison sont-elles gratuites ?","Oui, elles sont incluses à partir d'un minimum de commande qui dépend de votre zone : 50 € à Bruxelles ; 60 € pour les codes postaux 1150, 1200, 1600, 1700, 1731, 1780 et 1050 ; 100 € pour 1180, 1160, 1170, 9300, 3070, 1820, 1970, 1950, 1730, 1650 et 1785. Vous pouvez aussi déposer vos tapis à l'atelier (1020 Bruxelles) sans frais de livraison."],
     ["Quels types de tapis nettoyez-vous ?","Tous types : machine, tissé main, oriental, kilim, soie, shaggy, bambou, synthétique, laine..."],
     ["Mes taches tenaces peuvent-elles être éliminées ?","La majorité des taches disparaissent complètement (café, vin, urine, encre). Pour certaines taches très anciennes, nous vous informons honnêtement avant traitement."],
     ["Comment réserver ?","Via WhatsApp (+32 488 19 67 67), par téléphone, ou via le formulaire sur ce site. Notre IA répond 24h/24."],
@@ -1135,18 +1163,18 @@ nl:{
   devis_sub:"Gebruik onze online calculator om de reinigingskost van uw tapijten te schatten. Vergeet niet het minimale leveringsforfait voor uw zone te controleren.",
   devis_type_label:"Kies het type tapijt:",devis_m2_label:"Voer de afmeting van uw tapijt in m² in",
   devis_total_label:"Totale reinigingskost",devis_cta:"Deze offerte aanvragen via WhatsApp",
-  devis_forfait_title:"Leveringsforfait",devis_selfservice:"Self-Service: breng uw tapijten naar het atelier zonder leveringskosten te betalen.",
+  devis_forfait_title:"Minimumbestelling met levering",devis_selfservice:"Self-Service: breng uw tapijten naar het atelier zonder leveringskosten te betalen.",
   devis_types:["Synthetisch tapijt (polyester) — tot 10m²","Synthetisch tapijt (polyester) — vanaf 10m²","Acryl tapijt — tot 10m²","Acryl tapijt — vanaf 10m²","Shaggy tapijt — tot 10m²","Shaggy tapijt — vanaf 10m²","Perzisch tapijt (zuivere wol, oosters, artisanaal, Nepalees, Chinees) — tot 10m²","Perzisch tapijt (zuivere wol, oosters, artisanaal, Nepalees, Chinees) — vanaf 10m²","Zijden tapijt"],
-  announce_1:"🎁 GRATIS ophaling & levering in heel Brussel · WhatsApp: +32 488 19 67 67",
+  announce_1:"🚚 Ophaling & levering inbegrepen vanaf 50 € bestelling · WhatsApp: +32 488 19 67 67",
   announce_2:"🤖 AI-reservering 24/7 · Realtime tracking · Powered by K-SAT Automation",
-  hero_badge:"Gratis ophaling & levering · Retour in 48u",hero_h1:"Uw tapijten verdienen beter.",
-  hero_sub:"Professionele reiniging · Gratis ophaling & levering · Gegarandeerd resultaat",
+  hero_badge:"Ophaling & levering inbegrepen vanaf 50 € · Retour in 48u",hero_h1:"Uw tapijten verdienen beter.",
+  hero_sub:"Professionele reiniging · Ophaling & levering aan huis · Gegarandeerd resultaat",
   hero_cta_whatsapp:"Boek via WhatsApp",hero_cta_call:"Bel nu",
-  proof_1:"Levering in 48u",proof_2:"Ecologische producten",proof_3:"Tevredenheidsgarantie",proof_4:"Gratis ophaling",
-  stat_1:"Levertermijn",stat_2:"Bediende gemeenten",stat_3:"Ophaling & levering",stat_4:"WhatsApp-reservatie",
+  proof_1:"Levering in 48u",proof_2:"Ecologische producten",proof_3:"Tevredenheidsgarantie",proof_4:"Ophaling aan huis",
+  stat_1:"Levertermijn",stat_2:"Bediende gemeenten",stat_3:"Min. bestelling Brussel · levering inbegrepen",stat_4:"WhatsApp-reservatie",
   trust_label:"Waarom Ayka Tapis?",trust_title:"Vertrouwen verdien je.",
   trust_1_t:"Ecologische producten",trust_1_d:"Biologisch afbreekbare shampoos, veilig voor kinderen & huisdieren.",
-  trust_2_t:"Gratis ophaling & levering",trust_2_d:"Wij komen bij u thuis, overal in Brussel.",
+  trust_2_t:"Ophaling & levering aan huis",trust_2_d:"Wij komen bij u thuis, overal in Brussel — inbegrepen vanaf 50 € bestelling (60 € of 100 € naargelang de gemeente).",
   trust_3_t:"Terug in 48u",trust_3_d:"Express reiniging in 2 werkdagen gegarandeerd.",
   trust_4_t:"Gegarandeerd resultaat",trust_4_d:"Niet tevreden? We doen het gratis opnieuw.",
   trust_5_t:"AI-reservering 24/7",trust_5_d:"Uw WhatsApp-assistent is altijd beschikbaar.",
@@ -1161,7 +1189,7 @@ nl:{
   svc_6_t:"Hardnekkige Vlekken",svc_6_l1:"Koffie, rode wijn, inkt, bloed, urine, schimmel",svc_6_l2:"Gespecialiseerde behandeling per vlektype",svc_6_p:"Vlek weg of geld terug",
   proc_label:"Hoe het werkt?",proc_title:"Zo simpel als een WhatsApp-bericht.",
   proc_1_t:"Boek in 1 bericht",proc_1_d:"Stuur een WhatsApp of bel ons. Bevestiging binnen 2 minuten.",
-  proc_2_t:"Gratis ophaling D+1",proc_2_d:"Onze chauffeurs halen uw tapijten op wanneer het u past.",proc_2_tech:"Geoptimaliseerde route · K-SAT ERP",
+  proc_2_t:"Ophaling aan huis D+1",proc_2_d:"Onze chauffeurs halen uw tapijten op wanneer het u past.",proc_2_tech:"Geoptimaliseerde route · K-SAT ERP",
   proc_3_t:"Expertreiniging 24-48u",proc_3_d:"Wassing in volautomatische industriële machines — unieke technologie in België. Voor/na foto's gedeeld.",proc_3_tech:"Realtime tracking · K-SAT Dashboard",
   proc_4_t:"Levering aan huis",proc_4_d:"Uw tapijten, schoon, geleverd en verpakt. Frisse geur.",proc_4_tech:"Automatische WhatsApp-melding",
   show_label:"Voor / Na",show_title:"Zie zelf het verschil.",
@@ -1169,7 +1197,7 @@ nl:{
   zones_label:"Wij bedienen heel Brussel",zones_title:"Uw wijk is gedekt.",
   zones_banner:"Woont u buiten Brussel? Contacteer ons — wij bedienen ook de rand op aanvraag.",zones_cta:"Check mijn zone",
   price_label:"Onze prijzen",price_title:"Eerlijke prijzen. Nul verrassingen.",price_pop:"Populair",
-  price_1_t:"Per stuk",price_1_p:"vanaf 6,50€/m²",price_1_l1:"Synthetisch (polyester): vanaf 6,50€/m²",price_1_l2:"Acryl / Shaggy: vanaf 7,50€/m²",price_1_l3:"Perzisch / Oosters zuivere wol: vanaf 18€/m²",price_1_l4:"Zijden tapijt: 54€/m²",price_1_l5:"Precieze offerte in 2 min via de calculator",price_1_l6:"Ophaling & levering: GRATIS (min. forfait per zone)",price_1_cta:"Boeken",
+  price_1_t:"Per stuk",price_1_p:"vanaf 6,50€/m²",price_1_l1:"Synthetisch (polyester): vanaf 6,50€/m²",price_1_l2:"Acryl / Shaggy: vanaf 7,50€/m²",price_1_l3:"Perzisch / Oosters zuivere wol: vanaf 18€/m²",price_1_l4:"Zijden tapijt: 54€/m²",price_1_l5:"Precieze offerte in 2 min via de calculator",price_1_l6:"Ophaling & levering inbegrepen vanaf de minimumbestelling van uw zone (50 € Brussel · 60 € / 100 € naargelang de gemeente)",price_1_cta:"Boeken",
   price_2_t:"Express Formule",price_2_p:"+25% · terug in 24u",price_2_l1:"Zelfde service, prioritaire termijn",price_2_l2:"Ideaal vóór een evenement",price_2_l3:"Ophaling dezelfde dag indien mogelijk",price_2_cta:"Boek Express",
   price_3_t:"PRO Abonnement",price_3_p:"vanaf 49€/maand",price_3_l1:"Maandelijkse of driemaandelijkse reiniging",price_3_l2:"Prioritaire behandeling",price_3_l3:"-15% op alle diensten",price_3_l4:"Reinigingsrapport na elk bezoek",price_3_cta:"Vraag offerte",
   price_note:"🔍 Krijg een offerte in 2 minuten via WhatsApp. Stuur een foto van uw tapijt, wij antwoorden meteen.",
@@ -1191,7 +1219,7 @@ nl:{
   faq_title:"Veelgestelde vragen.",
   faq:[
     ["Hoe lang duurt de reiniging?","Meestal 24 tot 48u. Express service in 24u beschikbaar."],
-    ["Zijn ophaling en levering echt gratis?","Ja, overal in Brussel en de aangrenzende gemeenten. Zonder minimumbedrag."],
+    ["Zijn ophaling en levering gratis?","Ja, ze zijn inbegrepen vanaf een minimumbestelling die afhangt van uw zone: 50 € in Brussel; 60 € voor de postcodes 1150, 1200, 1600, 1700, 1731, 1780 en 1050; 100 € voor 1180, 1160, 1170, 9300, 3070, 1820, 1970, 1950, 1730, 1650 en 1785. U kunt uw tapijten ook zonder leveringskosten in het atelier (1020 Brussel) afgeven."],
     ["Welke soorten tapijten reinigen jullie?","Alle soorten: machinaal, handgeweven, oosters, kelim, zijde, shaggy, bamboe, synthetisch, wol..."],
     ["Kunnen mijn hardnekkige vlekken verwijderd worden?","De meeste vlekken verdwijnen volledig (koffie, wijn, urine, inkt). Bij zeer oude vlekken informeren wij u eerlijk vóór behandeling."],
     ["Hoe boek ik?","Via WhatsApp (+32 488 19 67 67), telefonisch, of via het formulier op deze site. Onze AI antwoordt 24/7."],
@@ -1215,18 +1243,18 @@ en:{
   devis_sub:"Use our online calculator to estimate the cleaning cost of your carpets. Don't forget to check the minimum delivery package for your zone.",
   devis_type_label:"Choose your carpet type:",devis_m2_label:"Enter your carpet size in m²",
   devis_total_label:"Total cleaning cost",devis_cta:"Request this quote on WhatsApp",
-  devis_forfait_title:"Delivery minimum",devis_selfservice:"Drop off your carpets at the workshop and pay no delivery fees.",
+  devis_forfait_title:"Minimum order with delivery",devis_selfservice:"Drop off your carpets at the workshop and pay no delivery fees.",
   devis_types:["Synthetic carpet (polyester) — up to 10m²","Synthetic carpet (polyester) — from 10m²","Acrylic carpet — up to 10m²","Acrylic carpet — from 10m²","Shaggy rug — up to 10m²","Shaggy rug — from 10m²","Persian carpet (pure wool, Oriental, artisanal, Nepalese, Chinese) — up to 10m²","Persian carpet (pure wool, Oriental, artisanal, Nepalese, Chinese) — from 10m²","Silk carpet"],
-  announce_1:"🎁 FREE pickup & delivery across Brussels · WhatsApp: +32 488 19 67 67",
+  announce_1:"🚚 Pickup & delivery included from a €50 order · WhatsApp: +32 488 19 67 67",
   announce_2:"🤖 AI booking 24/7 · Real-time tracking · Powered by K-SAT Automation",
-  hero_badge:"Free pickup & delivery · 48h turnaround",hero_h1:"Your carpets deserve better.",
-  hero_sub:"Professional cleaning · Free pickup & delivery · Guaranteed results",
+  hero_badge:"Pickup & delivery included from €50 · 48h turnaround",hero_h1:"Your carpets deserve better.",
+  hero_sub:"Professional cleaning · Home pickup & delivery · Guaranteed results",
   hero_cta_whatsapp:"Book on WhatsApp",hero_cta_call:"Call now",
-  proof_1:"48h delivery",proof_2:"Eco-friendly products",proof_3:"Satisfaction guarantee",proof_4:"Free pickup",
-  stat_1:"Turnaround time",stat_2:"Communes served",stat_3:"Pickup & delivery",stat_4:"WhatsApp booking",
+  proof_1:"48h delivery",proof_2:"Eco-friendly products",proof_3:"Satisfaction guarantee",proof_4:"Home pickup",
+  stat_1:"Turnaround time",stat_2:"Communes served",stat_3:"Min. order Brussels · delivery included",stat_4:"WhatsApp booking",
   trust_label:"Why Ayka Tapis?",trust_title:"Trust is earned.",
   trust_1_t:"Eco-friendly products",trust_1_d:"Biodegradable shampoos, safe for your kids & pets.",
-  trust_2_t:"Free pickup & delivery",trust_2_d:"We come to you, anywhere in Brussels.",
+  trust_2_t:"Home pickup & delivery",trust_2_d:"We come to you, anywhere in Brussels — included from a €50 order (€60 or €100 depending on the municipality).",
   trust_3_t:"Back in 48h",trust_3_d:"Express cleaning in 2 business days, guaranteed.",
   trust_4_t:"Guaranteed results",trust_4_d:"Not satisfied? We redo it, free of charge.",
   trust_5_t:"AI booking 24/7",trust_5_d:"Your WhatsApp assistant is available around the clock.",
@@ -1241,7 +1269,7 @@ en:{
   svc_6_t:"Tough Stains",svc_6_l1:"Coffee, red wine, ink, blood, urine, mold",svc_6_l2:"Specialized treatment per stain type",svc_6_p:"Stain removed or refunded",
   proc_label:"How it works",proc_title:"As simple as a WhatsApp message.",
   proc_1_t:"Book in 1 message",proc_1_d:"Send a WhatsApp or call us. We confirm within 2 minutes.",
-  proc_2_t:"Free pickup next day",proc_2_d:"Our drivers collect your carpets at the time you choose.",proc_2_tech:"Optimized route · K-SAT ERP",
+  proc_2_t:"Home pickup next day",proc_2_d:"Our drivers collect your carpets at the time you choose.",proc_2_tech:"Optimized route · K-SAT ERP",
   proc_3_t:"Expert cleaning 24-48h",proc_3_d:"Washing in fully automated industrial machines — technology unique in Belgium. Before/after photos shared.",proc_3_tech:"Real-time tracking · K-SAT Dashboard",
   proc_4_t:"Home delivery",proc_4_d:"Your carpets, clean, delivered and wrapped. Fresh scent.",proc_4_tech:"Automatic WhatsApp notification",
   show_label:"Before / After",show_title:"See the difference for yourself.",
@@ -1249,7 +1277,7 @@ en:{
   zones_label:"We serve all of Brussels",zones_title:"Your neighborhood is covered.",
   zones_banner:"Outside Brussels? Contact us — we also cover the outskirts on request.",zones_cta:"Check my area",
   price_label:"Our pricing",price_title:"Honest prices. Zero surprises.",price_pop:"Popular",
-  price_1_t:"Per item",price_1_p:"from €6.50/m²",price_1_l1:"Synthetic (polyester): from €6.50/m²",price_1_l2:"Acrylic / Shaggy: from €7.50/m²",price_1_l3:"Persian / Oriental pure wool: from €18/m²",price_1_l4:"Silk carpet: €54/m²",price_1_l5:"Exact quote in 2 min via the calculator",price_1_l6:"Pickup & delivery: FREE (min. package per zone)",price_1_cta:"Book",
+  price_1_t:"Per item",price_1_p:"from €6.50/m²",price_1_l1:"Synthetic (polyester): from €6.50/m²",price_1_l2:"Acrylic / Shaggy: from €7.50/m²",price_1_l3:"Persian / Oriental pure wool: from €18/m²",price_1_l4:"Silk carpet: €54/m²",price_1_l5:"Exact quote in 2 min via the calculator",price_1_l6:"Pickup & delivery included from your zone's minimum order (€50 Brussels · €60 / €100 depending on the municipality)",price_1_cta:"Book",
   price_2_t:"Express Formula",price_2_p:"+25% · back in 24h",price_2_l1:"Same service, priority turnaround",price_2_l2:"Ideal before an event",price_2_l3:"Same-day pickup when possible",price_2_cta:"Book Express",
   price_3_t:"PRO Subscription",price_3_p:"from €49/month",price_3_l1:"Monthly or quarterly cleaning",price_3_l2:"Priority handling",price_3_l3:"-15% on all services",price_3_l4:"Cleaning report after every visit",price_3_cta:"Request a quote",
   price_note:"🔍 Get a quote in 2 minutes on WhatsApp. Send a photo of your carpet, we reply immediately.",
@@ -1271,7 +1299,7 @@ en:{
   faq_title:"Frequently asked questions.",
   faq:[
     ["How long does cleaning take?","Usually 24 to 48h. Express 24h service available."],
-    ["Are pickup and delivery really free?","Yes, everywhere in Brussels and neighboring municipalities. No minimum amount."],
+    ["Are pickup and delivery free?","Yes, they are included from a minimum order that depends on your zone: €50 in Brussels; €60 for postcodes 1150, 1200, 1600, 1700, 1731, 1780 and 1050; €100 for 1180, 1160, 1170, 9300, 3070, 1820, 1970, 1950, 1730, 1650 and 1785. You can also drop your carpets off at the workshop (1020 Brussels) with no delivery fees."],
     ["What types of carpets do you clean?","All types: machine-made, hand-woven, Oriental, kilim, silk, shaggy, bamboo, synthetic, wool..."],
     ["Can my tough stains be removed?","Most stains disappear completely (coffee, wine, urine, ink). For some very old stains, we inform you honestly before treatment."],
     ["How do I book?","Via WhatsApp (+32 488 19 67 67), by phone, or via the form on this site. Our AI answers 24/7."],
@@ -1295,18 +1323,18 @@ tr:{
   devis_sub:"Halılarınızın temizlik maliyetini tahmin etmek için online hesaplayıcımızı kullanın. Bölgenize ait minimum teslimat tutarını kontrol etmeyi unutmayın.",
   devis_type_label:"Halı tipini seçin:",devis_m2_label:"Halınızın ölçüsünü m² olarak girin",
   devis_total_label:"Toplam temizlik ücreti",devis_cta:"Bu teklifi WhatsApp'tan iste",
-  devis_forfait_title:"Teslimat forfait",devis_selfservice:"Self-Servis: Halılarınızı atölyeye kendiniz bırakın, teslimat ücreti ödemeyin.",
+  devis_forfait_title:"Teslimatlı minimum sipariş",devis_selfservice:"Self-Servis: Halılarınızı atölyeye kendiniz bırakın, teslimat ücreti ödemeyin.",
   devis_types:["Sentetik halı (polyester) — 10m²'ye kadar","Sentetik halı (polyester) — 10m²'den itibaren","Akrilik halı — 10m²'ye kadar","Akrilik halı — 10m²'den itibaren","Shaggy halı — 10m²'ye kadar","Shaggy halı — 10m²'den itibaren","İran halısı (saf yün, şark, el işi, Nepal, Çin) — 10m²'ye kadar","İran halısı (saf yün, şark, el işi, Nepal, Çin) — 10m²'den itibaren","İpek halı"],
-  announce_1:"🎁 Tüm Brüksel'de ÜCRETSİZ alım & teslimat · WhatsApp: +32 488 19 67 67",
+  announce_1:"🚚 50 € ve üzeri siparişte alım & teslimat dahil · WhatsApp: +32 488 19 67 67",
   announce_2:"🤖 7/24 AI rezervasyon · Gerçek zamanlı takip · Powered by K-SAT Automation",
-  hero_badge:"Ücretsiz alım & teslimat · 48 saatte teslim",hero_h1:"Halılarınız daha iyisini hak ediyor.",
-  hero_sub:"Profesyonel temizlik · Ücretsiz alım & teslimat · Garantili sonuç",
+  hero_badge:"50 €'dan itibaren alım & teslimat dahil · 48 saatte teslim",hero_h1:"Halılarınız daha iyisini hak ediyor.",
+  hero_sub:"Profesyonel temizlik · Adresten alım & teslimat · Garantili sonuç",
   hero_cta_whatsapp:"WhatsApp'tan Rezervasyon",hero_cta_call:"Hemen ara",
-  proof_1:"48 saatte teslimat",proof_2:"Ekolojik ürünler",proof_3:"Memnuniyet garantisi",proof_4:"Ücretsiz alım",
-  stat_1:"Teslimat süresi",stat_2:"Hizmet verilen belediye",stat_3:"Alım & teslimat",stat_4:"WhatsApp rezervasyon",
+  proof_1:"48 saatte teslimat",proof_2:"Ekolojik ürünler",proof_3:"Memnuniyet garantisi",proof_4:"Adresten alım",
+  stat_1:"Teslimat süresi",stat_2:"Hizmet verilen belediye",stat_3:"Brüksel min. sipariş · teslimat dahil",stat_4:"WhatsApp rezervasyon",
   trust_label:"Neden Ayka Tapis?",trust_title:"Güven, hak edilir.",
   trust_1_t:"Ekolojik ürünler",trust_1_d:"Biyolojik olarak parçalanabilen şampuanlar; çocuklarınız ve evcil hayvanlarınız için güvenli.",
-  trust_2_t:"Ücretsiz alım & teslimat",trust_2_d:"Brüksel'in her yerinde ayağınıza geliyoruz.",
+  trust_2_t:"Adresten alım & teslimat",trust_2_d:"Brüksel'in her yerinde ayağınıza geliyoruz — 50 € ve üzeri siparişte dahil (belediyeye göre 60 € veya 100 €).",
   trust_3_t:"48 saatte iade",trust_3_d:"2 iş gününde ekspres temizlik garantisi.",
   trust_4_t:"Garantili sonuç",trust_4_d:"Memnun kalmadınız mı? Ücretsiz yeniden yapıyoruz.",
   trust_5_t:"7/24 AI rezervasyon",trust_5_d:"WhatsApp asistanınız her saat hizmetinizde.",
@@ -1321,7 +1349,7 @@ tr:{
   svc_6_t:"İnatçı Lekeler",svc_6_l1:"Kahve, kırmızı şarap, mürekkep, kan, idrar, küf",svc_6_l2:"Leke tipine göre özel işlem",svc_6_p:"Leke çıkmadıysa iade",
   proc_label:"Nasıl çalışır?",proc_title:"Bir WhatsApp mesajı kadar basit.",
   proc_1_t:"1 mesajla rezervasyon",proc_1_d:"WhatsApp gönderin ya da arayın. 2 dakikada onaylıyoruz.",
-  proc_2_t:"Ertesi gün ücretsiz alım",proc_2_d:"Şoförlerimiz halılarınızı seçtiğiniz saatte teslim alır.",proc_2_tech:"Optimize rota · K-SAT ERP",
+  proc_2_t:"Ertesi gün adresten alım",proc_2_d:"Şoförlerimiz halılarınızı seçtiğiniz saatte teslim alır.",proc_2_tech:"Optimize rota · K-SAT ERP",
   proc_3_t:"24-48 saatte uzman temizlik",proc_3_d:"Tam otomatik endüstriyel makinelerde yıkama — Belçika'da eşsiz teknoloji. Öncesi/sonrası fotoğraflar paylaşılır.",proc_3_tech:"Gerçek zamanlı takip · K-SAT Dashboard",
   proc_4_t:"Eve teslimat",proc_4_d:"Halılarınız tertemiz, paketlenmiş halde teslim. Mis gibi kokulu.",proc_4_tech:"Otomatik WhatsApp bildirimi",
   show_label:"Öncesi / Sonrası",show_title:"Farkı kendi gözlerinizle görün.",
@@ -1329,7 +1357,7 @@ tr:{
   zones_label:"Tüm Brüksel'e hizmet veriyoruz",zones_title:"Mahalleniz kapsama alanında.",
   zones_banner:"Brüksel dışında mısınız? Bize ulaşın — talep üzerine çevre bölgelere de hizmet veriyoruz.",zones_cta:"Bölgemi kontrol et",
   price_label:"Fiyatlarımız",price_title:"Dürüst fiyatlar. Sıfır sürpriz.",price_pop:"Popüler",
-  price_1_t:"Parça başı",price_1_p:"6,50€/m²'den başlayan",price_1_l1:"Sentetik (polyester): 6,50€/m²'den",price_1_l2:"Akrilik / Shaggy: 7,50€/m²'den",price_1_l3:"İran / Şark saf yün: 18€/m²'den",price_1_l4:"İpek halı: 54€/m²",price_1_l5:"Hesaplayıcıyla 2 dakikada net teklif",price_1_l6:"Alım & teslimat: ÜCRETSİZ (bölgeye göre min. tutar)",price_1_cta:"Rezervasyon",
+  price_1_t:"Parça başı",price_1_p:"6,50€/m²'den başlayan",price_1_l1:"Sentetik (polyester): 6,50€/m²'den",price_1_l2:"Akrilik / Shaggy: 7,50€/m²'den",price_1_l3:"İran / Şark saf yün: 18€/m²'den",price_1_l4:"İpek halı: 54€/m²",price_1_l5:"Hesaplayıcıyla 2 dakikada net teklif",price_1_l6:"Bölgenizin minimum sipariş tutarından itibaren alım & teslimat dahil (Brüksel 50 € · belediyeye göre 60 € / 100 €)",price_1_cta:"Rezervasyon",
   price_2_t:"Ekspres Formül",price_2_p:"+25% · 24 saatte iade",price_2_l1:"Aynı hizmet, öncelikli süre",price_2_l2:"Etkinlik öncesi ideal",price_2_l3:"Mümkünse aynı gün alım",price_2_cta:"Ekspres Rezervasyon",
   price_3_t:"PRO Abonelik",price_3_p:"49€/ay'dan başlayan",price_3_l1:"Aylık veya üç aylık temizlik",price_3_l2:"Öncelikli hizmet",price_3_l3:"Tüm hizmetlerde -15%",price_3_l4:"Her ziyaret sonrası temizlik raporu",price_3_cta:"Teklif iste",
   price_note:"🔍 WhatsApp'tan 2 dakikada teklif alın. Halınızın fotoğrafını gönderin, hemen yanıtlayalım.",
@@ -1351,7 +1379,7 @@ tr:{
   faq_title:"Sıkça sorulan sorular.",
   faq:[
     ["Temizlik ne kadar sürer?","Genellikle 24-48 saat. 24 saatte ekspres hizmet mevcut."],
-    ["Alım ve teslimat gerçekten ücretsiz mi?","Evet, Brüksel'in her yerinde ve komşu belediyelerde. Minimum tutar şartı yok."],
+    ["Alım ve teslimat ücretsiz mi?","Evet, bölgenize bağlı bir minimum sipariş tutarından itibaren dahildir: Brüksel'de 50 €; 1150, 1200, 1600, 1700, 1731, 1780 ve 1050 posta kodlarında 60 €; 1180, 1160, 1170, 9300, 3070, 1820, 1970, 1950, 1730, 1650 ve 1785'te 100 €. Halılarınızı teslimat ücreti ödemeden atölyeye (1020 Brüksel) de bırakabilirsiniz."],
     ["Hangi tür halıları temizliyorsunuz?","Her tür: makine, el dokuması, şark, kilim, ipek, shaggy, bambu, sentetik, yün..."],
     ["İnatçı lekelerim çıkarılabilir mi?","Lekelerin çoğu tamamen çıkar (kahve, şarap, idrar, mürekkep). Çok eski bazı lekeler için işlem öncesi sizi dürüstçe bilgilendiririz."],
     ["Nasıl rezervasyon yapabilirim?","WhatsApp (+32 488 19 67 67), telefon veya bu sitedeki form üzerinden. AI'mız 7/24 yanıt verir."],
